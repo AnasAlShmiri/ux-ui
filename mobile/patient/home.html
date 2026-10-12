@@ -1,254 +1,205 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>الرئيسية | تطبيق المريض - يرعاني</title>
-    <link rel="stylesheet" href="../../assets/css/variables.css">
-    <link rel="stylesheet" href="../../assets/css/global.css">
-    <link rel="stylesheet" href="../../assets/css/components.css">
-    <link rel="stylesheet" href="../../assets/css/mobile.css">
-    <link rel="stylesheet" href="../../assets/css/yerani-mint-theme.css">
-    <script defer src="../../assets/js/yerani-ui.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f4fbf8">
+  <meta name="description" content="يرعاني — خدماتك الطبية بطريقة واضحة وسهلة.">
+  <title>الرئيسية | يرعاني — تطبيق المريض</title>
+  <link rel="stylesheet" href="../../assets/css/variables.css">
+  <link rel="stylesheet" href="../../assets/css/global.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/mobile.css">
+  <link rel="stylesheet" href="../../assets/css/yerani-mint-theme.css">
+  <link rel="stylesheet" href="../../assets/css/patient-premium.css">
+  <script defer src="../../assets/js/yerani-ui.js"></script>
 </head>
-
-<body>
-
-    <!-- Mobile Device Shell (390px reference) -->
-    <div class="mobile-app-shell">
-
-<!-- Mobile Status Bar -->
-        
-
-        <!-- Mobile App Header -->
-        <div class="mobile-header">
-            <div class="d-flex align-center gap-xs">
-                <a href="profile.html" class="avatar avatar-sm">
-                    <span>س.أ</span>
-                    <span class="avatar-status online"></span>
-                </a>
-                <div>
-                    <span style="font-size: 0.7rem; color: #64748B; display: block; line-height: 1;">أهلاً بك</span>
-                    <strong style="font-size: 0.88rem; color: #1F2D2A;">سارة الشمري</strong>
-                </div>
-            </div>
-
-            <div class="d-flex align-center gap-xs">
-                <a href="appointments.html" class="mobile-header-action" title="الإشعارات والمواعيد">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
-                        <path d="M13.73 21a2 2 0 0 1-3.46 0" />
-                    </svg>
-                    <span class="bottom-nav-badge" style="top: 2px; right: 2px;">2</span>
-                </a>
-            </div>
-        </div>
-
-        <!-- Mobile App Content Area -->
-        <div class="mobile-content">
-
-            <!-- AI Symptom Recommendation Hero Mobile Card -->
-            <div class="m-card m-card-ai">
-                <div class="d-flex align-center justify-between mb-2">
-                    <div class="d-flex align-center gap-xs">
-                        <span style="font-size: 1.25rem;">✨</span>
-                        <strong style="font-size: 0.95rem; color: #11776D;">توجيه الأعراض بالذكاء الاصطناعي</strong>
-                    </div>
-                    <span class="badge badge-primary text-xs">AI Guide</span>
-                </div>
-                <p style="font-size: 0.8rem; color: #576A6F; line-height: 1.5; margin-bottom: 0.75rem;">
-                    هل تشعر بوعكة أو أعراض صحية جديدة؟ صف حالتك وسيرشدك النظام الذكي للتخصص الطبي الأنسب دون تشخيص
-                    المرض.
-                </p>
-                <a href="ai-recommendation.html" class="m-btn m-btn-primary m-btn-sm" style="width: 100%;">
-                    تحليل الأعراض واقتراح التخصص ←
-                </a>
-            </div>
-
-            <!-- Quick Action 4-Grid -->
-            <div class="m-action-grid">
-                <a href="ai-recommendation.html" class="m-action-item">
-                    <div class="m-action-icon" style="background: #E4F4F0; color: #0F8579;">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path
-                                d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
-                        </svg>
-                    </div>
-                    <span class="m-action-label">توجيه الأعراض</span>
-                </a>
-
-                <a href="doctors.html" class="m-action-item">
-                    <div class="m-action-icon" style="background: #DCFCE7; color: #16A34A;">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-                            <circle cx="9" cy="7" r="4" />
-                            <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-                        </svg>
-                    </div>
-                    <span class="m-action-label">حجز طبيب</span>
-                </a>
-
-                <a href="nursing.html" class="m-action-item">
-                    <div class="m-action-icon" style="background: #FEF3C7; color: #D97706;">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                        </svg>
-                    </div>
-                    <span class="m-action-label">تمريض منزلي</span>
-                </a>
-
-                <a href="medical-record.html" class="m-action-item">
-                    <div class="m-action-icon" style="background: #F3E8FF; color: #7E22CE;">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                            <polyline points="14 2 14 8 20 8" />
-                        </svg>
-                    </div>
-                    <span class="m-action-label">سجلي الطبي</span>
-                </a>
-            </div>
-
-            <!-- Upcoming Doctor Appointment Card -->
-            <div class="m-section-header">
-                <h3 class="m-section-title">
-                    <span>📅</span> موعد الطبيب القادم
-                </h3>
-                <a href="appointments.html" class="m-section-link">كل المواعيد</a>
-            </div>
-
-            <div class="m-card">
-                <div class="d-flex align-start justify-between mb-2">
-                    <div class="d-flex align-center gap-xs">
-                        <div class="avatar avatar-md" style="background: #E4F4F0; color: #0F8579;">
-                            <span>د.ع</span>
-                        </div>
-                        <div>
-                            <h4 style="font-size: 0.95rem; margin-bottom: 2px;">د. عبدالله الحربي</h4>
-                            <p class="text-xs text-secondary mb-0">استشاري أمراض القلب والأوعية</p>
-                        </div>
-                    </div>
-                    <span class="badge badge-success text-xs">مؤكد</span>
-                </div>
-
-                <div class="p-2 mb-2"
-                    style="background: #ECFAF6; border-radius: 10px; font-size: 0.78rem; color: #576A6F;">
-                    <div class="d-flex justify-between mb-1">
-                        <span>⏰ الوقت:</span>
-                        <strong>غداً الثلاثاء • 04:30 مساءً</strong>
-                    </div>
-                    <div class="d-flex justify-between">
-                        <span>🏥 الموقع:</span>
-                        <span>المركز الطبي التخصصي - عيادة 204</span>
-                    </div>
-                </div>
-
-                <div class="d-flex gap-xs">
-                    <a href="doctor-details.html" class="m-btn m-btn-outline m-btn-sm" style="flex: 1;">تفاصيل
-                        الطبيب</a>
-                    <a href="appointments.html" class="m-btn m-btn-primary m-btn-sm" style="flex: 1;">إدارة الموعد</a>
-                </div>
-            </div>
-
-            <!-- Active Treatment Plan & Home Nursing Follow-up -->
-            <div class="m-section-header">
-                <h3 class="m-section-title">
-                    <span>💊</span> الخطة العلاجية والتمريض المنزلي
-                </h3>
-                <a href="treatment-plan.html" class="m-section-link">التفاصيل</a>
-            </div>
-
-            <div class="m-card">
-                <div class="d-flex justify-between align-center mb-1">
-                    <strong style="font-size: 0.88rem; color: #1F2D2A;">برنامج ضبط الضغط وتأهيل القلب</strong>
-                    <span class="badge badge-info text-xs">65% مكتمل</span>
-                </div>
-                <p class="text-xs text-secondary mb-2">متبقي 10 أيام حتى موعد المراجعة وغلق الحالة.</p>
-
-                <!-- Progress Bar -->
-                <div
-                    style="width: 100%; height: 6px; background: #E2E8F0; border-radius: 999px; overflow: hidden; margin-bottom: 0.75rem;">
-                    <div style="width: 65%; height: 100%; background: #0F8579; border-radius: 999px;"></div>
-                </div>
-
-                <!-- Connected Home Nursing Visit -->
-                <div class="p-2" style="background: #FFFBEB; border: 1px solid #FDE68A; border-radius: 10px;">
-                    <div class="d-flex align-center justify-between">
-                        <span class="badge badge-warning text-xs">زيارة تمريض منزلي مجدولة</span>
-                        <span class="text-xs text-muted">الأربعاء 15 أكتوبر</span>
-                    </div>
-                    <p class="text-xs text-secondary mt-1 mb-0">
-                        الممرض: <strong>أ. فيصل السالم</strong> — قياس العلامات الحيوية وفحص السكر.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Lab Results Pending Banner -->
-            <div class="m-card" style="background: #FEF2F2; border-color: #FECACA;">
-                <div class="d-flex align-center justify-between">
-                    <div class="d-flex align-center gap-xs">
-                        <span style="font-size: 1.1rem;">🧪</span>
-                        <div>
-                            <strong style="font-size: 0.85rem; color: #991B1B;">مطلوب رفع نتيجة فحص دم</strong>
-                            <p class="text-xs mb-0" style="color: #B91C1C;">طلب الطبيب: تحليل صورة دم كاملة CBC ودهون
-                            </p>
-                        </div>
-                    </div>
-                    <a href="lab-results.html" class="m-btn m-btn-primary m-btn-sm"
-                        style="background: #DC2626; padding: 0.35rem 0.65rem; font-size: 0.75rem;">
-                        رفع الآن
-                    </a>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- Mobile Bottom Navigation Bar (Patient) -->
-        <nav class="mobile-bottom-nav">
-            <a href="home.html" class="bottom-nav-item active">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                    <polyline points="9 22 9 12 15 12 15 22" />
-                </svg>
-                <span>الرئيسية</span>
-            </a>
-
-            <a href="ai-recommendation.html" class="bottom-nav-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path
-                        d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
-                </svg>
-                <span>توجيه AI</span>
-            </a>
-
-            <a href="doctors.html" class="bottom-nav-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-                    <circle cx="9" cy="7" r="4" />
-                    <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-                </svg>
-                <span>الأطباء</span>
-            </a>
-
-            <a href="nursing.html" class="bottom-nav-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-                </svg>
-                <span>التمريض</span>
-            </a>
-
-            <a href="profile.html" class="bottom-nav-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="12" r="3" />
-                    <path
-                        d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
-                </svg>
-                <span>حسابي</span>
-            </a>
-        </nav>
-
+<body class="yp-page">
+<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" width="0" height="0" style="position:absolute;overflow:hidden">
+  <symbol id="yp-heart" viewBox="0 0 24 24">
+    <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z" />
+    <path d="M3.4 12H7l1.6-3.1L12 16l2.2-4H21" />
+  </symbol>
+  <symbol id="yp-sparkles" viewBox="0 0 24 24">
+    <path d="m12 2 1.6 6.4L20 10l-6.4 1.6L12 18l-1.6-6.4L4 10l6.4-1.6L12 2ZM19 17l.8 2.2L22 20l-2.2.8L19 23l-.8-2.2L16 20l2.2-.8L19 17ZM4 2l.7 2.3L7 5l-2.3.7L4 8l-.7-2.3L1 5l2.3-.7L4 2Z"/>
+  </symbol>
+  <symbol id="yp-stethoscope" viewBox="0 0 24 24">
+    <path d="M6 3v5a6 6 0 0 0 12 0V3M3 3h6M15 3h6M12 14v1a5 5 0 0 0 10 0v-2"/>
+    <circle cx="22" cy="11" r="2" />
+  </symbol>
+  <symbol id="yp-homecare" viewBox="0 0 24 24">
+    <path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V10Z"/>
+    <path d="M12 18s-4-2.4-4-5a2.2 2.2 0 0 1 4-1.1 2.2 2.2 0 0 1 4 1.1c0 2.6-4 5-4 5Z"/>
+  </symbol>
+  <symbol id="yp-record" viewBox="0 0 24 24">
+    <path d="M8 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V9l-6-6H8Z"/>
+    <path d="M14 3v6h6M8 14h8M8 17h5M8 11h3"/>
+  </symbol>
+  <symbol id="yp-lab" viewBox="0 0 24 24">
+    <path d="M9 3h6M10 3v7l-5 8a2 2 0 0 0 1.7 3h10.6a2 2 0 0 0 1.7-3l-5-8V3"/>
+    <path d="M7.5 16h9"/>
+    <circle cx="11" cy="18.5" r=".7" fill="currentColor" stroke="none"/>
+  </symbol>
+  <symbol id="yp-pill" viewBox="0 0 24 24">
+    <path d="M10.2 3.8a6 6 0 0 1 8.4 8.4l-6.4 6.4a6 6 0 0 1-8.4-8.4l6.4-6.4Z"/>
+    <path d="m8 7 9 9"/>
+  </symbol>
+  <symbol id="yp-calendar" viewBox="0 0 24 24">
+    <rect x="3" y="5" width="18" height="16" rx="2"/>
+    <path d="M7 3v4M17 3v4M3 10h18M8 15h3M8 18h7"/>
+  </symbol>
+  <symbol id="yp-clipboard" viewBox="0 0 24 24">
+    <rect x="4" y="4" width="16" height="18" rx="2"/>
+    <rect x="9" y="2" width="6" height="4" rx="1"/>
+    <path d="m8 12 1.5 1.5L12 11M14 12h3M8 18h8"/>
+  </symbol>
+  <symbol id="yp-bell" viewBox="0 0 24 24">
+    <path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9M10 21h4"/>
+  </symbol>
+  <symbol id="yp-user" viewBox="0 0 24 24">
+    <circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>
+  </symbol>
+  <symbol id="yp-arrow" viewBox="0 0 24 24"><path d="m13 5-7 7 7 7M6 12h15"/></symbol>
+  <symbol id="yp-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="yp-map" viewBox="0 0 24 24"><path d="M20 10c0 5.2-8 11-8 11S4 15.2 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  <symbol id="yp-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></symbol>
+</svg>
+<div class="mobile-app-shell">
+  <header class="yp-header">
+    <a class="yp-brand" href="home.html" aria-label="يرعاني، الرئيسية">
+      <span class="yp-brand-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><use href="#yp-heart"/></svg>
+      </span>
+      <span>
+        <span class="yp-brand-name">يرعاني</span>
+        <span class="yp-brand-caption">صحتك أقرب إليك</span>
+      </span>
+    </a>
+    <div class="yp-header-tools">
+      <a class="yp-icon-button" href="appointments.html" aria-label="مواعيدي" title="مواعيدي">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#yp-calendar"/></svg>
+        <span class="yp-dot" aria-hidden="true"></span>
+      </a>
+      <a class="yp-icon-button yp-avatar" href="profile.html" aria-label="الملف الشخصي" title="الملف الشخصي">س</a>
     </div>
+  </header>
+  <main class="mobile-content" id="main-content">
+    <section class="yp-welcome" aria-label="الترحيب">
+      <p class="yp-eyebrow">أهلاً بك في يرعاني</p>
+      <h1>مرحباً، سارة <span aria-hidden="true">♡</span></h1>
+      <p>كل ما يخص صحتك، بخطوات بسيطة وواضحة.</p>
+    </section>
+    <section class="yp-hero" aria-labelledby="yp-hero-title">
+      <div class="yp-hero-text">
+        <span class="yp-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#yp-sparkles"/></svg> المساعد الذكي</span>
+        <h2 id="yp-hero-title">ما التخصص الطبي<br>المناسب لك؟</h2>
+        <p>أخبرنا بأعراضك لنقترح عليك التخصص المناسب، دون تشخيص.</p>
+        <a class="yp-hero-button" href="ai-recommendation.html">
+          ابدأ توجيه الأعراض
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#yp-arrow"/></svg>
+        </a>
+      </div>
+      <div class="yp-hero-visual" aria-hidden="true">
+        <div class="yp-circle-main">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"><use href="#yp-heart"/></svg>
+        </div>
+        <span class="yp-spark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><use href="#yp-sparkles"/></svg></span>
+        <span class="yp-floating"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><use href="#yp-check"/></svg> رعاية أسهل</span>
+      </div>
+    </section>
 
+    <section class="yp-section" aria-labelledby="yp-services-title">
+      <div class="yp-section-head">
+        <div><h2 id="yp-services-title">كيف نساعدك؟</h2><p>اختر الخدمة التي تحتاجها</p></div>
+      </div>
+      <div class="yp-service-grid">
+        <a class="yp-service" href="doctors.html">
+          <span class="yp-service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><use href="#yp-stethoscope"/></svg></span>
+          <svg class="yp-service-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><use href="#yp-arrow"/></svg>
+          <span class="yp-service-title">حجز طبيب</span><span class="yp-service-desc">اختر طبيبك وموعدك</span>
+        </a>
+        <a class="yp-service" href="nursing.html">
+          <span class="yp-service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><use href="#yp-homecare"/></svg></span>
+          <svg class="yp-service-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><use href="#yp-arrow"/></svg>
+          <span class="yp-service-title">تمريض منزلي</span><span class="yp-service-desc">رعاية في منزلك</span>
+        </a>
+        <a class="yp-service" href="medical-record.html">
+          <span class="yp-service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><use href="#yp-record"/></svg></span>
+          <svg class="yp-service-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><use href="#yp-arrow"/></svg>
+          <span class="yp-service-title">سجلي الطبي</span><span class="yp-service-desc">جميع بياناتك الصحية</span>
+        </a>
+        <a class="yp-service" href="lab-results.html">
+          <span class="yp-service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><use href="#yp-lab"/></svg></span>
+          <svg class="yp-service-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><use href="#yp-arrow"/></svg>
+          <span class="yp-service-title">التحاليل</span><span class="yp-service-desc">ارفع نتائج فحوصاتك</span>
+        </a>
+      </div>
+      <div class="yp-mini-grid" aria-label="خدمات إضافية">
+        <a class="yp-mini" href="appointments.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><use href="#yp-calendar"/></svg>مواعيدي</a>
+        <a class="yp-mini" href="prescriptions.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><use href="#yp-pill"/></svg>الوصفات</a>
+        <a class="yp-mini" href="treatment-plan.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><use href="#yp-clipboard"/></svg>خطة العلاج</a>
+      </div>
+    </section>
+
+    <section class="yp-section" aria-labelledby="yp-appointment-title">
+      <div class="yp-section-head">
+        <div><h2 id="yp-appointment-title">موعدك القادم</h2><p>تفاصيل زيارتك القادمة</p></div>
+        <a class="yp-text-link" href="appointments.html">كل المواعيد <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><use href="#yp-arrow"/></svg></a>
+      </div>
+      <article class="yp-appointment">
+        <div class="yp-appointment-main">
+          <div class="yp-doctor-line">
+            <span class="yp-doc-avatar" aria-hidden="true">د.ع</span>
+            <div class="yp-doc-meta">
+              <strong>د. عبدالله الحربي</strong>
+              <span>أمراض القلب والأوعية الدموية</span>
+            </div>
+            <span class="yp-status">مؤكد</span>
+          </div>
+          <div class="yp-appointment-data">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><use href="#yp-calendar"/></svg>الخميس 15 أكتوبر</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><use href="#yp-clock"/></svg>4:30 مساءً</span>
+          </div>
+        </div>
+        <div class="yp-appointment-foot">
+          <span>المركز الطبي التخصصي</span>
+          <a href="appointments.html">تفاصيل الموعد <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><use href="#yp-arrow"/></svg></a>
+        </div>
+      </article>
+    </section>
+
+    <section class="yp-section" aria-labelledby="yp-follow-title">
+      <div class="yp-section-head">
+        <div><h2 id="yp-follow-title">متابعة صحتك</h2><p>خطتك العلاجية ونتائجك</p></div>
+        <a class="yp-text-link" href="treatment-plan.html">عرض الخطة <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><use href="#yp-arrow"/></svg></a>
+      </div>
+      <article class="yp-follow">
+        <div class="yp-follow-top">
+          <span class="yp-follow-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><use href="#yp-clipboard"/></svg></span>
+          <div class="yp-follow-name">
+            <strong>خطة متابعة القلب</strong><small>متابعة مع الطبيب المعالج</small>
+          </div>
+          <span class="yp-follow-rate">65%</span>
+        </div>
+        <div class="yp-progress" role="progressbar" aria-label="تقدم الخطة العلاجية، بيانات تجريبية" aria-valuemin="0" aria-valuemax="100" aria-valuenow="65"><span></span></div>
+        <div class="yp-follow-actions"><p>التقدم في الخطة العلاجية</p><a href="treatment-plan.html">عرض التفاصيل ←</a></div>
+      </article>
+      <div class="yp-lab">
+        <span class="yp-lab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><use href="#yp-lab"/></svg></span>
+        <span class="yp-lab-text"><strong>نتيجة فحص جاهزة للرفع</strong><span>يمكنك إضافتها إلى سجلك الطبي</span></span>
+        <a href="lab-results.html" class="yp-lab-action">رفع النتيجة ←</a>
+      </div>
+    </section>
+    <p class="yp-demo-footnote">واجهة تجريبية — الأسماء والمواعيد والتقدم بيانات توضيحية</p>
+  </main>
+
+  <nav class="mobile-bottom-nav" aria-label="التنقل الرئيسي">
+    <a href="home.html" class="bottom-nav-item active" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V10Z"/><path d="M9 21v-7h6v7"/></svg><span>الرئيسية</span></a>
+    <a href="doctors.html" class="bottom-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#yp-stethoscope"/></svg><span>الأطباء</span></a>
+    <a href="ai-recommendation.html" class="bottom-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#yp-sparkles"/></svg><span>المساعد</span></a>
+    <a href="nursing.html" class="bottom-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#yp-homecare"/></svg><span>التمريض</span></a>
+    <a href="profile.html" class="bottom-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#yp-user"/></svg><span>حسابي</span></a>
+  </nav>
+</div>
 </body>
-
 </html>
