@@ -1,0 +1,91 @@
+/* Yerani — Soft Mint + Premium Teal / High-Fidelity v4
+   Applied to existing patient, doctor, nurse and admin pages. RTL-first. */
+:root {
+ --mint-canvas:#ECFAF6;--mint-surface:#E4F4F0;--mint-tint:#F4FBF9;
+ --mint-mid:#B4DFDD;--mint-outline:#D9ECE7;--teal-brand:#0EA184;
+ --teal-control:#0F8579;--teal-hover:#11776D;--teal-ink:#0F4C3A;
+ --mint-text:#1F2D2A;--mint-muted:#576A6F;--mint-card:#FFF;
+ --brand-green:#0F8579;--brand-green-dark:#11776D;--brand-green-deeper:#0F4C3A;
+ --brand-green-medium:#0EA184;--brand-green-light:#B4DFDD;
+ --brand-green-pale:#D5F1EA;--brand-green-subtle:#F4FBF9;
+ --brand-coral:#0F8579;--brand-coral-dark:#11776D;
+ --brand-coral-soft:#B4DFDD;--brand-coral-pale:#E4F4F0;--brand-coral-subtle:#F4FBF9;
+ --primary:#0F8579;--primary-dark:#11776D;--primary-darker:#0F4C3A;
+ --primary-medium:#0EA184;--primary-light:#D5F1EA;--primary-subtle:#F4FBF9;
+ --accent:#0F8579;--accent-dark:#11776D;--accent-soft:#B4DFDD;--accent-pale:#E4F4F0;
+ --bg-main:#ECFAF6;--bg-card:#FFF;--bg-surface:#E4F4F0;--bg-hover:#F4FBF9;
+ --bg-active:#D5F1EA;--bg-muted:#E7F5F1;
+ --text-primary:#1F2D2A;--text-secondary:#576A6F;--text-muted:#718B87;
+ --border-color:#D9ECE7;--border-light:#E7F3F0;--border-dark:#B4D6CD;--border-focus:#0F8579;
+ --success:#107F64;--success-bg:#DDF5EE;--success-text:#0F5946;
+ --shadow-card:0 10px 32px rgba(15,133,121,.07),0 2px 6px rgba(15,76,58,.035);
+ --shadow-card-hover:0 16px 38px rgba(15,133,121,.13);
+ --radius-lg:18px;--radius-xl:22px;--radius-2xl:26px;
+}
+html{color-scheme:light}body,body.admin-body{color:var(--mint-text);background:var(--mint-canvas)}
+:where(a,button,input,select,textarea,[tabindex]):focus-visible{outline:3px solid var(--teal-hover)!important;outline-offset:3px}
+:where(.btn,.m-btn,button){touch-action:manipulation}
+:where(.btn-primary,.m-btn-primary,.btn-accent,.m-btn-accent){background:var(--teal-control)!important;color:#fff!important;border-color:var(--teal-control)!important}
+:where(.btn-primary,.m-btn-primary,.btn-accent,.m-btn-accent):where(:hover,:focus-visible){background:var(--teal-hover)!important;border-color:var(--teal-hover)!important}
+:where(.btn-outline,.m-btn-outline,.btn-ghost){border-color:var(--mint-outline);color:var(--teal-hover)}
+:where(.card,.admin-card,.admin-stat-card,.admin-table-card,.m-card,.auth-card){background:#fff;border-color:var(--mint-outline);box-shadow:var(--shadow-card)}
+:where(.form-input,.form-control,.form-select,.form-textarea,.m-form-input,.m-form-select,.m-form-textarea){background:#fff;border-color:var(--mint-outline);color:var(--mint-text)}
+:where(.form-input,.form-control,.form-select,.form-textarea,.m-form-input,.m-form-select,.m-form-textarea):focus{border-color:var(--teal-control);box-shadow:0 0 0 3px rgba(14,161,132,.14)}
+:where(.badge-primary,.badge-accent,.badge-info){background:#E2F5F0;color:#0F695A}
+/* Administrator: remove old navy sidebar and fix class-name mismatch in HTML. */
+body.admin-body,.admin-main{background:var(--mint-canvas)!important}
+.admin-layout{display:flex;min-height:100vh}
+.admin-sidebar{background:#F9FFFD!important;border-left:1px solid var(--mint-outline)!important;box-shadow:-5px 0 20px rgba(15,76,58,.045);color:var(--mint-text)}
+.admin-sidebar .admin-brand{padding:18px 15px;display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--mint-outline)}
+.admin-sidebar .admin-brand-icon{background:var(--teal-control)!important;box-shadow:0 6px 18px rgba(15,133,121,.18);flex:0 0 38px}
+.admin-sidebar .admin-brand-title{color:var(--teal-ink)!important;font-size:1.02rem}
+.admin-sidebar .admin-brand-title span,.admin-sidebar .admin-brand-sub{color:var(--teal-hover)!important}
+.admin-sidebar .admin-nav{overflow-y:auto;flex:1;min-height:0;padding:12px 10px;scrollbar-width:thin}
+.admin-sidebar .admin-nav-category{color:#5F7974;font-size:.74rem;font-weight:700;margin:14px 9px 5px}
+.admin-sidebar :where(.admin-nav-item,.admin-nav-link){display:flex;align-items:center;gap:10px;padding:11px 12px;color:#415C56;border-radius:12px;text-decoration:none;font-size:.85rem;font-weight:600;transition:background .18s,color .18s;min-height:44px}
+.admin-sidebar :where(.admin-nav-item,.admin-nav-link) svg{width:19px;height:19px;flex:0 0 auto;color:#5A9890}
+.admin-sidebar :where(.admin-nav-item,.admin-nav-link):hover{background:#E9F7F3;color:var(--teal-hover)}
+.admin-sidebar :where(.admin-nav-item,.admin-nav-link).active{background:#DEF4EC!important;color:#0D695A!important;border-right:3px solid var(--teal-control)}
+.admin-sidebar :where(.admin-nav-item,.admin-nav-link).active svg{color:var(--teal-control)}
+.admin-sidebar :where(.admin-nav-badge,.admin-badge){margin-inline-start:auto;padding:2px 7px;border-radius:999px;background:#E4F4F0;color:var(--teal-hover);font-size:.67rem;white-space:nowrap}
+.admin-topbar{background:#fff!important;border-color:var(--mint-outline)!important}
+.admin-topbar .form-input{background:var(--mint-tint);border-color:var(--mint-outline)}
+.admin-topbar .avatar{background:var(--teal-control)!important;color:#fff!important}
+.admin-content{width:100%;max-width:1440px;margin-inline:auto}
+.admin-content :where(h2,h3){color:var(--teal-ink)!important}
+.admin-content :where(.admin-stat-val,.admin-stat-value){color:var(--teal-ink)!important}
+.admin-content :where(.admin-table,.table) th{color:#3C6E65;background:#EAF7F3;border-color:var(--mint-outline)}
+.admin-content :where(.admin-table,.table) td{color:var(--mint-text);border-color:#E9F3EF}
+.admin-content :where(.admin-table,.table) tr:hover td{background:var(--mint-tint)}
+.admin-content .admin-stat-card[style*="border-right"]{border-right-color:var(--teal-control)!important}
+.admin-card,.admin-stat-card{transition:box-shadow .2s,border-color .2s}
+.admin-card:hover,.admin-stat-card:hover{border-color:var(--mint-mid);box-shadow:var(--shadow-card-hover)}
+.admin-content .d-grid{min-width:0}
+.admin-content :where(.admin-table-card,.table-responsive){max-width:100%;overflow-x:auto}
+.admin-content :where(.grid-4,.grid-3)>*{min-width:0}
+/* Mobile: remove demo bars, improve touch targets and balanced teal/mint hierarchy. */
+html:has(.mobile-app-shell),body:has(.mobile-app-shell){background:var(--mint-canvas)!important}
+body:has(.mobile-app-shell){background-image:radial-gradient(circle at 10% 12%,rgba(180,223,221,.5),transparent 44%),radial-gradient(circle at 92% 91%,rgba(14,161,132,.09),transparent 40%)}
+.mobile-app-shell{background:var(--mint-canvas)!important;box-shadow:0 24px 60px rgba(15,76,58,.12);max-width:414px}
+.mobile-app-shell :where(.demo-role-pill-bar,.mobile-status-bar){display:none!important}
+.mobile-header{top:0!important;background:#fff!important;border-color:var(--mint-outline);min-height:60px;height:auto;padding-block:10px}
+.mobile-header-title{color:var(--teal-ink)!important}
+.mobile-header :where(.mobile-header-back,.mobile-header-action){min-width:44px;min-height:44px;background:#E4F4F0;color:var(--teal-hover)}
+.mobile-content{background:var(--mint-canvas)!important;padding-bottom:calc(95px + env(safe-area-inset-bottom,0px))}
+.mobile-content .m-card{background:#fff;border-color:var(--mint-outline);box-shadow:var(--shadow-card)}
+.mobile-content .m-card-ai{background:linear-gradient(130deg,#DFF9EF 0%,#F4FBF9 58%,#FFF 100%)!important;border-color:var(--mint-mid)!important;box-shadow:0 9px 28px rgba(15,133,121,.10)!important}
+.mobile-content .m-card-ai strong{color:var(--teal-ink)!important}
+.mobile-content .m-section-title{color:var(--teal-ink)!important}
+.mobile-content .m-section-link{color:var(--teal-hover)!important}
+.mobile-content .m-action-item{min-height:94px;background:#fff;border-color:var(--mint-outline)}
+.mobile-content .m-action-item:hover{background:#F4FBF9;border-color:var(--mint-mid)}
+.mobile-content .m-action-icon[style]{background:#DDF5EE!important;color:var(--teal-hover)!important}
+.mobile-app-shell .mobile-bottom-nav{background:#fff!important;border-color:var(--mint-outline);height:calc(64px + env(safe-area-inset-bottom,0px));padding-bottom:env(safe-area-inset-bottom,0px)}
+.mobile-app-shell .bottom-nav-item{color:#647F79;min-height:50px}
+.mobile-app-shell .bottom-nav-item.active{background:#EAF7F3!important;color:var(--teal-control)}
+.mobile-app-shell .bottom-nav-item.active::after{background:var(--teal-brand)}
+.mobile-content :where(.m-chip,.m-slot-btn).active{background:var(--teal-control);border-color:var(--teal-control);color:#fff}
+@media(max-width:900px){.admin-topbar{padding-inline:14px;gap:12px}.admin-content{padding:18px}}
+@media(max-width:700px){.admin-sidebar{width:240px}.admin-main{margin-right:240px}.admin-content .grid-4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:480px){body:has(.mobile-app-shell){background:var(--mint-canvas)!important}.mobile-app-shell{box-shadow:none}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important}}
