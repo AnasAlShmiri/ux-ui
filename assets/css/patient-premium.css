@@ -185,3 +185,16 @@ body.yp-page .mobile-content {
 }
 @media(min-width:481px){body.yp-page .mobile-app-shell{border-radius:23px;overflow:hidden;margin:20px auto;min-height:calc(100vh - 40px)}}
 @media(prefers-reduced-motion:reduce){.yp-service{transition:none}}
+
+/* The AI specialty guidance page shares the quiet patient identity without red banners. */
+body.yp-ai-page .mobile-app-shell{background:#f4fbf8!important}
+body.yp-ai-page .mobile-content{background:#f4fbf8!important}
+body.yp-ai-page .mobile-header{background:#fff!important}
+body.yp-ai-page .mobile-content>.m-card{border-radius:20px!important;border-color:#dbece6!important;box-shadow:0 8px 26px rgba(19,115,91,.05)!important}
+body.yp-ai-page .m-form-textarea{min-height:115px;resize:vertical}
+body.yp-ai-page .m-form-input:focus,
+body.yp-ai-page .m-form-select:focus,
+body.yp-ai-page .m-form-textarea:focus{border-color:#0d9179!important;box-shadow:0 0 0 3px rgba(14,161,132,.12)}
+body.yp-ai-page .alert-ai{background:#eaf8f2;border:1px solid #c9e8dc;color:#2a6959;border-radius:14px}
+body.yp-ai-page .yp-emergency-note{margin:8px 0 1px;font-size:11px;line-height:1.7;color:#758b84}
+body.yp-ai-page .yp-ai-demo-label{background:#f1faf5;border:1px solid #daefe5;border-radius:12px;padding:9px 12px;font-size:11px;color:#376a5c;margin-bottom:15px}
