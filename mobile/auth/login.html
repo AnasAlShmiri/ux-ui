@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول | تطبيق يرعاني</title>
+    <link rel="stylesheet" href="../../assets/css/variables.css">
+    <link rel="stylesheet" href="../../assets/css/global.css">
+    <link rel="stylesheet" href="../../assets/css/components.css">
+    <link rel="stylesheet" href="../../assets/css/mobile.css">
+</head>
+
+<body>
+
+    <!-- Mobile Device Shell (390px reference) -->
+    <div class="mobile-app-shell">
+
+        <!-- Top Evaluator Quick Nav -->
+        <div class="demo-role-pill-bar">
+            <span>📱 تطبيق يرعاني للجوال</span>
+            <div>
+                <a href="../patient/home.html">مريض</a> |
+                <a href="../doctor/home.html">طبيب</a> |
+                <a href="../nurse/home.html">تمريض</a> |
+                <a href="../../admin-web/dashboard.html">لوحة الإدارة 🖥️</a>
+            </div>
+        </div>
+
+        <!-- Mobile Status Bar -->
+        <div class="mobile-status-bar">
+            <span>09:41</span>
+            <div class="status-bar-icons">
+                <span>5G</span>
+                <span>📶</span>
+                <span>🔋 100%</span>
+            </div>
+        </div>
+
+        <!-- Mobile Content Scroll Area -->
+        <div class="mobile-content" style="padding-bottom: 2rem;">
+
+            <!-- Brand Logo in Mobile App -->
+            <div class="text-center" style="margin-top: 2rem; margin-bottom: 2rem;">
+                <div class="brand-icon-box"
+                    style="width: 58px; height: 58px; border-radius: 18px; margin: 0 auto 0.75rem auto; background: linear-gradient(135deg, #167D95, #0EA5A4);">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="30"
+                        height="30">
+                        <path
+                            d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+                    </svg>
+                </div>
+                <h1 style="font-size: 1.5rem; font-weight: 900; color: #172B4D; margin-bottom: 4px;">تطبيق يرعاني</h1>
+                <p style="font-size: 0.85rem; color: #64748B;">المنصة الذكية للرعاية الصحية والتمريض المنزلي</p>
+            </div>
+
+            <!-- Role Selector for the Mobile App -->
+            <div class="m-card" style="padding: 0.5rem; margin-bottom: 1.5rem;">
+                <div class="d-grid grid-3 gap-xs text-center">
+                    <a href="../patient/home.html" class="m-slot-btn active" style="padding: 0.5rem 0.2rem;">مريض</a>
+                    <a href="../doctor/home.html" class="m-slot-btn" style="padding: 0.5rem 0.2rem;">طبيب</a>
+                    <a href="../nurse/home.html" class="m-slot-btn" style="padding: 0.5rem 0.2rem;">تمريض</a>
+                </div>
+            </div>
+
+            <!-- Mobile Form -->
+            <form action="../patient/home.html" method="GET">
+                <div class="m-form-group">
+                    <label class="m-form-label" for="login-id">رقم الهوية الوطنية أو البريد</label>
+                    <input type="text" id="login-id" class="m-form-input" placeholder="10XXXXXXXX أو البريد الإلكتروني"
+                        value="patient@yerani.sa" required>
+                </div>
+
+                <div class="m-form-group">
+                    <div class="d-flex align-center justify-between mb-1">
+                        <label class="m-form-label" for="login-pw" style="margin-bottom:0;">كلمة المرور</label>
+                        <a href="#" class="text-xs" style="color: #167D95; text-decoration: none;">نسيت كلمة المرور؟</a>
+                    </div>
+                    <input type="password" id="login-pw" class="m-form-input" placeholder="••••••••" value="password123"
+                        required>
+                </div>
+
+                <div class="d-flex align-center justify-between mb-3">
+                    <label class="form-check text-xs text-secondary">
+                        <input type="checkbox" checked>
+                        تذكرني على هذا الهاتف
+                    </label>
+                    <span class="badge badge-success text-xs">حماية طبية مشفرة</span>
+                </div>
+
+                <button type="submit" class="m-btn m-btn-primary mb-3">
+                    تسجيل الدخول للبوابة
+                </button>
+            </form>
+
+            <!-- Fast Direct Role Links for Mobile Prototype Evaluators -->
+            <div class="m-card" style="background: #F1F5F9; border: 1px dashed #CBD5E1; margin-top: 1rem;">
+                <span class="text-xs font-bold text-secondary d-block text-center mb-2">⚡ دخول سريع للمناقشة
+                    والتقييم:</span>
+                <div class="d-flex flex-column gap-xs">
+                    <a href="../patient/home.html" class="m-btn m-btn-outline m-btn-sm" style="width: 100%;">
+                        👤 الدخول كـ مريض (سارة الشمري)
+                    </a>
+                    <a href="../doctor/home.html" class="m-btn m-btn-outline m-btn-sm" style="width: 100%;">
+                        🩺 الدخول كـ طبيب (د. عبدالله الحربي)
+                    </a>
+                    <a href="../nurse/home.html" class="m-btn m-btn-outline m-btn-sm" style="width: 100%;">
+                        🩹 الدخول كـ ممرض (أ. فيصل السالم)
+                    </a>
+                </div>
+            </div>
+
+            <!-- Registration Link -->
+            <div class="text-center mt-3">
+                <p class="text-xs text-secondary">
+                    ليس لديك حساب مريض؟ <a href="register.html" style="color: #167D95; font-weight: 700;">إنشاء حساب
+                        مريض جديد</a>
+                </p>
+                <a href="../../index.html" class="text-xs text-muted" style="text-decoration: underline;">← بوابة النظام
+                    الرئيسية</a>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ملف الطبيب وحجز موعد | تطبيق يرعاني</title>
+    <link rel="stylesheet" href="../../assets/css/variables.css">
+    <link rel="stylesheet" href="../../assets/css/global.css">
+    <link rel="stylesheet" href="../../assets/css/components.css">
+    <link rel="stylesheet" href="../../assets/css/mobile.css">
+</head>
+
+<body>
+
+    <div class="mobile-app-shell">
+
+        <!-- Top Evaluator Quick Nav -->
+        <div class="demo-role-pill-bar">
+            <span>📱 ملف الطبيب وحجز الموعد</span>
+            <a href="doctors.html">قائمة الأطباء</a>
+        </div>
+
+        <!-- Mobile Status Bar -->
+        <div class="mobile-status-bar">
+            <span>09:41</span>
+            <div class="status-bar-icons">
+                <span>5G</span>
+                <span>🔋 100%</span>
+            </div>
+        </div>
+
+        <!-- Mobile Header -->
+        <div class="mobile-header">
+            <a href="doctors.html" class="mobile-header-back" title="رجوع">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </a>
+            <h2 class="mobile-header-title">ملف الطبيب والحجز</h2>
+            <a href="home.html" class="mobile-header-action" title="الرئيسية">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                </svg>
+            </a>
+        </div>
+
+        <!-- Mobile Content -->
+        <div class="mobile-content">
+
+            <!-- Doctor Profile Card -->
+            <div class="m-card text-center" style="padding-top: 1.5rem;">
+                <div class="avatar avatar-xl" style="background: #E0F2FE; color: #0284C7; margin: 0 auto 0.75rem auto;">
+                    <span>د.ع</span>
+                    <span class="avatar-status online" style="width: 16px; height: 16px;"></span>
+                </div>
+                <h3 style="font-size: 1.15rem; font-weight: 800; color: #172B4D; margin-bottom: 2px;">د. عبدالله الحربي
+                </h3>
+                <p class="text-xs text-secondary mb-1">استشاري أمراض القلب والقسطرة التداخلية</p>
+                <div class="d-flex align-center justify-center gap-xs mb-3">
+                    <span class="rating-badge text-xs">★ 4.9 (128 تقييم)</span>
+                    <span class="badge badge-primary text-xs">ترخيص هيئة التخصصات</span>
+                </div>
+
+                <div class="d-grid grid-3 gap-xs p-2"
+                    style="background: #F8FAFC; border-radius: 12px; font-size: 0.75rem;">
+                    <div>
+                        <span class="text-muted d-block">الخبرة</span>
+                        <strong class="text-primary">+14 سنة</strong>
+                    </div>
+                    <div>
+                        <span class="text-muted d-block">المرضى</span>
+                        <strong class="text-primary">+1,200</strong>
+                    </div>
+                    <div>
+                        <span class="text-muted d-block">المستشفى</span>
+                        <strong class="text-primary">المركز التخصصي</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- About Doctor -->
+            <div class="m-card">
+                <h4 style="font-size: 0.88rem; font-weight: 700; color: #172B4D; margin-bottom: 0.4rem;">نبذة عن الطبيب
+                </h4>
+                <p style="font-size: 0.78rem; color: #64748B; line-height: 1.6; margin-bottom: 0;">
+                    استشاري معتمد في طب وجراحة القلب التداخلية، حاصل على البورد الكندي، متخصص في تشخيص آلام الصدر،
+                    اعتلال الصمامات، وعلاج ارتفاع ضغط الدم وتصلب الشرايين.
+                </p>
+            </div>
+
+            <!-- Appointment Booking Interactive Component -->
+            <div id="booking" class="m-card" style="border: 2px solid #167D95;">
+                <div class="d-flex align-center gap-xs mb-3 pb-2" style="border-bottom: 1px solid #E2E8F0;">
+                    <span style="font-size: 1.1rem;">📅</span>
+                    <strong style="font-size: 0.95rem; color: #167D95;">اختيار موعد الكشف</strong>
+                </div>
+
+                <form action="appointments.html" method="GET">
+                    <!-- Consultation Type -->
+                    <label class="m-form-label" style="font-size: 0.8rem;">نوع الاستشارة</label>
+                    <div class="d-grid grid-2 gap-xs mb-3">
+                        <label class="m-slot-btn active" style="font-size: 0.78rem; display: block;">
+                            🏥 كشف حضوري بالعيادة
+                        </label>
+                        <label class="m-slot-btn" style="font-size: 0.78rem; display: block;">
+                            📹 استشارة عن بُعد
+                        </label>
+                    </div>
+
+                    <!-- Date Selector Chips -->
+                    <label class="m-form-label" style="font-size: 0.8rem;">اختر اليوم</label>
+                    <div class="m-chip-bar" style="margin-bottom: 0.75rem;">
+                        <a href="#" class="m-chip active">اليوم (13 أكتوبر)</a>
+                        <a href="#" class="m-chip">غداً (14 أكتوبر)</a>
+                        <a href="#" class="m-chip">الأربعاء (15 أكتوبر)</a>
+                        <a href="#" class="m-chip">الخميس (16 أكتوبر)</a>
+                    </div>
+
+                    <!-- Time Slots Grid -->
+                    <label class="m-form-label" style="font-size: 0.8rem;">اختر الوقت المتاح</label>
+                    <div class="m-slot-grid mb-3">
+                        <span class="m-slot-btn active">04:30 مساءً</span>
+                        <span class="m-slot-btn">05:00 مساءً</span>
+                        <span class="m-slot-btn">05:30 مساءً</span>
+                        <span class="m-slot-btn">06:00 مساءً</span>
+                        <span class="m-slot-btn disabled">06:30 (محجوز)</span>
+                        <span class="m-slot-btn">07:00 مساءً</span>
+                    </div>
+
+                    <!-- Symptoms / Reason for Visit -->
+                    <div class="m-form-group">
+                        <label class="m-form-label" style="font-size: 0.8rem;">سبب الزيارة أو ملخص الأعراض</label>
+                        <input type="text" class="m-form-input"
+                            value="ألم وثقل بالصدر مع تسارع بالنبض (محول من توجيه AI)" style="font-size: 0.8rem;">
+                    </div>
+
+                    <!-- Summary Pill -->
+                    <div class="p-2 mb-3"
+                        style="background: #F0FDF4; border: 1px solid #BBF7D0; border-radius: 10px; font-size: 0.75rem; color: #15803D;">
+                        <strong>ملخص الحجز:</strong> موعد حضوري • اليوم 04:30 م • المركز التخصصي عيادة 204
+                    </div>
+
+                    <button type="submit" class="m-btn m-btn-primary" style="width: 100%;">
+                        تأكيد حجز الموعد وإضافته لجدولي ←
+                    </button>
+                </form>
+            </div>
+
+            <!-- Patient Reviews -->
+            <div class="m-card">
+                <div class="d-flex align-center justify-between mb-2">
+                    <strong style="font-size: 0.88rem; color: #172B4D;">آراء المرضى</strong>
+                    <span class="text-xs text-muted">128 تقييم موثق</span>
+                </div>
+
+                <div class="p-2" style="background: #F8FAFC; border-radius: 10px; margin-bottom: 0.5rem;">
+                    <div class="d-flex justify-between align-center mb-1">
+                        <strong style="font-size: 0.8rem;">محمد فهد</strong>
+                        <span class="rating-badge text-xs">★ 5.0</span>
+                    </div>
+                    <p class="text-xs text-secondary mb-0">
+                        طبيب خلوق ومتمكن جداً، استمع للأعراض باهتمام ووضع خطة علاجية مريحة مع متابعة التمريض المنزلي.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Mobile Bottom Nav -->
+        <nav class="mobile-bottom-nav">
+            <a href="home.html" class="bottom-nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                    <polyline points="9 22 9 12 15 12 15 22" />
+                </svg>
+                <span>الرئيسية</span>
+            </a>
+
+            <a href="ai-recommendation.html" class="bottom-nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path
+                        d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+                </svg>
+                <span>توجيه AI</span>
+            </a>
+
+            <a href="doctors.html" class="bottom-nav-item active">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                    <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                </svg>
+                <span>الأطباء</span>
+            </a>
+
+            <a href="nursing.html" class="bottom-nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                </svg>
+                <span>التمريض</span>
+            </a>
+
+            <a href="profile.html" class="bottom-nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="3" />
+                </svg>
+                <span>حسابي</span>
+            </a>
+        </nav>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التحاليل والفحوصات المطلوبة | تطبيق الطبيب - يرعاني</title>
+    <link rel="stylesheet" href="../../assets/css/variables.css">
+    <link rel="stylesheet" href="../../assets/css/global.css">
+    <link rel="stylesheet" href="../../assets/css/components.css">
+    <link rel="stylesheet" href="../../assets/css/mobile.css">
+</head>
+
+<body>
+
+    <div class="mobile-app-shell">
+
+        <!-- Top Evaluator Quick Nav -->
+        <div class="demo-role-pill-bar" style="background: #0284C7;">
+            <span>🩺 إدارة التحاليل والفحوصات</span>
+            <a href="home.html">الرئيسية</a>
+        </div>
+
+        <!-- Mobile Status Bar -->
+        <div class="mobile-status-bar">
+            <span>09:41</span>
+            <div class="status-bar-icons">
+                <span>5G</span>
+                <span>🔋 100%</span>
+            </div>
+        </div>
+
+        <!-- Mobile Header -->
+        <div class="mobile-header">
+            <a href="home.html" class="mobile-header-back" title="رجوع">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </a>
+            <h2 class="mobile-header-title">الطلبات والفحوصات المخبرية</h2>
+            <a href="patient-details.html#diagnosis" class="mobile-header-action" title="طلب جديد">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+            </a>
+        </div>
+
+        <!-- Mobile Content -->
+        <div class="mobile-content">
+
+            <!-- Tabs Segment -->
+            <div class="m-card" style="padding: 0.35rem; margin-bottom: 1rem;">
+                <div class="d-grid grid-2 gap-xs text-center">
+                    <span class="m-slot-btn active" style="font-size: 0.78rem;">نتائج واردة بحاجة لاعتماد (1)</span>
+                    <span class="m-slot-btn" style="font-size: 0.78rem;">طلبات قيد الانتظار (2)</span>
+                </div>
+            </div>
+
+            <!-- Incoming Lab Result Requiring Approval -->
+            <div class="m-card" style="border: 2px solid #DC2626; background: #FFF5F5;">
+                <div class="d-flex align-center justify-between mb-2">
+                    <span class="badge badge-danger text-xs">نتيجة مرفوعة جديدة</span>
+                    <span class="text-xs text-muted">اليوم 12:15 م</span>
+                </div>
+
+                <div class="d-flex align-center gap-xs mb-2">
+                    <div class="avatar avatar-md" style="background: #FECACA; color: #991B1B;">
+                        <span>س.أ</span>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 0.95rem; margin-bottom: 1px;">سارة أحمد الشمري</h4>
+                        <span class="text-xs text-secondary">ملف #YR-8902 • تحليل الدهون الشامل Lipid Panel</span>
+                    </div>
+                </div>
+
+                <div class="p-2 mb-2"
+                    style="background: #FFFFFF; border-radius: 10px; font-size: 0.75rem; border: 1px solid #FED7D7;">
+                    <div class="d-flex justify-between mb-1">
+                        <span>الكوليسترول الكلي:</span>
+                        <strong>192 mg/dL <span class="text-success">(طبيعي)</span></strong>
+                    </div>
+                    <div class="d-flex justify-between">
+                        <span>الدهون الثلاثية:</span>
+                        <strong>135 mg/dL <span class="text-success">(طبيعي)</span></strong>
+                    </div>
+                </div>
+
+                <div class="d-flex gap-xs">
+                    <button type="button" class="m-btn m-btn-primary m-btn-sm" style="flex: 1.5; background: #16A34A;">
+                        ✓ اعتماد النتيجة وحفظها بالسجل
+                    </button>
+                    <a href="patient-details.html" class="m-btn m-btn-outline m-btn-sm" style="flex: 1;">
+                        ملف المريضة
+                    </a>
+                </div>
+            </div>
+
+            <!-- Pending Lab Requisition 1 -->
+            <div class="m-section-header">
+                <h3 class="m-section-title">
+                    <span>⏳</span> طلبات صادرة قيد انتظار إجراء المريض
+                </h3>
+            </div>
+
+            <div class="m-card">
+                <div class="d-flex align-start justify-between mb-1">
+                    <div>
+                        <strong style="font-size: 0.88rem;">محمد فهد الدوسري</strong>
+                        <span class="text-xs text-muted d-block">ملف #YR-4102</span>
+                    </div>
+                    <span class="badge badge-warning text-xs">بانتظار الرفع</span>
+                </div>
+                <p class="text-xs text-secondary mb-2">
+                    الفحص المطلوب: إنزيمات القلب Troponin I ووظائف كلى.
+                </p>
+                <span class="text-xs text-muted">صادر بتاريخ: 11 أكتوبر 2026</span>
+            </div>
+
+            <!-- Pending Lab Requisition 2 -->
+            <div class="m-card">
+                <div class="d-flex align-start justify-between mb-1">
+                    <div>
+                        <strong style="font-size: 0.88rem;">نورة عبدالملك</strong>
+                        <span class="text-xs text-muted d-block">ملف #YR-6019</span>
+                    </div>
+                    <span class="badge badge-warning text-xs">بانتظار الرفع</span>
+                </div>
+                <p class="text-xs text-secondary mb-2">
+                    الفحص المطلوب: صورة دم كاملة CBC وهرمون الغدة الدرقية TSH.
+                </p>
+                <span class="text-xs text-muted">صادر بتاريخ: 10 أكتوبر 2026</span>
+            </div>
+
+        </div>
+
+        <!-- Doctor Bottom Navigation -->
+        <nav class="mobile-bottom-nav">
+            <a href="home.html" class="bottom-nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                    <polyline points="9 22 9 12 15 12 15 22" />
+                </svg>
+                <span>الرئيسية</span>
+            </a>
+
+            <a href="appointments.html" class="bottom-nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
+                    <line x1="16" y1="2" x2="16" y2="6" />
+                    <line x1="8" y1="2" x2="8" y2="6" />
+                </svg>
+                <span>المواعيد</span>
+            </a>
+
+            <a href="patients.html" class="bottom-nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                    <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                </svg>
+                <span>المرضى</span>
+            </a>
+
+            <a href="nursing-reports.html" class="bottom-nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                    <polyline points="14 2 14 8 20 8" />
+                    <line x1="16" y1="13" x2="8" y2="13" />
+                </svg>
+                <span>التمريض</span>
+            </a>
+
+            <a href="follow-up.html" class="bottom-nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span>المتابعة</span>
+            </a>
+        </nav>
+
+    </div>
+
+</body>
+
+</html>

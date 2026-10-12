@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تدقيق خوارزميات الذكاء الاصطناعي والامتثال | لوحة التحكم الإدارية - منصة يرعاني</title>
+    <link rel="stylesheet" href="../assets/css/variables.css">
+    <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" href="../assets/css/components.css">
+    <link rel="stylesheet" href="../assets/css/layout.css">
+    <link rel="stylesheet" href="../assets/css/admin.css">
+</head>
+
+<body class="admin-body">
+
+    <div class="admin-layout">
+
+        <!-- Desktop Sidebar -->
+        <aside class="admin-sidebar">
+            <div class="admin-brand">
+                <div class="admin-brand-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        style="width: 22px; height: 22px; color: #FFFFFF;">
+                        <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                    </svg>
+                </div>
+                <div>
+                    <h1 class="admin-brand-title">يرعاني <span>Admin</span></h1>
+                    <p class="admin-brand-sub">إدارة المنظومة الطبية المركزية</p>
+                </div>
+            </div>
+
+            <nav class="admin-nav">
+                <div class="admin-nav-category">التحكم والعمليات</div>
+
+                <a href="dashboard.html" class="admin-nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect width="7" height="9" x="3" y="3" rx="1" />
+                        <rect width="7" height="5" x="14" y="3" rx="1" />
+                        <rect width="7" height="9" x="14" y="12" rx="1" />
+                        <rect width="7" height="5" x="3" y="16" rx="1" />
+                    </svg>
+                    <span>نظرة عامة والعمليات</span>
+                </a>
+
+                <a href="patients.html" class="admin-nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                        <circle cx="9" cy="7" r="4" />
+                    </svg>
+                    <span>إدارة المرضى</span>
+                    <span class="admin-nav-badge">1,248</span>
+                </a>
+
+                <a href="doctors.html" class="admin-nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                    </svg>
+                    <span>إدارة الأطباء والعيادات</span>
+                    <span class="admin-nav-badge">42</span>
+                </a>
+
+                <a href="nurses.html" class="admin-nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="m18 2 4 4-12 12H6v-4L18 2z" />
+                    </svg>
+                    <span>طواقم التمريض المنزلي</span>
+                    <span class="admin-nav-badge">28</span>
+                </a>
+
+                <div class="admin-nav-category">التشغيل السريري والذكاء</div>
+
+                <a href="specialties.html" class="admin-nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect width="18" height="18" x="3" y="3" rx="2" />
+                        <path d="M3 9h18M9 21V9" />
+                    </svg>
+                    <span>التخصصات والعيادات</span>
+                </a>
+
+                <a href="appointments.html" class="admin-nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
+                        <line x1="16" y1="2" x2="16" y2="6" />
+                        <line x1="8" y1="2" x2="8" y2="6" />
+                    </svg>
+                    <span>المواعيد والحجوزات</span>
+                </a>
+
+                <a href="home-care.html" class="admin-nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                    </svg>
+                    <span>الرعاية المنزلية الميدانية</span>
+                </a>
+
+                <a href="reviews.html" class="admin-nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon
+                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                    </svg>
+                    <span>التقييمات والمراجعات</span>
+                    <span class="admin-nav-badge">4.9 ★</span>
+                </a>
+
+                <a href="notifications.html" class="admin-nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+                        <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+                    </svg>
+                    <span>مركز الإشعارات والتعميم</span>
+                </a>
+
+                <a href="reports.html" class="admin-nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="20" x2="18" y2="10" />
+                        <line x1="12" y1="20" x2="12" y2="4" />
+                        <line x1="6" y1="20" x2="6" y2="14" />
+                    </svg>
+                    <span>الإحصائيات والتقارير</span>
+                </a>
+
+                <a href="ai-audit.html" class="admin-nav-item active">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path
+                            d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+                    </svg>
+                    <span>تدقيق توجيه AI والامتثال</span>
+                    <span class="admin-nav-badge" style="background: #16A34A; color: #fff;">98.4%</span>
+                </a>
+
+                <div class="admin-nav-category">النظام</div>
+
+                <a href="settings.html" class="admin-nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="3" />
+                        <path
+                            d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+                    </svg>
+                    <span>إعدادات النظام والأمان</span>
+                </a>
+
+                <a href="login.html" class="admin-nav-item" style="color: #EF4444;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                        <polyline points="16 17 21 12 16 7" />
+                        <line x1="21" y1="12" x2="9" y2="12" />
+                    </svg>
+                    <span>تسجيل الخروج</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+
+            <header class="admin-topbar">
+                <div class="d-flex align-center gap-md">
+                    <h2 style="font-size: 1.25rem; font-weight: 800; color: #172B4D; margin: 0;">تدقيق ورقابة الذكاء
+                        الاصطناعي والتوجيه الذكي</h2>
+                    <span class="badge badge-success text-xs">مطابقة أخلاقية وسريرية معتمدة</span>
+                </div>
+
+                <div class="d-flex align-center gap-md">
+                    <a href="../mobile/patient/ai-recommendation.html" class="btn btn-outline btn-sm">اختبار شاشة AI
+                        بالجوال 🤖</a>
+                    <button type="button" class="btn btn-primary btn-sm">تصدير تقرير التدقيق السريري</button>
+                </div>
+            </header>
+
+            <div class="admin-content">
+
+                <!-- Ethical AI Principles Banner -->
+                <div class="p-4 mb-4"
+                    style="background: linear-gradient(135deg, #EFF8F9 0%, #FFFFFF 100%); border: 1px solid #CCEEF1; border-radius: 12px;">
+                    <div class="d-flex align-center justify-between mb-2">
+                        <h3 style="font-size: 1.1rem; color: #105F75; margin: 0; font-weight: 800;">
+                            🛡️ ميثاق الأمان وأخلاقيات الذكاء الاصطناعي في منصة يرعاني
+                        </h3>
+                        <span class="badge badge-success text-xs">100% امتثال للوائح الصحة الرقمية</span>
+                    </div>
+                    <p class="text-sm text-secondary mb-3">
+                        تم تصميم خوارزمية التوجيه الذكي كمساعد لتحديد <strong>التخصص الطبي المناسب فقط (Specialty
+                            Recommendation)</strong> دون أن تقوم إطلاقاً بإصدار تشخيص طبي قطعي، ولا تقترح أي خطط دوائية
+                        للمريض قبل العرض على طبيب بشري مرخص.
+                    </p>
+                    <div class="d-grid grid-3 gap-md">
+                        <div class="p-2"
+                            style="background: #FFFFFF; border-radius: 8px; border: 1px solid #E2E8F0; font-size: 0.78rem;">
+                            <strong class="text-success d-block mb-1">✓ إخلاء مسؤولية قانوني إلزامي</strong>
+                            عرض تنبيه واضح بأن التوجيه استرشادي وليس بديلاً عن الطبيب.
+                        </div>
+                        <div class="p-2"
+                            style="background: #FFFFFF; border-radius: 8px; border: 1px solid #E2E8F0; font-size: 0.78rem;">
+                            <strong class="text-danger d-block mb-1">🚨 كشف علامات الطوارئ الفوري</strong>
+                            تحويل أي أعراض حادة (ألم حاد بالصدر، ضيق نفس) لزر الطوارئ 997.
+                        </div>
+                        <div class="p-2"
+                            style="background: #FFFFFF; border-radius: 8px; border: 1px solid #E2E8F0; font-size: 0.78rem;">
+                            <strong class="text-brand d-block mb-1">🩺 التحقق والاعتماد البشري</strong>
+                            يظل الطبيب هو المرجع النهائي للتشخيص، الوصفات، وخطط العلاج.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Audit KPIs -->
+                <div class="d-grid grid-4 gap-md mb-4">
+                    <div class="admin-stat-card">
+                        <span class="text-xs font-bold text-muted d-block mb-1">جلسات التوجيه المنجزة</span>
+                        <div class="admin-stat-val">418</div>
+                        <span class="text-xs text-secondary">جلسة تقييم أعراض عبر تطبيق المريض</span>
+                    </div>
+
+                    <div class="admin-stat-card">
+                        <span class="text-xs font-bold text-muted d-block mb-1">دقة مطابقة التخصص</span>
+                        <div class="admin-stat-val" style="color: #16A34A;">98.4%</div>
+                        <span class="text-xs text-secondary">بناءً على تأكيد استشاريي العيادات</span>
+                    </div>
+
+                    <div class="admin-stat-card">
+                        <span class="text-xs font-bold text-muted d-block mb-1">حالات الطوارئ المحولة لـ 997</span>
+                        <div class="admin-stat-val" style="color: #DC2626;">14</div>
+                        <span class="text-xs text-secondary">تم تحذيرهم فورياً وطلب الإسعاف بنجاح</span>
+                    </div>
+
+                    <div class="admin-stat-card">
+                        <span class="text-xs font-bold text-muted d-block mb-1">انتهاكات الأمان السريري</span>
+                        <div class="admin-stat-val" style="color: #16A34A;">0</div>
+                        <span class="text-xs text-secondary">صفر تشخيصات غير مصرح بها أو أدوية تلقائية</span>
+                    </div>
+                </div>
+
+                <!-- Audit Log Table -->
+                <div class="admin-card">
+                    <div class="admin-card-header">
+                        <h3 class="admin-card-title">
+                            <span>📋</span> سجل جلسات التوجيه الذكي ومطابقة الأطباء
+                        </h3>
+                        <span class="text-xs text-muted">سجل مدقق سريرياً وغير قابل للتعديل</span>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>معرف الجلسة</th>
+                                    <th>الأعراض المسجلة بواسطة المريض</th>
+                                    <th>المؤشرات المكتشفة</th>
+                                    <th>التخصص الموصى به</th>
+                                    <th>الطبيب المحال إليه</th>
+                                    <th>تقييم ملاءمة الاستشارة</th>
+                                    <th>الحالة</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>#AI-4180</code></td>
+                                    <td>خفقان بالصدر متكرر مع ضيق تنفس خفيف بعد صعود الدرج</td>
+                                    <td><span class="badge badge-warning text-xs">نبض سريع • إجهاد</span></td>
+                                    <td><strong>أمراض القلب والأوعية</strong></td>
+                                    <td>د. عبدالله الحربي</td>
+                                    <td><span class="badge badge-success text-xs">مطابق 100% ✓</span></td>
+                                    <td><span class="text-xs text-success font-semibold">مكتمل بالعيادة</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td><code>#AI-4179</code></td>
+                                    <td>صداع نصفي متكرر مع تشوش رؤية مؤقت عند الإضاءة القوية</td>
+                                    <td><span class="badge badge-info text-xs">صداع مزمن</span></td>
+                                    <td><strong>المخ والأعصاب</strong></td>
+                                    <td>د. سارة الدوسري</td>
+                                    <td><span class="badge badge-success text-xs">مطابق 100% ✓</span></td>
+                                    <td><span class="text-xs text-success font-semibold">حجز موعد</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td><code>#AI-4178</code></td>
+                                    <td>ألم شديد جداً ومفاجئ في منتصف الصدر مع تعرق غزير</td>
+                                    <td><span class="badge badge-danger text-xs">خطر حاد فوري 🚨</span></td>
+                                    <td><strong>طوارئ الهلال الأحمر (997)</strong></td>
+                                    <td>قسم الطوارئ المركزي</td>
+                                    <td><span class="badge badge-success text-xs">تدخل إسعافي مباشر</span></td>
+                                    <td><span class="badge badge-danger text-xs">تم التوجيه للطوارئ</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المتابعة وإغلاق الحالات | تطبيق الطبيب - يرعاني</title>
+    <link rel="stylesheet" href="../../assets/css/variables.css">
+    <link rel="stylesheet" href="../../assets/css/global.css">
+    <link rel="stylesheet" href="../../assets/css/components.css">
+    <link rel="stylesheet" href="../../assets/css/mobile.css">
+</head>
+
+<body>
+
+    <div class="mobile-app-shell">
+
+        <!-- Top Evaluator Quick Nav -->
+        <div class="demo-role-pill-bar" style="background: #0284C7;">
+            <span>🩺 المتابعة السريرية وإغلاق الحالات</span>
+            <a href="home.html">الرئيسية</a>
+        </div>
+
+        <!-- Mobile Status Bar -->
+        <div class="mobile-status-bar">
+            <span>09:41</span>
+            <div class="status-bar-icons">
+                <span>5G</span>
+                <span>🔋 100%</span>
+            </div>
+        </div>
+
+        <!-- Mobile Header -->
+        <div class="mobile-header">
+            <a href="home.html" class="mobile-header-back" title="رجوع">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </a>
+            <h2 class="mobile-header-title">المتابعة وإغلاق الحالات</h2>
+            <a href="patients.html" class="mobile-header-action" title="المرضى">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                </svg>
+            </a>
+        </div>
+
+        <!-- Mobile Content -->
+        <div class="mobile-content">
+
+            <!-- Case Closure Flow Banner for Khalid Al-Otaibi -->
+            <div class="m-card" style="border: 2px solid #16A34A; background: #F0FDF4;">
+                <div class="d-flex align-center justify-between mb-2">
+                    <span class="badge badge-success text-xs">حالة مكتملة وجاهزة للإغلاق</span>
+                    <span class="text-xs text-success font-bold">100% إنجاز</span>
+                </div>
+
+                <div class="d-flex align-center gap-xs mb-2">
+                    <div class="avatar avatar-md" style="background: #BBF7D0; color: #15803D;">
+                        <span>خ.ع</span>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 0.98rem; margin-bottom: 2px;">خالد العتيبي</h4>
+                        <span class="text-xs text-muted">ملف #YR-5510 • 45 سنة • خطة 30 يوماً</span>
+                    </div>
+                </div>
+
+                <!-- Clinical Completion Criteria Checklist -->
+                <div class="p-2 mb-3"
+                    style="background: #FFFFFF; border-radius: 10px; font-size: 0.75rem; border: 1px solid #BBF7D0;">
+                    <div class="d-flex align-center gap-xs mb-1">
+                        <span class="text-success font-bold">✓</span>
+                        <span>استقرار ضغط الدم (120/78) ومعدل النبض 72 bpm.</span>
+                    </div>
+                    <div class="d-flex align-center gap-xs mb-1">
+                        <span class="text-success font-bold">✓</span>
+                        <span>انتهاء الدورة الدوائية المحددة بالكامل دون مضاعفات.</span>
+                    </div>
+                    <div class="d-flex align-center gap-xs">
+                        <span class="text-success font-bold">✓</span>
+                        <span>اعتماد تقرير الزيارة التمريضية المنزلية الصادر اليوم.</span>
+                    </div>
+                </div>
+
+                <!-- Doctor Final Summary Note -->
+                <form action="#case-closed" method="GET">
+                    <div class="m-form-group">
+                        <label class="m-form-label" style="font-size: 0.78rem;">ملاحظات الطبيب النهائية لتقرير الخروج /
+                            الشفاء:</label>
+                        <textarea class="m-form-textarea" rows="2"
+                            style="font-size: 0.8rem;">استقرت الحالة السريرية تماماً. يوصى المريض بالاستمرار بنمط الحياة الصحي وممارسة رياضة المشي ومراجعة العيادة عند اللزوم.</textarea>
+                    </div>
+
+                    <button type="submit" class="m-btn m-btn-primary" style="width: 100%; background: #16A34A;">
+                        ✓ اعتماد إغلاق الحالة وتوثيق الشفاء
+                    </button>
+                </form>
+            </div>
+
+            <!-- Active Ongoing Follow-ups -->
+            <div class="m-section-header">
+                <h3 class="m-section-title">
+                    <span>⏳</span> حالات جارية قيد المتابعة
+                </h3>
+            </div>
+
+            <!-- Ongoing Case 1 -->
+            <div class="m-card">
+                <div class="d-flex align-start justify-between mb-2">
+                    <div>
+                        <h4 style="font-size: 0.92rem; margin-bottom: 2px;">سارة أحمد الشمري (#YR-8902)</h4>
+                        <span class="text-xs text-muted">إجهاد قلبي خفيف • اليوم 20 من 30</span>
+                    </div>
+                    <span class="badge badge-primary text-xs">65% إنجاز</span>
+                </div>
+
+                <!-- Progress bar -->
+                <div
+                    style="width: 100%; height: 6px; background: #E2E8F0; border-radius: 999px; overflow: hidden; margin-bottom: 0.5rem;">
+                    <div style="width: 65%; height: 100%; background: #0284C7;"></div>
+                </div>
+
+                <p class="text-xs text-secondary mb-2">
+                    المرحلة القادمة: زيارة تمريضية ثانية في 15 أكتوبر ورفع نتيجة فحص الدم.
+                </p>
+
+                <a href="patient-details.html" class="m-btn m-btn-outline m-btn-sm" style="width: 100%;">
+                    متابعة تفاصيل خطة سارة ←
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Doctor Bottom Navigation -->
+        <nav class="mobile-bottom-nav">
+            <a href="home.html" class="bottom-nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                    <polyline points="9 22 9 12 15 12 15 22" />
+                </svg>
+                <span>الرئيسية</span>
+            </a>
+
+            <a href="appointments.html" class="bottom-nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
+                    <line x1="16" y1="2" x2="16" y2="6" />
+                    <line x1="8" y1="2" x2="8" y2="6" />
+                </svg>
+                <span>المواعيد</span>
+            </a>
+
+            <a href="patients.html" class="bottom-nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                    <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                </svg>
+                <span>المرضى</span>
+            </a>
+
+            <a href="nursing-reports.html" class="bottom-nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                    <polyline points="14 2 14 8 20 8" />
+                    <line x1="16" y1="13" x2="8" y2="13" />
+                </svg>
+                <span>التمريض</span>
+            </a>
+
+            <a href="follow-up.html" class="bottom-nav-item active">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span>المتابعة</span>
+            </a>
+        </nav>
+
+    </div>
+
+</body>
+
+</html>

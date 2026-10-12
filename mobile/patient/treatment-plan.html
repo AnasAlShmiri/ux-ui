@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الخطة العلاجية | تطبيق يرعاني</title>
+    <link rel="stylesheet" href="../../assets/css/variables.css">
+    <link rel="stylesheet" href="../../assets/css/global.css">
+    <link rel="stylesheet" href="../../assets/css/components.css">
+    <link rel="stylesheet" href="../../assets/css/mobile.css">
+</head>
+
+<body>
+
+    <div class="mobile-app-shell">
+
+        <!-- Top Evaluator Quick Nav -->
+        <div class="demo-role-pill-bar">
+            <span>📱 الخطة العلاجية النشطة</span>
+            <a href="medical-record.html">السجل الطبي</a>
+        </div>
+
+        <!-- Mobile Status Bar -->
+        <div class="mobile-status-bar">
+            <span>09:41</span>
+            <div class="status-bar-icons">
+                <span>5G</span>
+                <span>🔋 100%</span>
+            </div>
+        </div>
+
+        <!-- Mobile Header -->
+        <div class="mobile-header">
+            <a href="medical-record.html" class="mobile-header-back" title="رجوع">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </a>
+            <h2 class="mobile-header-title">الخطة العلاجية والمتابعة</h2>
+            <a href="home.html" class="mobile-header-action" title="الرئيسية">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                </svg>
+            </a>
+        </div>
+
+        <!-- Mobile Content -->
+        <div class="mobile-content">
+
+            <!-- Plan Header Summary Card -->
+            <div class="m-card" style="border-right: 4px solid #167D95;">
+                <div class="d-flex align-center justify-between mb-2">
+                    <span class="badge badge-primary text-xs">خطة علاجية نشطة</span>
+                    <span class="text-xs text-muted">اليوم 20 من 30</span>
+                </div>
+
+                <h3 style="font-size: 1.05rem; font-weight: 800; color: #172B4D; margin-bottom: 2px;">
+                    برنامج استقرار النبض وضبط الضغط
+                </h3>
+                <p class="text-xs text-secondary mb-2">
+                    الطبيب المشرف: <strong>د. عبدالله الحربي</strong> (استشاري قلب)
+                </p>
+
+                <!-- Progress Bar -->
+                <div class="d-flex justify-between text-xs mb-1">
+                    <span class="text-muted">نسبة الإنجاز الإجمالية</span>
+                    <strong class="text-brand">65%</strong>
+                </div>
+                <div
+                    style="width: 100%; height: 8px; background: #E2E8F0; border-radius: 999px; overflow: hidden; margin-bottom: 0.75rem;">
+                    <div style="width: 65%; height: 100%; background: #167D95; border-radius: 999px;"></div>
+                </div>
+
+                <div class="p-2" style="background: #F8FAFC; border-radius: 10px; font-size: 0.75rem; color: #475569;">
+                    هدف الخطة: المحافظة على معدل النبض تحت 80 نبضة بالدقيقة وضغط الدم تحت 125/80 مع التزام نمط حياة صحي.
+                </div>
+            </div>
+
+            <!-- Treatment Milestones Checklist -->
+            <div class="m-section-header">
+                <h3 class="m-section-title">
+                    <span>🎯</span> مراحل الخطة العلاجية والمهام
+                </h3>
+            </div>
+
+            <!-- Milestone 1 -->
+            <div class="m-card" style="padding: 0.75rem 1rem;">
+                <div class="d-flex align-center gap-xs">
+                    <span style="font-size: 1.1rem; color: #16A34A;">✓</span>
+                    <div style="flex: 1;">
+                        <strong style="font-size: 0.85rem; color: #172B4D;">الكشف الأولي وتخطيط القلب بالعيادة</strong>
+                        <span class="text-xs text-muted d-block">تم بتاريخ 01 أكتوبر 2026</span>
+                    </div>
+                    <span class="badge badge-success text-xs">مكتمل</span>
+                </div>
+            </div>
+
+            <!-- Milestone 2 -->
+            <div class="m-card" style="padding: 0.75rem 1rem;">
+                <div class="d-flex align-center gap-xs">
+                    <span style="font-size: 1.1rem; color: #16A34A;">✓</span>
+                    <div style="flex: 1;">
+                        <strong style="font-size: 0.85rem; color: #172B4D;">الزيارة التمريضية المنزلية الأولى</strong>
+                        <span class="text-xs text-muted d-block">نفذها الممرض فيصل السالم • العلامات سليمة</span>
+                    </div>
+                    <span class="badge badge-success text-xs">مكتمل</span>
+                </div>
+            </div>
+
+            <!-- Milestone 3 -->
+            <div class="m-card" style="padding: 0.75rem 1rem; border-color: #FECACA; background: #FFF5F5;">
+                <div class="d-flex align-center gap-xs">
+                    <span style="font-size: 1.1rem; color: #DC2626;">⏳</span>
+                    <div style="flex: 1;">
+                        <strong style="font-size: 0.85rem; color: #991B1B;">رفع نتيجة تحليل الدم والدهون</strong>
+                        <span class="text-xs text-muted d-block">طلب الطبيب المتابع لمراجعة الجرعة</span>
+                    </div>
+                    <a href="lab-results.html" class="m-btn m-btn-primary m-btn-sm"
+                        style="background: #DC2626; font-size: 0.7rem; padding: 0.25rem 0.5rem;">
+                        رفع الآن
+                    </a>
+                </div>
+            </div>
+
+            <!-- Milestone 4 -->
+            <div class="m-card" style="padding: 0.75rem 1rem;">
+                <div class="d-flex align-center gap-xs">
+                    <span style="font-size: 1.1rem; color: #0284C7;">📅</span>
+                    <div style="flex: 1;">
+                        <strong style="font-size: 0.85rem; color: #172B4D;">الزيارة التمريضية المنزلية الثانية</strong>
+                        <span class="text-xs text-muted d-block">الأربعاء 15 أكتوبر 10:00 ص</span>
+                    </div>
+                    <span class="badge badge-info text-xs">مجدول</span>
+                </div>
+            </div>
+
+            <!-- Milestone 5 -->
+            <div class="m-card" style="padding: 0.75rem 1rem;">
+                <div class="d-flex align-center gap-xs">
+                    <span style="font-size: 1.1rem; color: #64748B;">🔒</span>
+                    <div style="flex: 1;">
+                        <strong style="font-size: 0.85rem; color: #172B4D;">المراجعة النهائية وغلق الحالة</strong>
+                        <span class="text-xs text-muted d-block">الخميس 20 أكتوبر 2026 مع د. عبدالله</span>
+                    </div>
+                    <span class="badge badge-neutral text-xs">قيد الانتظار</span>
+                </div>
+            </div>
+
+            <!-- Connected Home Nursing Service Box -->
+            <div class="p-3 mt-3 text-center"
+                style="background: #EFF8F9; border-radius: 14px; border: 1px solid #CCEEF1;">
+                <span style="font-size: 1.25rem; display: block; margin-bottom: 4px;">🏡</span>
+                <strong style="font-size: 0.88rem; color: #105F75; display: block; margin-bottom: 2px;">هل تحتاج زيارة
+                    تمريض إضافية؟</strong>
+                <p class="text-xs text-secondary mb-2">يمكنك طلب زيارة تمريض منزلي مخصصة للحقن أو الغيار أو فحص
+                    العلامات.</p>
+                <a href="nursing.html" class="m-btn m-btn-primary m-btn-sm" style="width: 100%;">
+                    استعراض وحجز خدمات التمريض المنزلي ←
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Mobile Bottom Nav -->
+        <nav class="mobile-bottom-nav">
+            <a href="home.html" class="bottom-nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                    <polyline points="9 22 9 12 15 12 15 22" />
+                </svg>
+                <span>الرئيسية</span>
+            </a>
+
+            <a href="ai-recommendation.html" class="bottom-nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path
+                        d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+                </svg>
+                <span>توجيه AI</span>
+            </a>
+
+            <a href="doctors.html" class="bottom-nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                    <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                </svg>
+                <span>الأطباء</span>
+            </a>
+
+            <a href="nursing.html" class="bottom-nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                </svg>
+                <span>التمريض</span>
+            </a>
+
+            <a href="profile.html" class="bottom-nav-item active">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="3" />
+                </svg>
+                <span>حسابي</span>
+            </a>
+        </nav>
+
+    </div>
+
+</body>
+
+</html>

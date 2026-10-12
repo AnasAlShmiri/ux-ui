@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قائمة المرضى | تطبيق الطبيب - يرعاني</title>
+    <link rel="stylesheet" href="../../assets/css/variables.css">
+    <link rel="stylesheet" href="../../assets/css/global.css">
+    <link rel="stylesheet" href="../../assets/css/components.css">
+    <link rel="stylesheet" href="../../assets/css/mobile.css">
+</head>
+
+<body>
+
+    <div class="mobile-app-shell">
+
+        <!-- Top Evaluator Quick Nav -->
+        <div class="demo-role-pill-bar" style="background: #0284C7;">
+            <span>🩺 سجل ومرضى الطبيب</span>
+            <a href="home.html">الرئيسية</a>
+        </div>
+
+        <!-- Mobile Status Bar -->
+        <div class="mobile-status-bar">
+            <span>09:41</span>
+            <div class="status-bar-icons">
+                <span>5G</span>
+                <span>🔋 100%</span>
+            </div>
+        </div>
+
+        <!-- Mobile Header -->
+        <div class="mobile-header">
+            <a href="home.html" class="mobile-header-back" title="رجوع">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </a>
+            <h2 class="mobile-header-title">سجل المرضى والمتابعة</h2>
+            <a href="home.html" class="mobile-header-action" title="الرئيسية">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                </svg>
+            </a>
+        </div>
+
+        <!-- Mobile Content -->
+        <div class="mobile-content">
+
+            <!-- Patient Search Input -->
+            <div class="m-card" style="padding: 0.5rem 0.75rem; margin-bottom: 0.75rem;">
+                <div class="input-icon-wrap">
+                    <input type="text" class="m-form-input" placeholder="ابحث باسم المريض أو رقم الملف الطبي..."
+                        style="padding-right: 2.25rem; font-size: 0.85rem; border: none;">
+                    <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        style="right: 0.5rem;">
+                        <circle cx="11" cy="11" r="8" />
+                        <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Filter Chips -->
+            <div class="m-chip-bar">
+                <span class="m-chip active">الكل (18 مريض)</span>
+                <span class="m-chip">حالات نشطة (12)</span>
+                <span class="m-chip">تمريض منزلي جارٍ (5)</span>
+                <span class="m-chip">جاهز للإغلاق (2)</span>
+            </div>
+
+            <!-- Patient 1 -->
+            <div class="m-card">
+                <div class="d-flex align-start justify-between mb-2">
+                    <div class="d-flex align-center gap-xs">
+                        <div class="avatar avatar-md" style="background: #E0F2FE; color: #0284C7;">
+                            <span>س.أ</span>
+                        </div>
+                        <div>
+                            <h4 style="font-size: 0.95rem; margin-bottom: 2px;">سارة أحمد الشمري</h4>
+                            <span class="text-xs text-muted">ملف #YR-8902 • 29 سنة • O+</span>
+                        </div>
+                    </div>
+                    <span class="badge badge-primary text-xs">خطة نشطة 65%</span>
+                </div>
+
+                <div class="p-2 mb-2" style="background: #F8FAFC; border-radius: 10px; font-size: 0.75rem;">
+                    <span class="text-muted d-block">التشخيص: إجهاد قلبي خفيف وتسارع نبض</span>
+                    <span class="text-brand font-semibold d-block mt-1">🏡 زيارة تمريضية مجدولة: 15 أكتوبر (فيصل
+                        السالم)</span>
+                </div>
+
+                <div class="d-flex gap-xs">
+                    <a href="patient-details.html" class="m-btn m-btn-primary m-btn-sm"
+                        style="flex: 1; background: #0284C7;">
+                        الملف السريري والخطة ←
+                    </a>
+                </div>
+            </div>
+
+            <!-- Patient 2 -->
+            <div class="m-card">
+                <div class="d-flex align-start justify-between mb-2">
+                    <div class="d-flex align-center gap-xs">
+                        <div class="avatar avatar-md" style="background: #F3E8FF; color: #7E22CE;">
+                            <span>خ.ع</span>
+                        </div>
+                        <div>
+                            <h4 style="font-size: 0.95rem; margin-bottom: 2px;">خالد العتيبي</h4>
+                            <span class="text-xs text-muted">ملف #YR-5510 • 45 سنة • B+</span>
+                        </div>
+                    </div>
+                    <span class="badge badge-success text-xs">مكتمل 100%</span>
+                </div>
+
+                <div class="p-2 mb-2" style="background: #F8FAFC; border-radius: 10px; font-size: 0.75rem;">
+                    <span class="text-muted d-block">التشخيص: اضطراب ضغط دم انقباضي سابق</span>
+                    <span class="text-success font-semibold d-block mt-1">✓ انتهت فترة المتابعة بنجاح وثبات المؤشرات
+                        الحيوية</span>
+                </div>
+
+                <div class="d-flex gap-xs">
+                    <a href="follow-up.html" class="m-btn m-btn-outline m-btn-sm"
+                        style="flex: 1; color: #16A34A; border-color: #BBF7D0;">
+                        إجراء إغلاق الحالة واعتماد التقرير ←
+                    </a>
+                </div>
+            </div>
+
+            <!-- Patient 3 -->
+            <div class="m-card">
+                <div class="d-flex align-start justify-between mb-2">
+                    <div class="d-flex align-center gap-xs">
+                        <div class="avatar avatar-md" style="background: #FEF3C7; color: #D97706;">
+                            <span>م.ف</span>
+                        </div>
+                        <div>
+                            <h4 style="font-size: 0.95rem; margin-bottom: 2px;">محمد فهد الدوسري</h4>
+                            <span class="text-xs text-muted">ملف #YR-4102 • 58 سنة • A+</span>
+                        </div>
+                    </div>
+                    <span class="badge badge-warning text-xs">متابعة قسطرة</span>
+                </div>
+
+                <div class="p-2 mb-2" style="background: #F8FAFC; border-radius: 10px; font-size: 0.75rem;">
+                    <span class="text-muted d-block">التشخيص: دعامة شريان تاجي وعلاج أتورفاستاتين</span>
+                </div>
+
+                <div class="d-flex gap-xs">
+                    <a href="patient-details.html" class="m-btn m-btn-outline m-btn-sm" style="flex: 1;">
+                        استعراض السجل السابق
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Doctor Bottom Navigation -->
+        <nav class="mobile-bottom-nav">
+            <a href="home.html" class="bottom-nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                    <polyline points="9 22 9 12 15 12 15 22" />
+                </svg>
+                <span>الرئيسية</span>
+            </a>
+
+            <a href="appointments.html" class="bottom-nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
+                    <line x1="16" y1="2" x2="16" y2="6" />
+                    <line x1="8" y1="2" x2="8" y2="6" />
+                </svg>
+                <span>المواعيد</span>
+            </a>
+
+            <a href="patients.html" class="bottom-nav-item active">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                    <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                </svg>
+                <span>المرضى</span>
+            </a>
+
+            <a href="nursing-reports.html" class="bottom-nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                    <polyline points="14 2 14 8 20 8" />
+                    <line x1="16" y1="13" x2="8" y2="13" />
+                </svg>
+                <span>التمريض</span>
+            </a>
+
+            <a href="follow-up.html" class="bottom-nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span>المتابعة</span>
+            </a>
+        </nav>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>يرعاني (Yerani) | منصة الرعاية الصحية والتمريض المنزلي</title>
+  <meta name="description"
+    content="منصة يرعاني للرعاية الصحية والتمريض المنزلي: تطبيق الهاتف الذكي للمريض والطبيب والممرض، وبوابة الإدارة عبر الويب.">
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/global.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+</head>
+
+<body style="background: #0B132B; color: #FFFFFF; min-height: 100vh;">
+
+  <!-- Executive Header -->
+  <header
+    style="background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid #1E293B; padding: 1rem 0; position: sticky; top: 0; z-index: 100;">
+    <div class="container d-flex align-center justify-between">
+      <div class="d-flex align-center gap-sm">
+        <div class="brand-icon-box"
+          style="width: 42px; height: 42px; border-radius: 12px; background: linear-gradient(135deg, #167D95, #0EA5A4);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="24" height="24">
+            <path
+              d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+          </svg>
+        </div>
+        <div>
+          <h2 style="font-size: 1.3rem; margin: 0; color: #FFFFFF; font-weight: 800;">يرعاني (Yerani)</h2>
+          <span style="font-size: 0.72rem; color: #38BDF8;">مشروع تخرج جامعي • المعمارية ثنائية التجربة</span>
+        </div>
+      </div>
+
+      <div class="d-flex align-center gap-sm">
+        <a href="mobile/auth/login.html" class="btn btn-primary btn-sm">📱 تشغيل تطبيق الجوال</a>
+        <a href="admin-web/dashboard.html" class="btn btn-outline btn-sm"
+          style="color: #38BDF8; border-color: #38BDF8;">🖥️ لوحة تحكم الإدارة (ويب)</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Presentation -->
+  <section style="padding: 4.5rem 0 3rem; text-align: center;">
+    <div class="container">
+      <div
+        style="display: inline-flex; align-items: center; gap: 8px; background: rgba(22, 125, 149, 0.2); border: 1px solid rgba(56, 189, 248, 0.3); color: #38BDF8; padding: 6px 16px; border-radius: 999px; font-size: 0.85rem; font-weight: 700; margin-bottom: 1.5rem;">
+        <span>🎯 المعمارية المعتمدة: تطبيق هاتف ذكي (Mobile App) + بوابة إدارة عبر الويب (Admin Web)</span>
+      </div>
+
+      <h1
+        style="font-size: 2.75rem; font-weight: 900; line-height: 1.3; color: #FFFFFF; max-width: 850px; margin: 0 auto 1.25rem;">
+        منصة الرعاية الصحية الذكية والتمريض المنزلي
+      </h1>
+      <p style="font-size: 1.1rem; color: #94A3B8; max-width: 700px; margin: 0 auto 2.5rem; line-height: 1.8;">
+        تم تصميم المنصة وفق فصل معماري كامل: <strong>تطبيق جوال أصيل</strong> (Native Mobile Experience 390px) لخدمة
+        المرضى والأطباء والممرضين، و<strong>لوحة ويب مكتبية</strong> (Desktop 1440px) مخصصة لإدارة النظام والرقابة
+        التشغيلية.
+      </p>
+
+      <!-- Architecture Dual Showcase Grid -->
+      <div class="d-grid grid-2 gap-xl text-right" style="max-width: 1050px; margin: 0 auto;">
+
+        <!-- Pillar 1: Mobile App -->
+        <div
+          style="background: #0F172A; border: 1px solid #1E293B; border-radius: 24px; padding: 2rem; position: relative; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
+          <div
+            style="position: absolute; top: -10px; left: -10px; width: 140px; height: 140px; background: radial-gradient(circle, rgba(22, 125, 149, 0.3) 0%, transparent 70%);">
+          </div>
+
+          <div class="d-flex align-center justify-between mb-3">
+            <span class="badge" style="background: #167D95; color: #FFFFFF; font-size: 0.8rem; padding: 4px 10px;">1.
+              تطبيق الجوال (Mobile App)</span>
+            <span style="font-size: 1.5rem;">📱</span>
+          </div>
+
+          <h3 style="font-size: 1.35rem; font-weight: 800; color: #FFFFFF; margin-bottom: 0.5rem;">
+            تطبيق المريض • الطبيب • التمريض
+          </h3>
+          <p style="font-size: 0.88rem; color: #94A3B8; line-height: 1.7; margin-bottom: 1.25rem;">
+            واجهات جوال متوافقة مع قياس 390px، تشمل شريط تنقل سفلي (Bottom Nav)، شريط علوي مع زر الرجوع، كروت لمسية،
+            واستمارة زيارة تمريضية وعيادات مخصصة.
+          </p>
+
+          <div style="background: #1E293B; border-radius: 14px; padding: 1rem; margin-bottom: 1.5rem;">
+            <div class="text-xs text-secondary font-bold mb-2" style="color: #38BDF8;">روابط المعاينة المباشرة للتطبيق:
+            </div>
+            <div class="d-grid grid-3 gap-xs text-center">
+              <a href="mobile/patient/home.html" class="btn btn-outline btn-sm"
+                style="color: #FFFFFF; border-color: #334155; font-size: 0.78rem;">تطبيق المريض</a>
+              <a href="mobile/doctor/home.html" class="btn btn-outline btn-sm"
+                style="color: #FFFFFF; border-color: #334155; font-size: 0.78rem;">تطبيق الطبيب</a>
+              <a href="mobile/nurse/home.html" class="btn btn-outline btn-sm"
+                style="color: #FFFFFF; border-color: #334155; font-size: 0.78rem;">تطبيق التمريض</a>
+            </div>
+          </div>
+
+          <div class="d-flex gap-sm">
+            <a href="mobile/auth/login.html" class="btn btn-primary btn-block">
+              تشغيل تسجيل الدخول للجوال ←
+            </a>
+          </div>
+        </div>
+
+        <!-- Pillar 2: Admin Web Dashboard -->
+        <div
+          style="background: #0F172A; border: 1px solid #1E293B; border-radius: 24px; padding: 2rem; position: relative; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
+          <div
+            style="position: absolute; top: -10px; left: -10px; width: 140px; height: 140px; background: radial-gradient(circle, rgba(14, 165, 164, 0.3) 0%, transparent 70%);">
+          </div>
+
+          <div class="d-flex align-center justify-between mb-3">
+            <span class="badge" style="background: #0EA5A4; color: #FFFFFF; font-size: 0.8rem; padding: 4px 10px;">2.
+              بوابة الويب (Admin Web)</span>
+            <span style="font-size: 1.5rem;">🖥️</span>
+          </div>
+
+          <h3 style="font-size: 1.35rem; font-weight: 800; color: #FFFFFF; margin-bottom: 0.5rem;">
+            لوحة الإدارة والإشراف المكتبي
+          </h3>
+          <p style="font-size: 0.88rem; color: #94A3B8; line-height: 1.7; margin-bottom: 1.25rem;">
+            لوحة مكتبية 1440px احترافية مخصصة لمسؤولي النظام فقط، تتضمن شريطاً جانبياً كاملاً، جداول بيانات المرضى
+            والأطباء والممرضين، إحصاءات تشغيلية، وضبط التخصصات.
+          </p>
+
+          <div style="background: #1E293B; border-radius: 14px; padding: 1rem; margin-bottom: 1.5rem;">
+            <div class="text-xs text-secondary font-bold mb-2" style="color: #2DD4BF;">أقسام لوحة الإدارة المركزية:
+            </div>
+            <div class="d-grid grid-3 gap-xs text-center mb-2">
+              <a href="admin-web/patients.html" class="btn btn-outline btn-sm"
+                style="color: #FFFFFF; border-color: #334155; font-size: 0.78rem;">إدارة المرضى</a>
+              <a href="admin-web/doctors.html" class="btn btn-outline btn-sm"
+                style="color: #FFFFFF; border-color: #334155; font-size: 0.78rem;">إدارة الأطباء</a>
+              <a href="admin-web/nurses.html" class="btn btn-outline btn-sm"
+                style="color: #FFFFFF; border-color: #334155; font-size: 0.78rem;">إدارة التمريض</a>
+            </div>
+            <div class="d-grid grid-3 gap-xs text-center">
+              <a href="admin-web/reports.html" class="btn btn-outline btn-sm"
+                style="color: #FFFFFF; border-color: #334155; font-size: 0.78rem;">التقارير والإحصاءات</a>
+              <a href="admin-web/reviews.html" class="btn btn-outline btn-sm"
+                style="color: #FFFFFF; border-color: #334155; font-size: 0.78rem;">التقييمات والرقابة</a>
+              <a href="admin-web/notifications.html" class="btn btn-outline btn-sm"
+                style="color: #FFFFFF; border-color: #334155; font-size: 0.78rem;">مركز الإشعارات</a>
+            </div>
+          </div>
+
+          <div class="d-flex gap-sm">
+            <a href="admin-web/login.html" class="btn btn-secondary btn-block">
+              تسجيل دخول الإدارة (2FA) ←
+            </a>
+            <a href="admin-web/dashboard.html" class="btn btn-primary btn-block">
+              لوحة العمليات الرئيسية ←
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Workflow & Verification Notes -->
+      <div
+        style="margin-top: 3.5rem; padding: 1.5rem; background: rgba(255, 255, 255, 0.03); border: 1px solid #1E293B; border-radius: 16px; max-width: 900px; margin-left: auto; margin-right: auto; text-align: right;">
+        <h4 style="color: #F8FAFC; font-size: 1rem; margin-bottom: 8px;">ملاحظات التدقيق والالتزام بالمعايير:</h4>
+        <ul
+          style="font-size: 0.82rem; color: #94A3B8; line-height: 1.8; list-style-type: disc; padding-right: 1.25rem;">
+          <li>الذكاء الاصطناعي <strong>لا يشخص الأمراض</strong> مطلقاً، وإنما يوجه المريض إلى التخصص الطبي المناسب بدقة
+            بناءً على الأعراض المدخلة.</li>
+          <li>لا يوجد دور "زائر" (Visitor)؛ التطبيق يخدم الأدوار الأربعة المعتمدة: مريض، طبيب، تمريض، وإدارة.</li>
+          <li>خدمات التمريض المنزلي التخصصية وإعطاء الأدوية مقيدة باشتراط وجود توجيه أو ترخيص طبي مسجل.</li>
+          <li>تم البناء حصرياً باستخدام HTML5 وCSS3 النقي وبدون أي مكتبات خارجية أو جافاسكريبت.</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer
+    style="text-align: center; padding: 2rem 0; border-top: 1px solid #1E293B; color: #64748B; font-size: 0.8rem;">
+    منصة يرعاني (Yerani) • مشروع تخرج رعاية صحية رقمية • HTML5 & CSS3 RTL
+  </footer>
+
+</body>
+
+</html>

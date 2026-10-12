@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول | يرعاني (Yerani)</title>
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body class="auth-page">
+
+    <div class="auth-card-container">
+        <div class="auth-card">
+            <!-- Header -->
+            <div class="auth-header">
+                <a href="index.html" class="brand-logo">
+                    <div class="brand-icon-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                            <path
+                                d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+                        </svg>
+                    </div>
+                    <div class="brand-text">
+                        <span class="brand-name">يرعاني</span>
+                        <span class="brand-tagline">Yerani Health</span>
+                    </div>
+                </a>
+                <h1 class="auth-title">تسجيل الدخول للمنصة</h1>
+                <p class="auth-subtitle">اختر دورك وسجّل الدخول إلى حسابك لمتابعة الرعاية</p>
+            </div>
+
+            <!-- Quick Role Navigation Selector -->
+            <div class="role-switcher-grid">
+                <a href="mobile/patient/home.html" class="role-switcher-tab active">مريض 📱</a>
+                <a href="mobile/doctor/home.html" class="role-switcher-tab">طبيب 🩺</a>
+                <a href="mobile/nurse/home.html" class="role-switcher-tab">تمريض 🩹</a>
+                <a href="admin-web/login.html" class="role-switcher-tab">إدارة 🖥️</a>
+            </div>
+
+            <!-- Login Form (Default Patient Action) -->
+            <form action="mobile/patient/home.html" method="GET">
+                <div class="form-group">
+                    <label class="form-label" for="email">البريد الإلكتروني أو رقم الهوية</label>
+                    <div class="input-icon-wrap">
+                        <input type="text" id="email" class="form-control" placeholder="user@yerani.sa أو 1029384756"
+                            value="patient@yerani.sa" required>
+                        <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect width="20" height="16" x="2" y="4" rx="2" />
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="d-flex align-center justify-between mb-1">
+                        <label class="form-label" for="password" style="margin-bottom:0;">كلمة المرور</label>
+                        <a href="#" class="text-xs text-brand">نسيت كلمة المرور؟</a>
+                    </div>
+                    <div class="input-icon-wrap">
+                        <input type="password" id="password" class="form-control" placeholder="••••••••"
+                            value="password123" required>
+                        <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="d-flex align-center justify-between mb-4">
+                    <label class="form-check text-xs text-secondary">
+                        <input type="checkbox" checked>
+                        تذكر بيانات الدخول
+                    </label>
+                    <span class="badge badge-success text-xs">اتصال مشفر 256-bit</span>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block btn-lg mb-3">
+                    دخول تطبيق المريض بالجوال 📱
+                </button>
+            </form>
+
+            <!-- Demo Quick Roles Direct Launchers -->
+            <div class="p-3 mb-3"
+                style="background: var(--bg-main); border: 1px dashed var(--border-color); border-radius: var(--radius-md);">
+                <p class="text-xs font-semibold text-secondary mb-2 text-center">⚡ وصول فوري للجان المناقشة والتقييم:
+                </p>
+                <div class="d-grid grid-2 gap-xs">
+                    <a href="mobile/patient/home.html" class="btn btn-outline btn-sm">📱 تطبيق المريض</a>
+                    <a href="mobile/doctor/home.html" class="btn btn-outline btn-sm">🩺 تطبيق الطبيب</a>
+                    <a href="mobile/nurse/home.html" class="btn btn-outline btn-sm">🩹 تطبيق التمريض</a>
+                    <a href="admin-web/dashboard.html" class="btn btn-outline btn-sm">🖥️ لوحة الإدارة (ويب)</a>
+                </div>
+            </div>
+
+            <!-- Footer Info -->
+            <div class="text-center">
+                <p class="text-sm text-secondary mb-0">
+                    ليس لديك حساب مريض؟ <a href="register.html" class="font-bold text-brand">إنشاء حساب مريض جديد</a>
+                </p>
+                <div class="mt-3">
+                    <a href="index.html" class="text-xs text-muted">← العودة للصفحة الرئيسية</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

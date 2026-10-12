@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الوصفات الدوائية الصادرة | تطبيق الطبيب - يرعاني</title>
+    <link rel="stylesheet" href="../../assets/css/variables.css">
+    <link rel="stylesheet" href="../../assets/css/global.css">
+    <link rel="stylesheet" href="../../assets/css/components.css">
+    <link rel="stylesheet" href="../../assets/css/mobile.css">
+</head>
+
+<body>
+
+    <div class="mobile-app-shell">
+
+        <!-- Top Evaluator Quick Nav -->
+        <div class="demo-role-pill-bar" style="background: #0284C7;">
+            <span>🩺 الوصفات الدوائية الإلكترونية</span>
+            <a href="home.html">الرئيسية</a>
+        </div>
+
+        <!-- Mobile Status Bar -->
+        <div class="mobile-status-bar">
+            <span>09:41</span>
+            <div class="status-bar-icons">
+                <span>5G</span>
+                <span>🔋 100%</span>
+            </div>
+        </div>
+
+        <!-- Mobile Header -->
+        <div class="mobile-header">
+            <a href="home.html" class="mobile-header-back" title="رجوع">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </a>
+            <h2 class="mobile-header-title">الوصفات الإلكترونية الصادرة</h2>
+            <a href="#new-rx" class="mobile-header-action" title="إصدار وصفة">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+            </a>
+        </div>
+
+        <!-- Mobile Content -->
+        <div class="mobile-content">
+
+            <!-- Issue New Electronic Prescription Form -->
+            <div id="new-rx" class="m-card" style="border: 2px solid #0284C7;">
+                <div class="d-flex align-center justify-between mb-2 pb-1" style="border-bottom: 1px solid #E2E8F0;">
+                    <div class="d-flex align-center gap-xs">
+                        <span style="font-size: 1.1rem;">✍️</span>
+                        <strong style="font-size: 0.9rem; color: #0284C7;">تحرير وصفة دوائية جديدة</strong>
+                    </div>
+                    <span class="badge badge-primary text-xs" style="background: #0284C7;">اعتماد فوري</span>
+                </div>
+
+                <form action="#saved" method="GET">
+                    <div class="m-form-group">
+                        <label class="m-form-label" style="font-size: 0.78rem;">المريض المستفيد</label>
+                        <select class="m-form-select" style="font-size: 0.8rem;">
+                            <option selected>سارة أحمد الشمري (#YR-8902)</option>
+                            <option>محمد فهد الدوسري (#YR-4102)</option>
+                            <option>خالد العتيبي (#YR-5510)</option>
+                        </select>
+                    </div>
+
+                    <div class="m-form-group">
+                        <label class="m-form-label" style="font-size: 0.78rem;">اسم الدواء والتركيز</label>
+                        <input type="text" class="m-form-input" placeholder="مثال: Concor 2.5mg أو Lipitor 10mg"
+                            value="Concor 2.5 mg (Bisoprolol)" style="font-size: 0.82rem;" required>
+                    </div>
+
+                    <div class="d-grid grid-2 gap-xs mb-2">
+                        <div>
+                            <label class="m-form-label" style="font-size: 0.75rem;">الجرعة والتكرار</label>
+                            <select class="m-form-select" style="font-size: 0.8rem;">
+                                <option selected>قرص واحد صباحاً</option>
+                                <option>قرص واحد مساءً</option>
+                                <option>مرتين يومياً</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="m-form-label" style="font-size: 0.75rem;">المدة بالأيام</label>
+                            <select class="m-form-select" style="font-size: 0.8rem;">
+                                <option selected>30 يوماً</option>
+                                <option>14 يوماً</option>
+                                <option>60 يوماً</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="p-2 mb-3 d-flex align-center gap-xs"
+                        style="background: #F0FDF4; border: 1px solid #BBF7D0; border-radius: 8px; font-size: 0.75rem; color: #15803D;">
+                        <span>✓</span>
+                        <strong>فحص التداخلات: آمن مع أدوية المريض السابقة</strong>
+                    </div>
+
+                    <button type="submit" class="m-btn m-btn-primary" style="width: 100%; background: #0284C7;">
+                        توقيع الوصفة وإرسالها للمريض والصيدليات ←
+                    </button>
+                </form>
+            </div>
+
+            <!-- Recent Issued Prescriptions List -->
+            <div class="m-section-header">
+                <h3 class="m-section-title">
+                    <span>📋</span> الوصفات الصادرة حديثاً
+                </h3>
+            </div>
+
+            <!-- Prescription 1 -->
+            <div class="m-card">
+                <div class="d-flex align-start justify-between mb-2">
+                    <div>
+                        <h4 style="font-size: 0.92rem; margin-bottom: 2px;">سارة أحمد الشمري (#YR-8902)</h4>
+                        <span class="text-xs text-muted">صادرة: 10 أكتوبر 2026 • كود: #RX-771</span>
+                    </div>
+                    <span class="badge badge-success text-xs">سارية</span>
+                </div>
+
+                <div class="p-2 mb-2" style="background: #F8FAFC; border-radius: 8px; font-size: 0.75rem;">
+                    <div>• Concor 2.5 mg (قرص صباحاً يومياً - 30 يوماً)</div>
+                    <div>• Lipitor 10 mg (قرص مساءً يومياً - 30 يوماً)</div>
+                </div>
+
+                <div class="d-flex gap-xs">
+                    <button type="button" class="m-btn m-btn-outline m-btn-sm" style="flex: 1;">تجديد الوصفة</button>
+                    <button type="button" class="m-btn m-btn-outline m-btn-sm" style="flex: 1; color: #DC2626;">إلغاء
+                        الوصفة</button>
+                </div>
+            </div>
+
+            <!-- Prescription 2 -->
+            <div class="m-card">
+                <div class="d-flex align-start justify-between mb-2">
+                    <div>
+                        <h4 style="font-size: 0.92rem; margin-bottom: 2px;">محمد فهد الدوسري (#YR-4102)</h4>
+                        <span class="text-xs text-muted">صادرة: 25 سبتمبر 2026 • كود: #RX-640</span>
+                    </div>
+                    <span class="badge badge-neutral text-xs">منتهية</span>
+                </div>
+
+                <div class="p-2 mb-2" style="background: #F8FAFC; border-radius: 8px; font-size: 0.75rem;">
+                    <div>• Plavix 75 mg (قرص يومياً)</div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Doctor Bottom Navigation -->
+        <nav class="mobile-bottom-nav">
+            <a href="home.html" class="bottom-nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                    <polyline points="9 22 9 12 15 12 15 22" />
+                </svg>
+                <span>الرئيسية</span>
+            </a>
+
+            <a href="appointments.html" class="bottom-nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
+                    <line x1="16" y1="2" x2="16" y2="6" />
+                    <line x1="8" y1="2" x2="8" y2="6" />
+                </svg>
+                <span>المواعيد</span>
+            </a>
+
+            <a href="patients.html" class="bottom-nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                    <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                </svg>
+                <span>المرضى</span>
+            </a>
+
+            <a href="nursing-reports.html" class="bottom-nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                    <polyline points="14 2 14 8 20 8" />
+                    <line x1="16" y1="13" x2="8" y2="13" />
+                </svg>
+                <span>التمريض</span>
+            </a>
+
+            <a href="follow-up.html" class="bottom-nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span>المتابعة</span>
+            </a>
+        </nav>
+
+    </div>
+
+</body>
+
+</html>

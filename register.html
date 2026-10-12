@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إنشاء حساب مريض جديد | يرعاني (Yerani)</title>
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body class="auth-page" style="padding: 2.5rem 1rem;">
+
+    <div class="auth-card-container" style="max-width: 650px;">
+        <div class="auth-card">
+            <!-- Header -->
+            <div class="auth-header">
+                <a href="index.html" class="brand-logo">
+                    <div class="brand-icon-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                            <path
+                                d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+                        </svg>
+                    </div>
+                    <div class="brand-text">
+                        <span class="brand-name">يرعاني</span>
+                        <span class="brand-tagline">Yerani Health</span>
+                    </div>
+                </a>
+                <h1 class="auth-title">إنشاء حساب مريض جديد</h1>
+                <p class="auth-subtitle">انضم لمنصة يرعاني لإدارة صحتك وتلقي الرعاية الطبية والتمريضية المتكاملة</p>
+            </div>
+
+            <!-- Registration Form -->
+            <form action="mobile/patient/home.html" method="GET">
+                <div class="d-grid grid-2 gap-md">
+                    <div class="form-group">
+                        <label class="form-label" for="fullname"><span class="required">*</span> الاسم الثلاثي</label>
+                        <input type="text" id="fullname" class="form-control" placeholder="مثال: خالد محمد العتيبي"
+                            required value="سارة أحمد الشمري">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="national-id"><span class="required">*</span> رقم الهوية الوطنية /
+                            الإقامة</label>
+                        <input type="text" id="national-id" class="form-control" placeholder="10 أرقام" required
+                            value="1098765432">
+                    </div>
+                </div>
+
+                <div class="d-grid grid-2 gap-md">
+                    <div class="form-group">
+                        <label class="form-label" for="email"><span class="required">*</span> البريد الإلكتروني</label>
+                        <input type="email" id="email" class="form-control" placeholder="sara@example.com" required
+                            value="sara.shammari@yerani.sa">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="phone"><span class="required">*</span> رقم الجوال</label>
+                        <input type="tel" id="phone" class="form-control" placeholder="05XXXXXXXX" required
+                            value="0551234567">
+                    </div>
+                </div>
+
+                <div class="d-grid grid-3 gap-md">
+                    <div class="form-group">
+                        <label class="form-label" for="dob"><span class="required">*</span> تاريخ الميلاد</label>
+                        <input type="date" id="dob" class="form-control" value="1995-06-15" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="gender"><span class="required">*</span> الجنس</label>
+                        <select id="gender" class="form-select" required>
+                            <option value="female" selected>أنثى</option>
+                            <option value="male">ذكر</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="blood-type">فصيلة الدم</label>
+                        <select id="blood-type" class="form-select">
+                            <option value="O+" selected>O+</option>
+                            <option value="A+">A+</option>
+                            <option value="B+">B+</option>
+                            <option value="AB+">AB+</option>
+                            <option value="O-">O-</option>
+                            <option value="A-">A-</option>
+                            <option value="B-">B-</option>
+                            <option value="AB-">AB-</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">الأمراض المزمنة أو الحساسية (إن وجدت)</label>
+                    <div class="d-flex flex-wrap gap-md mt-1">
+                        <label class="form-check text-xs">
+                            <input type="checkbox" name="chronic" value="diabetes"> السكري
+                        </label>
+                        <label class="form-check text-xs">
+                            <input type="checkbox" name="chronic" value="hypertension"> ضغط الدم
+                        </label>
+                        <label class="form-check text-xs">
+                            <input type="checkbox" name="chronic" value="asthma"> الربو القصبي
+                        </label>
+                        <label class="form-check text-xs">
+                            <input type="checkbox" name="chronic" value="penicillin"> حساسية البنسلين
+                        </label>
+                        <label class="form-check text-xs">
+                            <input type="checkbox" name="chronic" value="none" checked> لا توجد أمراض مزمنة
+                        </label>
+                    </div>
+                    <p class="form-hint">تساعد هذه البيانات الطبيب والممرض في تقديم تشخيص ورعاية دقيقة وآمنة.</p>
+                </div>
+
+                <div class="d-grid grid-2 gap-md">
+                    <div class="form-group">
+                        <label class="form-label" for="reg-pass"><span class="required">*</span> كلمة المرور</label>
+                        <input type="password" id="reg-pass" class="form-control" placeholder="••••••••"
+                            value="Secret1234!" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="reg-pass-confirm"><span class="required">*</span> تأكيد كلمة
+                            المرور</label>
+                        <input type="password" id="reg-pass-confirm" class="form-control" placeholder="••••••••"
+                            value="Secret1234!" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-check text-xs text-secondary">
+                        <input type="checkbox" checked required>
+                        أوافق على <a href="#" class="text-brand">شروط الخدمة</a> وسياسة الخصوصية وسرية البيانات الطبية
+                        لمنصة يرعاني.
+                    </label>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block btn-lg mb-3">
+                    إتمام التسجيل والدخول لبوابة المريض
+                </button>
+            </form>
+
+            <!-- Footer Info -->
+            <div class="text-center pt-2" style="border-top: 1px solid var(--border-light);">
+                <p class="text-sm text-secondary mb-0">
+                    لديك حساب مسبقاً؟ <a href="login.html" class="font-bold text-brand">تسجيل الدخول</a>
+                </p>
+                <div class="mt-2">
+                    <a href="index.html" class="text-xs text-muted">← العودة للصفحة الرئيسية</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

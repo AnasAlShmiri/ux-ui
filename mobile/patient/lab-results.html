@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التحاليل والفحوصات | تطبيق يرعاني</title>
+    <link rel="stylesheet" href="../../assets/css/variables.css">
+    <link rel="stylesheet" href="../../assets/css/global.css">
+    <link rel="stylesheet" href="../../assets/css/components.css">
+    <link rel="stylesheet" href="../../assets/css/mobile.css">
+</head>
+
+<body>
+
+    <div class="mobile-app-shell">
+
+        <!-- Top Evaluator Quick Nav -->
+        <div class="demo-role-pill-bar">
+            <span>📱 التحاليل المخبرية والنتائج</span>
+            <a href="medical-record.html">السجل الطبي</a>
+        </div>
+
+        <!-- Mobile Status Bar -->
+        <div class="mobile-status-bar">
+            <span>09:41</span>
+            <div class="status-bar-icons">
+                <span>5G</span>
+                <span>🔋 100%</span>
+            </div>
+        </div>
+
+        <!-- Mobile Header -->
+        <div class="mobile-header">
+            <a href="medical-record.html" class="mobile-header-back" title="رجوع">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </a>
+            <h2 class="mobile-header-title">التحاليل والفحوصات</h2>
+            <a href="home.html" class="mobile-header-action" title="الرئيسية">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                </svg>
+            </a>
+        </div>
+
+        <!-- Mobile Content -->
+        <div class="mobile-content">
+
+            <!-- Pending Lab Order Requiring Patient Upload -->
+            <div class="m-card" style="border: 2px dashed #DC2626; background: #FEF2F2;">
+                <div class="d-flex align-center justify-between mb-2">
+                    <div class="d-flex align-center gap-xs">
+                        <span style="font-size: 1.2rem;">⚠️</span>
+                        <strong style="font-size: 0.92rem; color: #991B1B;">طلب فحص جديد من الطبيب</strong>
+                    </div>
+                    <span class="badge badge-danger text-xs">مطلوب الرفع</span>
+                </div>
+
+                <p class="text-xs text-secondary mb-1">
+                    <strong>الطبيب الطالب:</strong> د. عبدالله الحربي (استشاري القلب)
+                </p>
+                <p class="text-xs text-secondary mb-2">
+                    <strong>الفحوصات المطلوبة:</strong> صورة دم كاملة (CBC)، فحص الكوليسترول والدهون الثلاثية (Lipid
+                    Profile).
+                </p>
+
+                <!-- Simulated Upload Area -->
+                <div class="p-3 text-center mb-2"
+                    style="background: #FFFFFF; border: 1.5px dashed #CBD5E1; border-radius: 12px; cursor: pointer;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        style="width: 28px; height: 28px; color: #167D95; margin-bottom: 4px;">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                        <polyline points="17 8 12 3 7 8" />
+                        <line x1="12" y1="3" x2="12" y2="15" />
+                    </svg>
+                    <span style="font-size: 0.78rem; font-weight: 700; color: #172B4D; display: block;">انقر لرفع ملف
+                        النتيجة (PDF أو صورة)</span>
+                    <span class="text-xs text-muted">سيصل الإشعار للطبيب المعالج فور الإرفاق</span>
+                </div>
+
+                <button type="button" class="m-btn m-btn-primary m-btn-sm" style="background: #DC2626; width: 100%;">
+                    تأكيد إرسال النتيجة للطبيب
+                </button>
+            </div>
+
+            <!-- History of Lab Results -->
+            <div class="m-section-header">
+                <h3 class="m-section-title">
+                    <span>📋</span> النتائج والتقارير المكتملة
+                </h3>
+            </div>
+
+            <!-- Lab Result 1 -->
+            <div class="m-card">
+                <div class="d-flex align-start justify-between mb-2">
+                    <div>
+                        <h4 style="font-size: 0.92rem; margin-bottom: 2px;">تحليل الدهون الشامل (Lipid Panel)</h4>
+                        <span class="text-xs text-muted">مختبر البرج الطبي • 05 أكتوبر 2026</span>
+                    </div>
+                    <span class="badge badge-success text-xs">طبيعي ✓</span>
+                </div>
+
+                <div class="p-2 mb-2" style="background: #F8FAFC; border-radius: 10px; font-size: 0.75rem;">
+                    <div class="d-flex justify-between mb-1">
+                        <span>الكوليسترول الكلي:</span>
+                        <strong>192 mg/dL <span class="text-muted">(المعدل: &lt;200)</span></strong>
+                    </div>
+                    <div class="d-flex justify-between mb-1">
+                        <span>الدهون الثلاثية:</span>
+                        <strong>135 mg/dL <span class="text-muted">(المعدل: &lt;150)</span></strong>
+                    </div>
+                    <div class="d-flex justify-between">
+                        <span>الكوليسترول الضار LDL:</span>
+                        <strong>110 mg/dL <span class="text-muted">(المعدل: &lt;130)</span></strong>
+                    </div>
+                </div>
+
+                <div class="d-flex align-center justify-between">
+                    <span class="text-xs text-success font-semibold">اعتمدها د. عبدالله الحربي</span>
+                    <button type="button" class="m-btn m-btn-outline m-btn-sm">عرض التقرير PDF</button>
+                </div>
+            </div>
+
+            <!-- Lab Result 2: ECG -->
+            <div class="m-card">
+                <div class="d-flex align-start justify-between mb-2">
+                    <div>
+                        <h4 style="font-size: 0.92rem; margin-bottom: 2px;">تخطيط القلب الكهربائي (12-Lead ECG)</h4>
+                        <span class="text-xs text-muted">قسم القلب - المركز التخصصي • 01 أكتوبر 2026</span>
+                    </div>
+                    <span class="badge badge-info text-xs">معتمد</span>
+                </div>
+
+                <p class="text-xs text-secondary mb-2" style="line-height: 1.5;">
+                    النتيجة: إيقاع جيبي نظامي مع تسارع خفيف بالنبض (Sinus Tachycardia 88 bpm)، لا توجد تغيرات إقفارية
+                    حادة.
+                </p>
+
+                <div class="d-flex align-center justify-between">
+                    <span class="text-xs text-muted">رقم الفحص: #ECG-2281</span>
+                    <button type="button" class="m-btn m-btn-outline m-btn-sm">عرض المخطط</button>
+                </div>
+            </div>
+
+            <!-- Lab Result 3: Kidney & Liver -->
+            <div class="m-card">
+                <div class="d-flex align-start justify-between mb-2">
+                    <div>
+                        <h4 style="font-size: 0.92rem; margin-bottom: 2px;">فحص وظائف الكلى والكبد (RFT & LFT)</h4>
+                        <span class="text-xs text-muted">مختبر العاصمة • 15 سبتمبر 2026</span>
+                    </div>
+                    <span class="badge badge-success text-xs">ضمن المعدل</span>
+                </div>
+
+                <div class="p-2 mb-2" style="background: #F8FAFC; border-radius: 10px; font-size: 0.75rem;">
+                    <div class="d-flex justify-between">
+                        <span>الكرياتينين (Creatinine):</span>
+                        <strong>0.8 mg/dL <span class="text-muted">(طبيعي)</span></strong>
+                    </div>
+                </div>
+
+                <div class="d-flex align-center justify-between">
+                    <span class="text-xs text-muted">ارشيف السجل</span>
+                    <button type="button" class="m-btn m-btn-outline m-btn-sm">عرض التقرير</button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Mobile Bottom Nav -->
+        <nav class="mobile-bottom-nav">
+            <a href="home.html" class="bottom-nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                    <polyline points="9 22 9 12 15 12 15 22" />
+                </svg>
+                <span>الرئيسية</span>
+            </a>
+
+            <a href="ai-recommendation.html" class="bottom-nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path
+                        d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+                </svg>
+                <span>توجيه AI</span>
+            </a>
+
+            <a href="doctors.html" class="bottom-nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                    <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                </svg>
+                <span>الأطباء</span>
+            </a>
+
+            <a href="nursing.html" class="bottom-nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                </svg>
+                <span>التمريض</span>
+            </a>
+
+            <a href="profile.html" class="bottom-nav-item active">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="3" />
+                </svg>
+                <span>حسابي</span>
+            </a>
+        </nav>
+
+    </div>
+
+</body>
+
+</html>

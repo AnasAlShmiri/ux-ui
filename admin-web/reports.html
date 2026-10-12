@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الإحصائيات والتقارير الشاملة | لوحة التحكم الإدارية - منصة يرعاني</title>
+    <link rel="stylesheet" href="../assets/css/variables.css">
+    <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" href="../assets/css/components.css">
+    <link rel="stylesheet" href="../assets/css/layout.css">
+    <link rel="stylesheet" href="../assets/css/admin.css">
+</head>
+
+<body class="admin-body">
+
+    <div class="admin-layout">
+
+        <!-- Desktop Sidebar (1440px Standard) -->
+        <aside class="admin-sidebar">
+            <div class="admin-brand">
+                <div class="admin-brand-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        style="width: 22px; height: 22px; color: #FFFFFF;">
+                        <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                    </svg>
+                </div>
+                <div>
+                    <h1 class="admin-brand-title">يرعاني <span>Admin</span></h1>
+                    <p class="admin-brand-sub">إدارة المنظومة الطبية المركزية</p>
+                </div>
+            </div>
+
+            <!-- Quick Switch to Mobile Apps for Committee Demo -->
+            <div class="p-2 mb-2"
+                style="background: rgba(22, 125, 149, 0.15); border-radius: 10px; border: 1px solid rgba(22, 125, 149, 0.3);">
+                <span class="text-xs text-muted d-block mb-1">📱 تجربة تطبيقات الجوال:</span>
+                <div class="d-flex flex-wrap gap-xs">
+                    <a href="../mobile/patient/home.html" class="badge badge-primary text-xs"
+                        style="text-decoration: none;">تطبيق المريض</a>
+                    <a href="../mobile/doctor/home.html" class="badge badge-info text-xs"
+                        style="text-decoration: none;">تطبيق الطبيب</a>
+                    <a href="../mobile/nurse/home.html" class="badge badge-warning text-xs"
+                        style="text-decoration: none;">تطبيق التمريض</a>
+                </div>
+            </div>
+
+            <!-- Admin Navigation -->
+            <nav class="admin-nav">
+                <div class="admin-nav-category">التحكم والعمليات</div>
+
+                <a href="dashboard.html" class="admin-nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect width="7" height="9" x="3" y="3" rx="1" />
+                        <rect width="7" height="5" x="14" y="3" rx="1" />
+                        <rect width="7" height="9" x="14" y="12" rx="1" />
+                        <rect width="7" height="5" x="3" y="16" rx="1" />
+                    </svg>
+                    <span>نظرة عامة والعمليات</span>
+                </a>
+
+                <a href="patients.html" class="admin-nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                        <circle cx="9" cy="7" r="4" />
+                    </svg>
+                    <span>إدارة المرضى</span>
+                    <span class="admin-nav-badge">1,248</span>
+                </a>
+
+                <a href="doctors.html" class="admin-nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                    </svg>
+                    <span>إدارة الأطباء والعيادات</span>
+                    <span class="admin-nav-badge">42</span>
+                </a>
+
+                <a href="nurses.html" class="admin-nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="m18 2 4 4-12 12H6v-4L18 2z" />
+                    </svg>
+                    <span>طواقم التمريض المنزلي</span>
+                    <span class="admin-nav-badge">28</span>
+                </a>
+
+                <div class="admin-nav-category">التشغيل السريري والذكاء</div>
+
+                <a href="specialties.html" class="admin-nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect width="18" height="18" x="3" y="3" rx="2" />
+                        <path d="M3 9h18M9 21V9" />
+                    </svg>
+                    <span>التخصصات والعيادات</span>
+                </a>
+
+                <a href="appointments.html" class="admin-nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
+                        <line x1="16" y1="2" x2="16" y2="6" />
+                        <line x1="8" y1="2" x2="8" y2="6" />
+                    </svg>
+                    <span>المواعيد والحجوزات</span>
+                </a>
+
+                <a href="home-care.html" class="admin-nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                    </svg>
+                    <span>الرعاية المنزلية الميدانية</span>
+                </a>
+
+                <a href="reviews.html" class="admin-nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon
+                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                    </svg>
+                    <span>التقييمات والمراجعات</span>
+                    <span class="admin-nav-badge">4.9 ★</span>
+                </a>
+
+                <a href="notifications.html" class="admin-nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+                        <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+                    </svg>
+                    <span>مركز الإشعارات والتعميم</span>
+                </a>
+
+                <a href="reports.html" class="admin-nav-item active">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="20" x2="18" y2="10" />
+                        <line x1="12" y1="20" x2="12" y2="4" />
+                        <line x1="6" y1="20" x2="6" y2="14" />
+                    </svg>
+                    <span>الإحصائيات والتقارير</span>
+                </a>
+
+                <a href="ai-audit.html" class="admin-nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path
+                            d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+                    </svg>
+                    <span>تدقيق توجيه AI والامتثال</span>
+                    <span class="admin-nav-badge" style="background: #16A34A; color: #fff;">98.4%</span>
+                </a>
+
+                <div class="admin-nav-category">النظام</div>
+
+                <a href="settings.html" class="admin-nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="3" />
+                        <path
+                            d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+                    </svg>
+                    <span>إعدادات النظام والأمان</span>
+                </a>
+
+                <a href="login.html" class="admin-nav-item" style="color: #EF4444;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                        <polyline points="16 17 21 12 16 7" />
+                        <line x1="21" y1="12" x2="9" y2="12" />
+                    </svg>
+                    <span>تسجيل الخروج</span>
+                </a>
+            </nav>
+
+            <!-- Sidebar Footer -->
+            <div class="p-3"
+                style="border-top: 1px solid rgba(255, 255, 255, 0.08); font-size: 0.75rem; color: #94A3B8;">
+                منصة يرعاني v2.4 (Enterprise)<br>
+                معتمد وفق معايير هيئة الصحة الرقمية
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="admin-main">
+
+            <!-- Topbar Header -->
+            <header class="admin-topbar">
+                <div class="d-flex align-center gap-md">
+                    <h2 style="font-size: 1.25rem; font-weight: 800; color: #172B4D; margin: 0;">الإحصائيات ولوحة
+                        التقارير المركزية</h2>
+                    <span class="badge badge-success text-xs">تحديث فوري (Real-Time)</span>
+                </div>
+
+                <div class="d-flex align-center gap-md">
+                    <button type="button" class="btn btn-outline btn-sm">
+                        📥 تصدير تقرير PDF معتمد
+                    </button>
+                    <button type="button" class="btn btn-primary btn-sm">
+                        📊 استخراج بيانات Excel (XLSX)
+                    </button>
+                </div>
+            </header>
+
+            <!-- Content Container -->
+            <div class="admin-content">
+
+                <!-- Filter & Period Selection Bar -->
+                <div class="admin-card mb-4" style="padding: 1rem;">
+                    <div class="d-flex align-center justify-between flex-wrap gap-sm">
+                        <div class="d-flex align-center gap-xs">
+                            <span class="text-xs text-muted font-bold">النطاق الزمني:</span>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-outline btn-sm">اليوم</button>
+                                <button type="button" class="btn btn-outline btn-sm">هذا الأسبوع</button>
+                                <button type="button" class="btn btn-primary btn-sm">هذا الشهر (أكتوبر 2026)</button>
+                                <button type="button" class="btn btn-outline btn-sm">الربع السنوي Q4</button>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-center gap-xs">
+                            <select class="form-select" style="font-size: 0.85rem; width: 180px;">
+                                <option selected>جميع التخصصات</option>
+                                <option>أمراض القلب والشرايين</option>
+                                <option>الطب الباطني</option>
+                                <option>طب العظام والمفاصل</option>
+                                <option>التمريض المنزلي الميداني</option>
+                            </select>
+
+                            <select class="form-select" style="font-size: 0.85rem; width: 160px;">
+                                <option selected>كافة المراكز والعيادات</option>
+                                <option>مجمع الرياض الطبي</option>
+                                <option>مركز الشمال التخصصي</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- KPI Highlight Metric Cards -->
+                <div class="d-grid grid-4 gap-md mb-4">
+                    <!-- KPI 1 -->
+                    <div class="admin-stat-card">
+                        <div class="admin-stat-header">
+                            <div>
+                                <span class="admin-stat-title">إجمالي الاستشارات الطبية</span>
+                                <div class="admin-stat-value">8,420</div>
+                            </div>
+                            <div class="admin-stat-icon" style="background: #E0F2FE; color: #0284C7;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="admin-stat-change positive">
+                            <span>↑ +14.8% مقارنة بالشهر السابق</span>
+                        </div>
+                    </div>
+
+                    <!-- KPI 2 -->
+                    <div class="admin-stat-card">
+                        <div class="admin-stat-header">
+                            <div>
+                                <span class="admin-stat-title">زيارات التمريض المنزلي</span>
+                                <div class="admin-stat-value">1,930</div>
+                            </div>
+                            <div class="admin-stat-icon" style="background: #FEF3C7; color: #D97706;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="admin-stat-change positive">
+                            <span>↑ معدل إنجاز 98.2% من المجدول</span>
+                        </div>
+                    </div>
+
+                    <!-- KPI 3 -->
+                    <div class="admin-stat-card">
+                        <div class="admin-stat-header">
+                            <div>
+                                <span class="admin-stat-title">دقة توجيه الذكاء الاصطناعي</span>
+                                <div class="admin-stat-value">98.4%</div>
+                            </div>
+                            <div class="admin-stat-icon" style="background: #DCFCE7; color: #16A34A;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="admin-stat-change positive">
+                            <span>↑ توافق تام مع تشخيص الطبيب المعالج</span>
+                        </div>
+                    </div>
+
+                    <!-- KPI 4 -->
+                    <div class="admin-stat-card">
+                        <div class="admin-stat-header">
+                            <div>
+                                <span class="admin-stat-title">مؤشر رضا المستفيدين</span>
+                                <div class="admin-stat-value">4.9 / 5.0</div>
+                            </div>
+                            <div class="admin-stat-icon" style="background: #F3E8FF; color: #7E22CE;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polygon
+                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="admin-stat-change positive">
+                            <span>↑ بناءً على 3,420 تقييم موثق</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visual Charts Row -->
+                <div class="d-grid grid-2 gap-md mb-4">
+
+                    <!-- Chart 1: Monthly Consultations & Home Visits Trend -->
+                    <div class="admin-card">
+                        <div class="admin-card-header">
+                            <div>
+                                <h3 class="admin-card-title">
+                                    <span>📈</span> نمو الاستشارات والزيارات المنزلية (2026)
+                                </h3>
+                                <span class="text-xs text-muted">مقارنة شهرية للخدمات السريرية والميدانية</span>
+                            </div>
+                            <div class="d-flex gap-xs text-xs">
+                                <span class="d-flex align-center gap-xs"><span
+                                        style="width: 10px; height: 10px; background: #167D95; border-radius: 2px;"></span>
+                                    استشارات عيادة</span>
+                                <span class="d-flex align-center gap-xs"><span
+                                        style="width: 10px; height: 10px; background: #D97706; border-radius: 2px;"></span>
+                                    تمريض منزلي</span>
+                            </div>
+                        </div>
+
+                        <!-- Elegant Visual Chart with CSS Bars -->
+                        <div style="padding: 1.5rem 0.5rem 0.5rem;">
+                            <div
+                                style="display: flex; align-items: flex-end; justify-content: space-between; height: 200px; padding: 0 1rem; border-bottom: 2px solid #E2E8F0; gap: 0.75rem;">
+                                <!-- May -->
+                                <div
+                                    style="display: flex; flex-direction: column; align-items: center; flex: 1; height: 100%; justify-content: flex-end; gap: 4px;">
+                                    <div
+                                        style="display: flex; gap: 3px; align-items: flex-end; width: 100%; justify-content: center; height: 100%;">
+                                        <div style="width: 14px; height: 55%; background: #167D95; border-radius: 4px 4px 0 0;"
+                                            title="العيادات: 550"></div>
+                                        <div style="width: 14px; height: 30%; background: #D97706; border-radius: 4px 4px 0 0;"
+                                            title="التمريض: 180"></div>
+                                    </div>
+                                    <span style="font-size: 0.72rem; color: #64748B;">مايو</span>
+                                </div>
+
+                                <!-- June -->
+                                <div
+                                    style="display: flex; flex-direction: column; align-items: center; flex: 1; height: 100%; justify-content: flex-end; gap: 4px;">
+                                    <div
+                                        style="display: flex; gap: 3px; align-items: flex-end; width: 100%; justify-content: center; height: 100%;">
+                                        <div style="width: 14px; height: 68%; background: #167D95; border-radius: 4px 4px 0 0;"
+                                            title="العيادات: 680"></div>
+                                        <div style="width: 14px; height: 42%; background: #D97706; border-radius: 4px 4px 0 0;"
+                                            title="التمريض: 240"></div>
+                                    </div>
+                                    <span style="font-size: 0.72rem; color: #64748B;">يونيو</span>
+                                </div>
+
+                                <!-- July -->
+                                <div
+                                    style="display: flex; flex-direction: column; align-items: center; flex: 1; height: 100%; justify-content: flex-end; gap: 4px;">
+                                    <div
+                                        style="display: flex; gap: 3px; align-items: flex-end; width: 100%; justify-content: center; height: 100%;">
+                                        <div style="width: 14px; height: 75%; background: #167D95; border-radius: 4px 4px 0 0;"
+                                            title="العيادات: 750"></div>
+                                        <div style="width: 14px; height: 52%; background: #D97706; border-radius: 4px 4px 0 0;"
+                                            title="التمريض: 310"></div>
+                                    </div>
+                                    <span style="font-size: 0.72rem; color: #64748B;">يوليو</span>
+                                </div>
+
+                                <!-- August -->
+                                <div
+                                    style="display: flex; flex-direction: column; align-items: center; flex: 1; height: 100%; justify-content: flex-end; gap: 4px;">
+                                    <div
+                                        style="display: flex; gap: 3px; align-items: flex-end; width: 100%; justify-content: center; height: 100%;">
+                                        <div style="width: 14px; height: 82%; background: #167D95; border-radius: 4px 4px 0 0;"
+                                            title="العيادات: 820"></div>
+                                        <div style="width: 14px; height: 64%; background: #D97706; border-radius: 4px 4px 0 0;"
+                                            title="التمريض: 390"></div>
+                                    </div>
+                                    <span style="font-size: 0.72rem; color: #64748B;">أغسطس</span>
+                                </div>
+
+                                <!-- September -->
+                                <div
+                                    style="display: flex; flex-direction: column; align-items: center; flex: 1; height: 100%; justify-content: flex-end; gap: 4px;">
+                                    <div
+                                        style="display: flex; gap: 3px; align-items: flex-end; width: 100%; justify-content: center; height: 100%;">
+                                        <div style="width: 14px; height: 90%; background: #167D95; border-radius: 4px 4px 0 0;"
+                                            title="العيادات: 900"></div>
+                                        <div style="width: 14px; height: 78%; background: #D97706; border-radius: 4px 4px 0 0;"
+                                            title="التمريض: 460"></div>
+                                    </div>
+                                    <span style="font-size: 0.72rem; color: #64748B;">سبتمبر</span>
+                                </div>
+
+                                <!-- October (Current) -->
+                                <div
+                                    style="display: flex; flex-direction: column; align-items: center; flex: 1; height: 100%; justify-content: flex-end; gap: 4px;">
+                                    <div
+                                        style="display: flex; gap: 3px; align-items: flex-end; width: 100%; justify-content: center; height: 100%;">
+                                        <div style="width: 14px; height: 100%; background: #0EA5A4; border-radius: 4px 4px 0 0; box-shadow: 0 0 10px rgba(14, 165, 164, 0.5);"
+                                            title="العيادات: 1,120"></div>
+                                        <div style="width: 14px; height: 88%; background: #F59E0B; border-radius: 4px 4px 0 0;"
+                                            title="التمريض: 540"></div>
+                                    </div>
+                                    <span style="font-size: 0.72rem; color: #167D95; font-weight: 800;">أكتوبر
+                                        (الآن)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-between align-center p-3 text-xs text-muted"
+                            style="border-top: 1px solid #F1F5F9;">
+                            <span>إجمالي نمو المنظومة: <strong>+38% نمو سنوي</strong></span>
+                            <span class="text-success font-semibold">معدل الإلغاء &lt; 2.1% فقط</span>
+                        </div>
+                    </div>
+
+                    <!-- Chart 2: Specialty Share & Home Care Distribution -->
+                    <div class="admin-card">
+                        <div class="admin-card-header">
+                            <div>
+                                <h3 class="admin-card-title">
+                                    <span>🩺</span> توزيع الحالات حسب التخصصات الطبية
+                                </h3>
+                                <span class="text-xs text-muted">نسبة إقبال المستفيدين على التخصصات الصحية</span>
+                            </div>
+                            <span class="badge badge-primary text-xs">تحديث شهري</span>
+                        </div>
+
+                        <div style="padding: 1.25rem;">
+                            <!-- Specialty 1 -->
+                            <div class="mb-3">
+                                <div class="d-flex justify-between text-xs mb-1">
+                                    <span class="font-bold text-dark">أمراض القلب والشرايين (Cardiology)</span>
+                                    <strong>34% (2,862 مريض)</strong>
+                                </div>
+                                <div
+                                    style="width: 100%; height: 8px; background: #E2E8F0; border-radius: 999px; overflow: hidden;">
+                                    <div style="width: 34%; height: 100%; background: #167D95; border-radius: 999px;">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Specialty 2 -->
+                            <div class="mb-3">
+                                <div class="d-flex justify-between text-xs mb-1">
+                                    <span class="font-bold text-dark">الطب الباطني والغدد الصماء (Internal Med)</span>
+                                    <strong>26% (2,189 مريض)</strong>
+                                </div>
+                                <div
+                                    style="width: 100%; height: 8px; background: #E2E8F0; border-radius: 999px; overflow: hidden;">
+                                    <div style="width: 26%; height: 100%; background: #0284C7; border-radius: 999px;">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Specialty 3 -->
+                            <div class="mb-3">
+                                <div class="d-flex justify-between text-xs mb-1">
+                                    <span class="font-bold text-dark">طب العظام والمفاصل والتأهيل (Orthopedics)</span>
+                                    <strong>18% (1,515 مريض)</strong>
+                                </div>
+                                <div
+                                    style="width: 100%; height: 8px; background: #E2E8F0; border-radius: 999px; overflow: hidden;">
+                                    <div style="width: 18%; height: 100%; background: #D97706; border-radius: 999px;">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Specialty 4 -->
+                            <div class="mb-3">
+                                <div class="d-flex justify-between text-xs mb-1">
+                                    <span class="font-bold text-dark">طب الأطفال وحديثي الولادة (Pediatrics)</span>
+                                    <strong>12% (1,010 مريض)</strong>
+                                </div>
+                                <div
+                                    style="width: 100%; height: 8px; background: #E2E8F0; border-radius: 999px; overflow: hidden;">
+                                    <div style="width: 12%; height: 100%; background: #7E22CE; border-radius: 999px;">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Specialty 5 -->
+                            <div>
+                                <div class="d-flex justify-between text-xs mb-1">
+                                    <span class="font-bold text-dark">الجلدية والتخصصات الأخرى (Dermatology &
+                                        Others)</span>
+                                    <strong>10% (844 مريض)</strong>
+                                </div>
+                                <div
+                                    style="width: 100%; height: 8px; background: #E2E8F0; border-radius: 999px; overflow: hidden;">
+                                    <div style="width: 10%; height: 100%; background: #64748B; border-radius: 999px;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-3"
+                            style="background: #F8FAFC; border-top: 1px solid #E2E8F0; font-size: 0.78rem;">
+                            <strong>توجيه ذكي:</strong> التخصص الأعلى توجيهاً من خوارزمية الأعراض هو <em>القلب
+                                والباطنية</em> بنسبة 60% من مجمل الاستشارات.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Detailed Performance Table by Department -->
+                <div class="admin-card">
+                    <div class="admin-card-header">
+                        <div>
+                            <h3 class="admin-card-title">
+                                <span>📋</span> جدول مؤشرات الأداء التشغيلي والسريري للأقسام
+                            </h3>
+                            <span class="text-xs text-muted">ملخص الأداء لشهر أكتوبر 2026 معتمد من الإدارة الطبية</span>
+                        </div>
+                        <span class="badge badge-success text-xs">معتمد للتقرير السنوي</span>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>القسم / العيادة</th>
+                                    <th>كادر الأطباء والتمريض</th>
+                                    <th>المواعيد المنجزة</th>
+                                    <th>الزيارات المنزلية</th>
+                                    <th>الالتزام الدوائي للمرضى</th>
+                                    <th>متوسط وقت الانتظار</th>
+                                    <th>معدل رضا المرضى</th>
+                                    <th>مستوى الأداء</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <strong>مركز أمراض القلب والشرايين</strong>
+                                        <span class="text-xs text-muted d-block">إشراف: د. عبدالله الحربي</span>
+                                    </td>
+                                    <td>8 استشاريين • 6 تمريض</td>
+                                    <td><strong>1,420</strong></td>
+                                    <td>280 زيارة</td>
+                                    <td><span class="badge badge-success text-xs">94.2%</span></td>
+                                    <td>12 دقيقة</td>
+                                    <td><strong class="text-brand">4.95 ★</strong></td>
+                                    <td><span class="badge badge-success text-xs">ممتاز (A+)</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <strong>قسم الطب الباطني والرعاية الممتدة</strong>
+                                        <span class="text-xs text-muted d-block">إشراف: د. خالد الغامدي</span>
+                                    </td>
+                                    <td>10 أطباء • 8 تمريض</td>
+                                    <td><strong>1,180</strong></td>
+                                    <td>410 زيارة</td>
+                                    <td><span class="badge badge-success text-xs">91.8%</span></td>
+                                    <td>15 دقيقة</td>
+                                    <td><strong class="text-brand">4.88 ★</strong></td>
+                                    <td><span class="badge badge-success text-xs">ممتاز (A)</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <strong>وحدة التمريض المنزلي الميداني</strong>
+                                        <span class="text-xs text-muted d-block">إشراف: أ. فيصل السالم</span>
+                                    </td>
+                                    <td>28 ممرضاً وممرضة مرخصين</td>
+                                    <td>—</td>
+                                    <td><strong>1,240 زيارة</strong></td>
+                                    <td><span class="badge badge-success text-xs">96.5%</span></td>
+                                    <td>38 دقيقة (وصول ميداني)</td>
+                                    <td><strong class="text-brand">4.98 ★</strong></td>
+                                    <td><span class="badge badge-success text-xs">استثنائي (A+)</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <strong>عيادة العظام والمفاصل</strong>
+                                        <span class="text-xs text-muted d-block">إشراف: د. فهد المطيري</span>
+                                    </td>
+                                    <td>6 استشاريين • 4 تمريض</td>
+                                    <td><strong>940</strong></td>
+                                    <td>120 زيارة</td>
+                                    <td><span class="badge badge-primary text-xs">88.4%</span></td>
+                                    <td>18 دقيقة</td>
+                                    <td><strong class="text-brand">4.82 ★</strong></td>
+                                    <td><span class="badge badge-info text-xs">جيد جداً (B+)</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <strong>طب الأطفال وطب الأسرة</strong>
+                                        <span class="text-xs text-muted d-block">إشراف: د. سمر العلي</span>
+                                    </td>
+                                    <td>8 أطباء • 4 تمريض</td>
+                                    <td><strong>880</strong></td>
+                                    <td>90 زيارة</td>
+                                    <td><span class="badge badge-success text-xs">92.0%</span></td>
+                                    <td>10 دقائق</td>
+                                    <td><strong class="text-brand">4.91 ★</strong></td>
+                                    <td><span class="badge badge-success text-xs">ممتاز (A)</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Card Footer -->
+                    <div class="d-flex align-center justify-between p-3"
+                        style="border-top: 1px solid #E2E8F0; font-size: 0.8rem;">
+                        <span class="text-muted">تم استخراج التقرير آلياً بتاريخ: 15 أكتوبر 2026 • 09:41 ص</span>
+                        <div class="d-flex gap-xs">
+                            <button type="button" class="btn btn-outline btn-sm">طباعة الجدول</button>
+                            <button type="button" class="btn btn-primary btn-sm">تنزيل ملف CSV</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>

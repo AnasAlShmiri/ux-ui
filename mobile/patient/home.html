@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الرئيسية | تطبيق المريض - يرعاني</title>
+    <link rel="stylesheet" href="../../assets/css/variables.css">
+    <link rel="stylesheet" href="../../assets/css/global.css">
+    <link rel="stylesheet" href="../../assets/css/components.css">
+    <link rel="stylesheet" href="../../assets/css/mobile.css">
+</head>
+
+<body>
+
+    <!-- Mobile Device Shell (390px reference) -->
+    <div class="mobile-app-shell">
+
+        <!-- Top Evaluator Quick Nav -->
+        <div class="demo-role-pill-bar">
+            <span>📱 تطبيق المريض</span>
+            <div>
+                <a href="../doctor/home.html">تبديل للطبيب</a> |
+                <a href="../nurse/home.html">تبديل للتمريض</a> |
+                <a href="../../admin-web/dashboard.html">لوحة الإدارة 🖥️</a>
+            </div>
+        </div>
+
+        <!-- Mobile Status Bar -->
+        <div class="mobile-status-bar">
+            <span>09:41</span>
+            <div class="status-bar-icons">
+                <span>5G</span>
+                <span>📶</span>
+                <span>🔋 100%</span>
+            </div>
+        </div>
+
+        <!-- Mobile App Header -->
+        <div class="mobile-header">
+            <div class="d-flex align-center gap-xs">
+                <a href="profile.html" class="avatar avatar-sm">
+                    <span>س.أ</span>
+                    <span class="avatar-status online"></span>
+                </a>
+                <div>
+                    <span style="font-size: 0.7rem; color: #64748B; display: block; line-height: 1;">أهلاً بك</span>
+                    <strong style="font-size: 0.88rem; color: #172B4D;">سارة الشمري</strong>
+                </div>
+            </div>
+
+            <div class="d-flex align-center gap-xs">
+                <a href="appointments.html" class="mobile-header-action" title="الإشعارات والمواعيد">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+                        <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+                    </svg>
+                    <span class="bottom-nav-badge" style="top: 2px; right: 2px;">2</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Mobile App Content Area -->
+        <div class="mobile-content">
+
+            <!-- AI Symptom Recommendation Hero Mobile Card -->
+            <div class="m-card m-card-ai">
+                <div class="d-flex align-center justify-between mb-2">
+                    <div class="d-flex align-center gap-xs">
+                        <span style="font-size: 1.25rem;">✨</span>
+                        <strong style="font-size: 0.95rem; color: #105F75;">توجيه الأعراض بالذكاء الاصطناعي</strong>
+                    </div>
+                    <span class="badge badge-primary text-xs">AI Guide</span>
+                </div>
+                <p style="font-size: 0.8rem; color: #475569; line-height: 1.5; margin-bottom: 0.75rem;">
+                    هل تشعر بوعكة أو أعراض صحية جديدة؟ صف حالتك وسيرشدك النظام الذكي للتخصص الطبي الأنسب دون تشخيص
+                    المرض.
+                </p>
+                <a href="ai-recommendation.html" class="m-btn m-btn-primary m-btn-sm" style="width: 100%;">
+                    تحليل الأعراض واقتراح التخصص ←
+                </a>
+            </div>
+
+            <!-- Quick Action 4-Grid -->
+            <div class="m-action-grid">
+                <a href="ai-recommendation.html" class="m-action-item">
+                    <div class="m-action-icon" style="background: #E0F2FE; color: #0284C7;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path
+                                d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+                        </svg>
+                    </div>
+                    <span class="m-action-label">توجيه الأعراض</span>
+                </a>
+
+                <a href="doctors.html" class="m-action-item">
+                    <div class="m-action-icon" style="background: #DCFCE7; color: #16A34A;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                        </svg>
+                    </div>
+                    <span class="m-action-label">حجز طبيب</span>
+                </a>
+
+                <a href="nursing.html" class="m-action-item">
+                    <div class="m-action-icon" style="background: #FEF3C7; color: #D97706;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                        </svg>
+                    </div>
+                    <span class="m-action-label">تمريض منزلي</span>
+                </a>
+
+                <a href="medical-record.html" class="m-action-item">
+                    <div class="m-action-icon" style="background: #F3E8FF; color: #7E22CE;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                            <polyline points="14 2 14 8 20 8" />
+                        </svg>
+                    </div>
+                    <span class="m-action-label">سجلي الطبي</span>
+                </a>
+            </div>
+
+            <!-- Upcoming Doctor Appointment Card -->
+            <div class="m-section-header">
+                <h3 class="m-section-title">
+                    <span>📅</span> موعد الطبيب القادم
+                </h3>
+                <a href="appointments.html" class="m-section-link">كل المواعيد</a>
+            </div>
+
+            <div class="m-card">
+                <div class="d-flex align-start justify-between mb-2">
+                    <div class="d-flex align-center gap-xs">
+                        <div class="avatar avatar-md" style="background: #E0F2FE; color: #0284C7;">
+                            <span>د.ع</span>
+                        </div>
+                        <div>
+                            <h4 style="font-size: 0.95rem; margin-bottom: 2px;">د. عبدالله الحربي</h4>
+                            <p class="text-xs text-secondary mb-0">استشاري أمراض القلب والأوعية</p>
+                        </div>
+                    </div>
+                    <span class="badge badge-success text-xs">مؤكد</span>
+                </div>
+
+                <div class="p-2 mb-2"
+                    style="background: #F8FAFC; border-radius: 10px; font-size: 0.78rem; color: #475569;">
+                    <div class="d-flex justify-between mb-1">
+                        <span>⏰ الوقت:</span>
+                        <strong>غداً الثلاثاء • 04:30 مساءً</strong>
+                    </div>
+                    <div class="d-flex justify-between">
+                        <span>🏥 الموقع:</span>
+                        <span>المركز الطبي التخصصي - عيادة 204</span>
+                    </div>
+                </div>
+
+                <div class="d-flex gap-xs">
+                    <a href="doctor-details.html" class="m-btn m-btn-outline m-btn-sm" style="flex: 1;">تفاصيل
+                        الطبيب</a>
+                    <a href="appointments.html" class="m-btn m-btn-primary m-btn-sm" style="flex: 1;">إدارة الموعد</a>
+                </div>
+            </div>
+
+            <!-- Active Treatment Plan & Home Nursing Follow-up -->
+            <div class="m-section-header">
+                <h3 class="m-section-title">
+                    <span>💊</span> الخطة العلاجية والتمريض المنزلي
+                </h3>
+                <a href="treatment-plan.html" class="m-section-link">التفاصيل</a>
+            </div>
+
+            <div class="m-card">
+                <div class="d-flex justify-between align-center mb-1">
+                    <strong style="font-size: 0.88rem; color: #172B4D;">برنامج ضبط الضغط وتأهيل القلب</strong>
+                    <span class="badge badge-info text-xs">65% مكتمل</span>
+                </div>
+                <p class="text-xs text-secondary mb-2">متبقي 10 أيام حتى موعد المراجعة وغلق الحالة.</p>
+
+                <!-- Progress Bar -->
+                <div
+                    style="width: 100%; height: 6px; background: #E2E8F0; border-radius: 999px; overflow: hidden; margin-bottom: 0.75rem;">
+                    <div style="width: 65%; height: 100%; background: #167D95; border-radius: 999px;"></div>
+                </div>
+
+                <!-- Connected Home Nursing Visit -->
+                <div class="p-2" style="background: #FFFBEB; border: 1px solid #FDE68A; border-radius: 10px;">
+                    <div class="d-flex align-center justify-between">
+                        <span class="badge badge-warning text-xs">زيارة تمريض منزلي مجدولة</span>
+                        <span class="text-xs text-muted">الأربعاء 15 أكتوبر</span>
+                    </div>
+                    <p class="text-xs text-secondary mt-1 mb-0">
+                        الممرض: <strong>أ. فيصل السالم</strong> — قياس العلامات الحيوية وفحص السكر.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Lab Results Pending Banner -->
+            <div class="m-card" style="background: #FEF2F2; border-color: #FECACA;">
+                <div class="d-flex align-center justify-between">
+                    <div class="d-flex align-center gap-xs">
+                        <span style="font-size: 1.1rem;">🧪</span>
+                        <div>
+                            <strong style="font-size: 0.85rem; color: #991B1B;">مطلوب رفع نتيجة فحص دم</strong>
+                            <p class="text-xs mb-0" style="color: #B91C1C;">طلب الطبيب: تحليل صورة دم كاملة CBC ودهون
+                            </p>
+                        </div>
+                    </div>
+                    <a href="lab-results.html" class="m-btn m-btn-primary m-btn-sm"
+                        style="background: #DC2626; padding: 0.35rem 0.65rem; font-size: 0.75rem;">
+                        رفع الآن
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Mobile Bottom Navigation Bar (Patient) -->
+        <nav class="mobile-bottom-nav">
+            <a href="home.html" class="bottom-nav-item active">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                    <polyline points="9 22 9 12 15 12 15 22" />
+                </svg>
+                <span>الرئيسية</span>
+            </a>
+
+            <a href="ai-recommendation.html" class="bottom-nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path
+                        d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+                </svg>
+                <span>توجيه AI</span>
+            </a>
+
+            <a href="doctors.html" class="bottom-nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                    <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                </svg>
+                <span>الأطباء</span>
+            </a>
+
+            <a href="nursing.html" class="bottom-nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                </svg>
+                <span>التمريض</span>
+            </a>
+
+            <a href="profile.html" class="bottom-nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="3" />
+                    <path
+                        d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+                </svg>
+                <span>حسابي</span>
+            </a>
+        </nav>
+
+    </div>
+
+</body>
+
+</html>

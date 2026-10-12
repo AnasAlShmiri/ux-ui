@@ -1,0 +1,322 @@
+/* ==========================================================================
+   Yerani (يرعاني) - Admin Web CSS System
+   Desktop 1440px-First SaaS Dashboard (Admin Only)
+   Sidebar, Topbar, Data Tables, SVG Analytics, Management Panels
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    direction: rtl;
+    font-family: var(--font-family, 'Cairo', system-ui, sans-serif);
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    background-color: #F8FAFC;
+    color: #172B4D;
+    min-height: 100vh;
+}
+
+/* --------------------------------------------------------------------------
+   Desktop Admin App Shell
+   -------------------------------------------------------------------------- */
+.admin-shell {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* Admin Sidebar */
+.admin-sidebar {
+    width: 270px;
+    background-color: #0F172A;
+    /* Sleek dark admin sidebar for clear authority distinction */
+    color: #94A3B8;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 50;
+    border-left: 1px solid #1E293B;
+}
+
+.admin-sidebar-header {
+    height: 72px;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #1E293B;
+}
+
+.admin-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+}
+
+.admin-brand-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #167D95 0%, #0EA5A4 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+}
+
+.admin-brand-icon svg {
+    width: 22px;
+    height: 22px;
+}
+
+.admin-brand-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-brand-title {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #FFFFFF;
+    line-height: 1.1;
+}
+
+.admin-brand-sub {
+    font-size: 0.72rem;
+    color: #0EA5A4;
+    font-weight: 600;
+}
+
+.admin-sidebar-nav {
+    flex: 1;
+    padding: 1.25rem 0.75rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.admin-nav-category {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: #64748B;
+    font-weight: 700;
+    padding: 0.75rem 0.75rem 0.25rem;
+    letter-spacing: 0.05em;
+}
+
+.admin-nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.7rem 0.85rem;
+    color: #94A3B8;
+    font-size: 0.88rem;
+    font-weight: 600;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.15s;
+}
+
+.admin-nav-link svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    color: #64748B;
+}
+
+.admin-nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.06);
+    color: #FFFFFF;
+}
+
+.admin-nav-link:hover svg {
+    color: #0EA5A4;
+}
+
+.admin-nav-link.active {
+    background: linear-gradient(90deg, rgba(22, 125, 149, 0.25) 0%, rgba(22, 125, 149, 0.05) 100%);
+    color: #38BDF8;
+    border-right: 3px solid #38BDF8;
+}
+
+.admin-nav-link.active svg {
+    color: #38BDF8;
+}
+
+.admin-badge {
+    margin-right: auto;
+    padding: 0.15rem 0.45rem;
+    font-size: 0.7rem;
+    border-radius: 999px;
+    background-color: #1E293B;
+    color: #94A3B8;
+    font-weight: 700;
+}
+
+.admin-sidebar-footer {
+    padding: 1rem 1.25rem;
+    border-top: 1px solid #1E293B;
+}
+
+/* --------------------------------------------------------------------------
+   Desktop Admin Main Container
+   -------------------------------------------------------------------------- */
+.admin-main {
+    flex: 1;
+    margin-right: 270px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Admin Topbar */
+.admin-topbar {
+    height: 72px;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #E2E8F0;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 40;
+}
+
+.admin-search-box {
+    width: 360px;
+    position: relative;
+}
+
+.admin-search-box input {
+    width: 100%;
+    padding: 0.6rem 2.6rem 0.6rem 1rem;
+    background-color: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    font-size: 0.88rem;
+    outline: none;
+}
+
+.admin-search-box svg {
+    position: absolute;
+    right: 0.85rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    color: #94A3B8;
+}
+
+.admin-user-profile {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+/* Admin Page Content Area */
+.admin-content {
+    flex: 1;
+    padding: 2rem;
+    max-width: 1440px;
+}
+
+.admin-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.admin-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #172B4D;
+    margin-bottom: 0.25rem;
+}
+
+.admin-desc {
+    font-size: 0.88rem;
+    color: #64748B;
+}
+
+/* --------------------------------------------------------------------------
+   Admin Data Tables & Filters
+   -------------------------------------------------------------------------- */
+.admin-table-card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+}
+
+.admin-table-header {
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid #E2E8F0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: right;
+    font-size: 0.88rem;
+}
+
+.admin-table th {
+    background-color: #F8FAFC;
+    padding: 0.85rem 1.25rem;
+    color: #64748B;
+    font-weight: 700;
+    border-bottom: 1px solid #E2E8F0;
+    white-space: nowrap;
+}
+
+.admin-table td {
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid #F1F5F9;
+    color: #172B4D;
+    vertical-align: middle;
+}
+
+.admin-table tr:hover td {
+    background-color: #F8FAFC;
+}
+
+.admin-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Pagination */
+.admin-pagination {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid #E2E8F0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: #64748B;
+}

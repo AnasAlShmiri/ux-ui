@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حسابي والإشعارات | تطبيق يرعاني</title>
+    <link rel="stylesheet" href="../../assets/css/variables.css">
+    <link rel="stylesheet" href="../../assets/css/global.css">
+    <link rel="stylesheet" href="../../assets/css/components.css">
+    <link rel="stylesheet" href="../../assets/css/mobile.css">
+</head>
+
+<body>
+
+    <div class="mobile-app-shell">
+
+        <!-- Top Evaluator Quick Nav -->
+        <div class="demo-role-pill-bar">
+            <span>📱 حساب المريض والإعدادات</span>
+            <a href="home.html">الرئيسية</a>
+        </div>
+
+        <!-- Mobile Status Bar -->
+        <div class="mobile-status-bar">
+            <span>09:41</span>
+            <div class="status-bar-icons">
+                <span>5G</span>
+                <span>🔋 100%</span>
+            </div>
+        </div>
+
+        <!-- Mobile Header -->
+        <div class="mobile-header">
+            <a href="home.html" class="mobile-header-back" title="رجوع">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </a>
+            <h2 class="mobile-header-title">الملف الشخصي والإشعارات</h2>
+            <a href="home.html" class="mobile-header-action" title="الرئيسية">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                </svg>
+            </a>
+        </div>
+
+        <!-- Mobile Content -->
+        <div class="mobile-content">
+
+            <!-- Profile Header Card -->
+            <div class="m-card text-center" style="padding-top: 1.25rem;">
+                <div class="avatar avatar-xl"
+                    style="margin: 0 auto 0.5rem auto; background: #167D95; color: #FFFFFF; font-size: 1.3rem;">
+                    <span>س.أ</span>
+                    <span class="avatar-status online" style="width: 14px; height: 14px;"></span>
+                </div>
+                <h3 style="font-size: 1.15rem; font-weight: 800; color: #172B4D; margin-bottom: 2px;">سارة أحمد الشمري
+                </h3>
+                <span class="text-xs text-muted d-block mb-2">رقم الملف: #YR-8902 • هوية: 1098765432</span>
+                <div class="d-flex justify-center gap-xs">
+                    <span class="badge badge-success text-xs">حساب موثق</span>
+                    <span class="badge badge-primary text-xs">O+ إيجابي</span>
+                </div>
+            </div>
+
+            <!-- Notifications Center List -->
+            <div class="m-section-header">
+                <h3 class="m-section-title">
+                    <span>🔔</span> مركز الإشعارات والتنبيهات
+                </h3>
+                <span class="badge badge-danger text-xs">2 جديد</span>
+            </div>
+
+            <!-- Notification 1 -->
+            <div class="m-card" style="padding: 0.75rem 1rem; border-right: 4px solid #167D95;">
+                <div class="d-flex align-center justify-between mb-1">
+                    <strong style="font-size: 0.85rem; color: #172B4D;">تذكير بموعد العيادة القادم</strong>
+                    <span class="text-xs text-muted">منذ ساعتين</span>
+                </div>
+                <p class="text-xs text-secondary mb-1">
+                    موعدك غداً الثلاثاء الساعة 04:30 م مع د. عبدالله الحربي بالمركز التخصصي.
+                </p>
+                <a href="appointments.html" class="text-xs text-brand font-bold">عرض تفاصيل الحجز ←</a>
+            </div>
+
+            <!-- Notification 2 -->
+            <div class="m-card" style="padding: 0.75rem 1rem; border-right: 4px solid #DC2626;">
+                <div class="d-flex align-center justify-between mb-1">
+                    <strong style="font-size: 0.85rem; color: #DC2626;">مطلوب رفع نتيجة الفحص</strong>
+                    <span class="text-xs text-muted">منذ 5 ساعات</span>
+                </div>
+                <p class="text-xs text-secondary mb-1">
+                    طلب الدكتور نتيجة صورة الدم والدهون لاستكمال الخطة العلاجية.
+                </p>
+                <a href="lab-results.html" class="text-xs text-danger font-bold">رفع النتيجة الآن ←</a>
+            </div>
+
+            <!-- Notification 3 -->
+            <div class="m-card" style="padding: 0.75rem 1rem; border-right: 4px solid #F59E0B;">
+                <div class="d-flex align-center justify-between mb-1">
+                    <strong style="font-size: 0.85rem; color: #172B4D;">تأكيد موعد التمريض المنزلي</strong>
+                    <span class="text-xs text-muted">أمس</span>
+                </div>
+                <p class="text-xs text-secondary mb-1">
+                    تم تأكيد زيارة الممرض أ. فيصل السالم ليوم الأربعاء 15 أكتوبر 10:00 ص.
+                </p>
+                <a href="nursing.html" class="text-xs text-brand font-bold">تفاصيل الزيارة ←</a>
+            </div>
+
+            <!-- Health Records Shortcut Links -->
+            <div class="m-section-header">
+                <h3 class="m-section-title">
+                    <span>📁</span> السجلات والروابط الصحية
+                </h3>
+            </div>
+
+            <div class="m-card" style="padding: 0.25rem 0.5rem;">
+                <a href="medical-record.html" class="d-flex align-center justify-between p-2"
+                    style="text-decoration: none; border-bottom: 1px solid #F1F5F9;">
+                    <div class="d-flex align-center gap-xs">
+                        <span style="font-size: 1.1rem;">📄</span>
+                        <span style="font-size: 0.85rem; font-weight: 700; color: #172B4D;">الملف الطبي الموحد</span>
+                    </div>
+                    <span style="color: #94A3B8;">←</span>
+                </a>
+
+                <a href="prescriptions.html" class="d-flex align-center justify-between p-2"
+                    style="text-decoration: none; border-bottom: 1px solid #F1F5F9;">
+                    <div class="d-flex align-center gap-xs">
+                        <span style="font-size: 1.1rem;">💊</span>
+                        <span style="font-size: 0.85rem; font-weight: 700; color: #172B4D;">الوصفات الدوائية
+                            النشطة</span>
+                    </div>
+                    <span style="color: #94A3B8;">←</span>
+                </a>
+
+                <a href="treatment-plan.html" class="d-flex align-center justify-between p-2"
+                    style="text-decoration: none; border-bottom: 1px solid #F1F5F9;">
+                    <div class="d-flex align-center gap-xs">
+                        <span style="font-size: 1.1rem;">📊</span>
+                        <span style="font-size: 0.85rem; font-weight: 700; color: #172B4D;">الخطة العلاجية
+                            والتقدم</span>
+                    </div>
+                    <span style="color: #94A3B8;">←</span>
+                </a>
+
+                <a href="appointments.html" class="d-flex align-center justify-between p-2"
+                    style="text-decoration: none;">
+                    <div class="d-flex align-center gap-xs">
+                        <span style="font-size: 1.1rem;">📅</span>
+                        <span style="font-size: 0.85rem; font-weight: 700; color: #172B4D;">سجل المواعيد
+                            والزيارات</span>
+                    </div>
+                    <span style="color: #94A3B8;">←</span>
+                </a>
+            </div>
+
+            <!-- App Settings -->
+            <div class="m-card">
+                <h4 style="font-size: 0.88rem; font-weight: 700; color: #172B4D; margin-bottom: 0.75rem;">إعدادات
+                    التطبيق</h4>
+
+                <div class="d-flex align-center justify-between py-2"
+                    style="border-bottom: 1px solid #F1F5F9; font-size: 0.82rem;">
+                    <span>لغة التطبيق</span>
+                    <strong style="color: #167D95;">العربية (RTL)</strong>
+                </div>
+
+                <div class="d-flex align-center justify-between py-2"
+                    style="border-bottom: 1px solid #F1F5F9; font-size: 0.82rem;">
+                    <span>إشعارات الهاتف الفورية</span>
+                    <span class="badge badge-success text-xs">مفعلة</span>
+                </div>
+
+                <div class="d-flex align-center justify-between py-2" style="font-size: 0.82rem;">
+                    <span>خصوصية الملف وسرية البيانات</span>
+                    <span class="badge badge-primary text-xs">مشفرة HIPAA</span>
+                </div>
+            </div>
+
+            <!-- Logout Button -->
+            <div class="mt-3 mb-2">
+                <a href="../auth/login.html" class="m-btn m-btn-outline" style="color: #DC2626; border-color: #FECACA;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        style="width: 18px; height: 18px;">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                        <polyline points="16 17 21 12 16 7" />
+                        <line x1="21" y1="12" x2="9" y2="12" />
+                    </svg>
+                    تسجيل الخروج من التطبيق
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Mobile Bottom Nav -->
+        <nav class="mobile-bottom-nav">
+            <a href="home.html" class="bottom-nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                    <polyline points="9 22 9 12 15 12 15 22" />
+                </svg>
+                <span>الرئيسية</span>
+            </a>
+
+            <a href="ai-recommendation.html" class="bottom-nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path
+                        d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+                </svg>
+                <span>توجيه AI</span>
+            </a>
+
+            <a href="doctors.html" class="bottom-nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                    <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                </svg>
+                <span>الأطباء</span>
+            </a>
+
+            <a href="nursing.html" class="bottom-nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                </svg>
+                <span>التمريض</span>
+            </a>
+
+            <a href="profile.html" class="bottom-nav-item active">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="3" />
+                    <path
+                        d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+                </svg>
+                <span>حسابي</span>
+            </a>
+        </nav>
+
+    </div>
+
+</body>
+
+</html>

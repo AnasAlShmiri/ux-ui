@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إنشاء حساب مريض | تطبيق يرعاني</title>
+    <link rel="stylesheet" href="../../assets/css/variables.css">
+    <link rel="stylesheet" href="../../assets/css/global.css">
+    <link rel="stylesheet" href="../../assets/css/components.css">
+    <link rel="stylesheet" href="../../assets/css/mobile.css">
+</head>
+
+<body>
+
+    <div class="mobile-app-shell">
+
+        <!-- Top Evaluator Quick Nav -->
+        <div class="demo-role-pill-bar">
+            <span>📱 تسجيل مريض جديد</span>
+            <a href="login.html">تسجيل الدخول</a>
+        </div>
+
+        <!-- Mobile Status Bar -->
+        <div class="mobile-status-bar">
+            <span>09:41</span>
+            <div class="status-bar-icons">
+                <span>5G</span>
+                <span>🔋 100%</span>
+            </div>
+        </div>
+
+        <!-- Mobile Header with Back Button -->
+        <div class="mobile-header">
+            <a href="login.html" class="mobile-header-back" title="رجوع">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </a>
+            <h2 class="mobile-header-title">حساب مريض جديد</h2>
+            <div style="width: 38px;"></div>
+        </div>
+
+        <!-- Mobile Content -->
+        <div class="mobile-content" style="padding-bottom: 2rem;">
+            <div class="text-center mb-3">
+                <h3 style="font-size: 1.15rem; font-weight: 800; color: #172B4D; margin-bottom: 2px;">بيانات التسجيل
+                    الأساسية</h3>
+                <p style="font-size: 0.8rem; color: #64748B;">سجل بياناتك للوصول للخدمات الذكية والتمريض المنزلي</p>
+            </div>
+
+            <form action="../patient/home.html" method="GET">
+                <div class="m-form-group">
+                    <label class="m-form-label" for="reg-name"><span class="required">*</span> الاسم الكامل</label>
+                    <input type="text" id="reg-name" class="m-form-input" placeholder="الاسم الثلاثي"
+                        value="سارة أحمد الشمري" required>
+                </div>
+
+                <div class="m-form-group">
+                    <label class="m-form-label" for="reg-id"><span class="required">*</span> رقم الهوية الوطنية /
+                        الإقامة</label>
+                    <input type="text" id="reg-id" class="m-form-input" placeholder="10 أرقام" value="1098765432"
+                        required>
+                </div>
+
+                <div class="m-form-group">
+                    <label class="m-form-label" for="reg-phone"><span class="required">*</span> رقم الجوال</label>
+                    <input type="tel" id="reg-phone" class="m-form-input" placeholder="05XXXXXXXX" value="0551234567"
+                        required>
+                </div>
+
+                <div class="m-form-group">
+                    <label class="m-form-label" for="reg-email">البريد الإلكتروني</label>
+                    <input type="email" id="reg-email" class="m-form-input" placeholder="name@example.com"
+                        value="sara@yerani.sa">
+                </div>
+
+                <div class="d-grid grid-2 gap-xs">
+                    <div class="m-form-group">
+                        <label class="m-form-label" for="reg-dob">تاريخ الميلاد</label>
+                        <input type="date" id="reg-dob" class="m-form-input" value="1995-06-15" required>
+                    </div>
+
+                    <div class="m-form-group">
+                        <label class="m-form-label" for="reg-blood">فصيلة الدم</label>
+                        <select id="reg-blood" class="m-form-select">
+                            <option value="O+" selected>O+</option>
+                            <option value="A+">A+</option>
+                            <option value="B+">B+</option>
+                            <option value="AB+">AB+</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="m-form-group">
+                    <label class="m-form-label">الأمراض المزمنة (إن وجدت)</label>
+                    <div class="d-flex flex-wrap gap-xs">
+                        <label class="form-check text-xs">
+                            <input type="checkbox"> السكري
+                        </label>
+                        <label class="form-check text-xs">
+                            <input type="checkbox"> ضغط الدم
+                        </label>
+                        <label class="form-check text-xs">
+                            <input type="checkbox"> الربو
+                        </label>
+                        <label class="form-check text-xs">
+                            <input type="checkbox" checked> لا يوجد
+                        </label>
+                    </div>
+                </div>
+
+                <div class="m-form-group">
+                    <label class="m-form-label" for="reg-pass"><span class="required">*</span> كلمة المرور</label>
+                    <input type="password" id="reg-pass" class="m-form-input" placeholder="••••••••" value="Secret123"
+                        required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-check text-xs text-secondary">
+                        <input type="checkbox" checked required>
+                        أوافق على الشروط والخصوصية وسرية السجل الطبي
+                    </label>
+                </div>
+
+                <button type="submit" class="m-btn m-btn-primary mb-2">
+                    إتمام التسجيل ودخول التطبيق
+                </button>
+
+                <a href="login.html" class="m-btn m-btn-outline">
+                    لديك حساب بالفعل؟ تسجيل الدخول
+                </a>
+            </form>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

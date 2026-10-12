@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>السجل الطبي الموحد | تطبيق يرعاني</title>
+    <link rel="stylesheet" href="../../assets/css/variables.css">
+    <link rel="stylesheet" href="../../assets/css/global.css">
+    <link rel="stylesheet" href="../../assets/css/components.css">
+    <link rel="stylesheet" href="../../assets/css/mobile.css">
+</head>
+
+<body>
+
+    <div class="mobile-app-shell">
+
+        <!-- Top Evaluator Quick Nav -->
+        <div class="demo-role-pill-bar">
+            <span>📱 السجل الصحي الموحد</span>
+            <a href="home.html">الرئيسية</a>
+        </div>
+
+        <!-- Mobile Status Bar -->
+        <div class="mobile-status-bar">
+            <span>09:41</span>
+            <div class="status-bar-icons">
+                <span>5G</span>
+                <span>🔋 100%</span>
+            </div>
+        </div>
+
+        <!-- Mobile Header -->
+        <div class="mobile-header">
+            <a href="home.html" class="mobile-header-back" title="رجوع">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </a>
+            <h2 class="mobile-header-title">السجل الطبي الموحد</h2>
+            <a href="profile.html" class="mobile-header-action" title="الملف">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="3" />
+                </svg>
+            </a>
+        </div>
+
+        <!-- Mobile Content -->
+        <div class="mobile-content">
+
+            <!-- Patient Identity Header Card -->
+            <div class="m-card m-card-primary">
+                <div class="d-flex align-center justify-between mb-2">
+                    <div class="d-flex align-center gap-xs">
+                        <div class="avatar avatar-md" style="background: rgba(255,255,255,0.2); color: #fff;">
+                            <span>س.أ</span>
+                        </div>
+                        <div>
+                            <h3 style="font-size: 1.05rem; font-weight: 800; color: #FFFFFF; margin-bottom: 2px;">سارة
+                                أحمد الشمري</h3>
+                            <span class="text-xs" style="color: #BAE6FD;">ملف طبي إلكتروني: #YR-8902</span>
+                        </div>
+                    </div>
+                    <span class="badge text-xs" style="background: rgba(255,255,255,0.25); color: #FFFFFF;">نشط</span>
+                </div>
+
+                <div class="d-grid grid-3 gap-xs p-2 text-center"
+                    style="background: rgba(0, 0, 0, 0.15); border-radius: 10px; font-size: 0.75rem;">
+                    <div>
+                        <span style="color: #E0F2FE; display: block;">فصيلة الدم</span>
+                        <strong style="color: #FFFFFF;">O+</strong>
+                    </div>
+                    <div>
+                        <span style="color: #E0F2FE; display: block;">العمر</span>
+                        <strong style="color: #FFFFFF;">29 سنة</strong>
+                    </div>
+                    <div>
+                        <span style="color: #E0F2FE; display: block;">الحساسية</span>
+                        <strong style="color: #FFFFFF;">لا توجد</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Navigation to Specialized Health Records -->
+            <div class="d-grid grid-3 gap-xs mb-3 text-center">
+                <a href="lab-results.html" class="m-card"
+                    style="padding: 0.75rem 0.25rem; margin-bottom: 0; text-decoration: none;">
+                    <span style="font-size: 1.25rem; display: block; margin-bottom: 4px;">🧪</span>
+                    <strong style="font-size: 0.75rem; color: #172B4D; display: block;">التحاليل</strong>
+                    <span class="badge badge-danger text-xs mt-1" style="font-size: 0.65rem;">مطلوب 1</span>
+                </a>
+
+                <a href="prescriptions.html" class="m-card"
+                    style="padding: 0.75rem 0.25rem; margin-bottom: 0; text-decoration: none;">
+                    <span style="font-size: 1.25rem; display: block; margin-bottom: 4px;">💊</span>
+                    <strong style="font-size: 0.75rem; color: #172B4D; display: block;">الوصفات</strong>
+                    <span class="badge badge-info text-xs mt-1" style="font-size: 0.65rem;">3 أدوية</span>
+                </a>
+
+                <a href="treatment-plan.html" class="m-card"
+                    style="padding: 0.75rem 0.25rem; margin-bottom: 0; text-decoration: none;">
+                    <span style="font-size: 1.25rem; display: block; margin-bottom: 4px;">📊</span>
+                    <strong style="font-size: 0.75rem; color: #172B4D; display: block;">الخطة</strong>
+                    <span class="badge badge-success text-xs mt-1" style="font-size: 0.65rem;">65%</span>
+                </a>
+            </div>
+
+            <!-- Clinical Diagnoses History -->
+            <div class="m-section-header">
+                <h3 class="m-section-title">
+                    <span>🩺</span> التشخيصات المسجلة من الأطباء
+                </h3>
+            </div>
+
+            <div class="m-card">
+                <div class="d-flex align-center justify-between mb-1">
+                    <strong style="font-size: 0.88rem; color: #172B4D;">إجهاد قلبي خفيف وتسارع نبض وضغط دم
+                        انقباضي</strong>
+                    <span class="badge badge-primary text-xs">نشط</span>
+                </div>
+                <p class="text-xs text-muted mb-2">الطبيب المشرف: د. عبدالله الحربي (استشاري قلب) • 10 أكتوبر 2026</p>
+                <p class="text-xs text-secondary mb-2" style="line-height: 1.5;">
+                    <strong>التوصيات:</strong> خفض الملح، أخذ دواء Concor بانتظام، طلب فحص دم كامل وصورة دهون، وجدولة
+                    زيارات تمريض منزلي دورية لمراقبة ضغط الدم.
+                </p>
+                <div class="d-flex gap-xs">
+                    <a href="prescriptions.html" class="badge badge-neutral text-xs">الوصفة الصادرة #RX-771</a>
+                    <a href="treatment-plan.html" class="badge badge-neutral text-xs">الخطة العلاجية</a>
+                </div>
+            </div>
+
+            <!-- Nursing Home Reports Log -->
+            <div class="m-section-header">
+                <h3 class="m-section-title">
+                    <span>🏡</span> تقارير الزيارات التمريضية المنزلية
+                </h3>
+            </div>
+
+            <div class="m-card">
+                <div class="d-flex align-center justify-between mb-1">
+                    <div class="d-flex align-center gap-xs">
+                        <span class="badge badge-warning text-xs">تقرير زيارة معتمد</span>
+                        <strong style="font-size: 0.85rem;">الممرض: أ. فيصل السالم</strong>
+                    </div>
+                    <span class="text-xs text-muted">08 أكتوبر 2026</span>
+                </div>
+                <p class="text-xs text-secondary mb-2">
+                    تمت الزيارة المنزلية بنجاح لقياس المؤشرات الحيوية والتأكد من التزام المريضة بالجرعات الدوائية
+                    المقررة.
+                </p>
+
+                <!-- Vitals Grid inside Report -->
+                <div class="d-grid grid-4 gap-xs p-2 text-center"
+                    style="background: #F8FAFC; border-radius: 10px; font-size: 0.72rem;">
+                    <div>
+                        <span class="text-muted d-block">ضغط الدم</span>
+                        <strong class="text-success">124 / 82</strong>
+                    </div>
+                    <div>
+                        <span class="text-muted d-block">النبض</span>
+                        <strong class="text-success">74 bpm</strong>
+                    </div>
+                    <div>
+                        <span class="text-muted d-block">الحرارة</span>
+                        <strong class="text-success">36.8 °C</strong>
+                    </div>
+                    <div>
+                        <span class="text-muted d-block">السكر</span>
+                        <strong class="text-success">98 mg/dl</strong>
+                    </div>
+                </div>
+
+                <div class="mt-2 text-left">
+                    <span class="text-xs text-success font-bold">✓ تم إرسال التقرير لملف الطبيب المتابع</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Mobile Bottom Nav -->
+        <nav class="mobile-bottom-nav">
+            <a href="home.html" class="bottom-nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                    <polyline points="9 22 9 12 15 12 15 22" />
+                </svg>
+                <span>الرئيسية</span>
+            </a>
+
+            <a href="ai-recommendation.html" class="bottom-nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path
+                        d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+                </svg>
+                <span>توجيه AI</span>
+            </a>
+
+            <a href="doctors.html" class="bottom-nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                    <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                </svg>
+                <span>الأطباء</span>
+            </a>
+
+            <a href="nursing.html" class="bottom-nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                </svg>
+                <span>التمريض</span>
+            </a>
+
+            <a href="profile.html" class="bottom-nav-item active">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="3" />
+                    <path
+                        d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+                </svg>
+                <span>حسابي</span>
+            </a>
+        </nav>
+
+    </div>
+
+</body>
+
+</html>

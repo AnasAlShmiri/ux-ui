@@ -1,0 +1,228 @@
+/* ==========================================================================
+   Yerani (يرعاني) - Responsive Media Queries & Mobile Optimizations
+   Breakpoints: 1200px, 992px, 768px, 480px
+   ========================================================================== */
+
+/* Toggle Checkbox for Pure CSS Mobile Sidebar */
+#sidebar-toggle-input {
+    display: none;
+}
+
+.sidebar-toggle-label {
+    display: none;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    background: #FFFFFF;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--text-primary);
+}
+
+.sidebar-toggle-label svg {
+    width: 22px;
+    height: 22px;
+}
+
+/* --------------------------------------------------------------------------
+   Desktop & Large Screens (<= 1200px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1200px) {
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* --------------------------------------------------------------------------
+   Tablets Landscape (<= 992px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 992px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+    }
+
+    .hero-desc {
+        max-width: 100%;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-xl);
+    }
+
+    .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .sidebar {
+        transform: translateX(100%);
+        box-shadow: -4px 0 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .sidebar-toggle-label {
+        display: inline-flex;
+    }
+
+    .main-wrapper {
+        margin-right: 0 !important;
+    }
+
+    /* When checkbox is checked, slide sidebar in */
+    #sidebar-toggle-input:checked~.sidebar {
+        transform: translateX(0);
+    }
+
+    /* Overlay backdrop when sidebar is open */
+    #sidebar-toggle-input:checked~.sidebar-overlay {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(15, 23, 42, 0.4);
+        backdrop-filter: blur(2px);
+        z-index: calc(var(--z-sidebar) - 1);
+    }
+
+    .topbar-search {
+        width: 220px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   Tablets Portrait (<= 768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+    :root {
+        --header-height: 64px;
+    }
+
+    .page-content {
+        padding: var(--spacing-md);
+    }
+
+    .topbar {
+        padding: 0 var(--spacing-md);
+    }
+
+    .topbar-search {
+        display: none;
+        /* Can be opened on demand or kept simple */
+    }
+
+    .hero-title {
+        font-size: 2.25rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+    }
+
+    .hero-stats {
+        flex-wrap: wrap;
+        gap: var(--spacing-lg);
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-2,
+    .grid-3,
+    .grid-4 {
+        grid-template-columns: 1fr;
+    }
+
+    .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .stepper {
+        flex-direction: column;
+        gap: var(--spacing-md);
+        align-items: flex-start;
+    }
+
+    .stepper::before {
+        display: none;
+    }
+
+    .step-item {
+        flex-direction: row;
+        gap: var(--spacing-sm);
+        text-align: right;
+    }
+
+    .step-circle {
+        margin-bottom: 0;
+    }
+
+    .landing-menu {
+        display: none;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        text-align: center;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   Mobile Phones (<= 480px / 390px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 1.85rem;
+    }
+
+    .card-header,
+    .card-body,
+    .card-footer {
+        padding: var(--spacing-md);
+    }
+
+    .stat-card {
+        padding: var(--spacing-md);
+    }
+
+    .stat-value {
+        font-size: 1.6rem;
+    }
+
+    .stat-icon {
+        width: 44px;
+        height: 44px;
+    }
+
+    .auth-card {
+        padding: var(--spacing-lg);
+    }
+
+    .role-switcher-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .user-meta-name,
+    .user-meta-role {
+        display: none;
+    }
+}

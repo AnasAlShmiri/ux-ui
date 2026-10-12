@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة الممرض | تطبيق يرعاني</title>
+    <link rel="stylesheet" href="../../assets/css/variables.css">
+    <link rel="stylesheet" href="../../assets/css/global.css">
+    <link rel="stylesheet" href="../../assets/css/components.css">
+    <link rel="stylesheet" href="../../assets/css/mobile.css">
+</head>
+
+<body>
+
+    <div class="mobile-app-shell">
+
+        <!-- Top Evaluator Quick Nav -->
+        <div class="demo-role-pill-bar" style="background: #D97706;">
+            <span>🏡 تطبيق التمريض المنزلي</span>
+            <div>
+                <a href="../patient/home.html">المريض</a> |
+                <a href="../doctor/home.html">الطبيب</a> |
+                <a href="../../admin-web/dashboard.html">لوحة الإدارة 🖥️</a>
+            </div>
+        </div>
+
+        <!-- Mobile Status Bar -->
+        <div class="mobile-status-bar">
+            <span>09:41</span>
+            <div class="status-bar-icons">
+                <span>5G</span>
+                <span>🔋 100%</span>
+            </div>
+        </div>
+
+        <!-- Mobile Header -->
+        <div class="mobile-header">
+            <div class="d-flex align-center gap-xs">
+                <div class="avatar avatar-sm" style="background: #FEF3C7; color: #D97706;">
+                    <span>ف.س</span>
+                    <span class="avatar-status online"></span>
+                </div>
+                <div>
+                    <span style="font-size: 0.7rem; color: #64748B; display: block; line-height: 1;">فريق الرعاية
+                        المنزلية</span>
+                    <strong style="font-size: 0.88rem; color: #172B4D;">الممرض: فيصل السالم</strong>
+                </div>
+            </div>
+
+            <div class="d-flex align-center gap-xs">
+                <a href="visits.html" class="mobile-header-action" title="المهام">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="9 11 12 14 22 4" />
+                        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- Mobile Content -->
+        <div class="mobile-content">
+
+            <!-- Today's Visits Stats -->
+            <div class="d-grid grid-3 gap-xs mb-3 text-center">
+                <div class="m-card" style="padding: 0.6rem 0.2rem; margin-bottom: 0;">
+                    <strong style="font-size: 1.15rem; color: #D97706; display: block;">3</strong>
+                    <span class="text-xs text-muted">زيارات اليوم</span>
+                </div>
+
+                <div class="m-card" style="padding: 0.6rem 0.2rem; margin-bottom: 0;">
+                    <strong style="font-size: 1.15rem; color: #16A34A; display: block;">1</strong>
+                    <span class="text-xs text-muted">تمت بنجاح</span>
+                </div>
+
+                <div class="m-card" style="padding: 0.6rem 0.2rem; margin-bottom: 0;">
+                    <strong style="font-size: 1.15rem; color: #0284C7; display: block;">2</strong>
+                    <span class="text-xs text-muted">متبقية اليوم</span>
+                </div>
+            </div>
+
+            <!-- Current Active Visit Banner -->
+            <div class="m-card" style="border: 2px solid #D97706; background: #FFFDF5;">
+                <div class="d-flex align-center justify-between mb-2">
+                    <span class="badge badge-warning text-xs">الزيارة الحالية قيد التنفيذ 📍</span>
+                    <span class="text-xs font-bold" style="color: #B45309;">اليوم • 10:00 صباحاً</span>
+                </div>
+
+                <div class="d-flex align-center gap-xs mb-2">
+                    <div class="avatar avatar-md" style="background: #FEF3C7; color: #D97706;">
+                        <span>س.أ</span>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 0.98rem; margin-bottom: 1px;">سارة أحمد الشمري</h4>
+                        <span class="text-xs text-secondary">ملف #YR-8902 • هاتف: 0551234567</span>
+                    </div>
+                </div>
+
+                <div class="p-2 mb-2"
+                    style="background: #FFFFFF; border-radius: 10px; font-size: 0.75rem; border: 1px solid #FDE68A;">
+                    <div class="d-flex justify-between mb-1">
+                        <span>📍 العنوان:</span>
+                        <strong>الرياض - حي النخيل - فيلا 42</strong>
+                    </div>
+                    <div class="d-flex justify-between">
+                        <span>🩺 الإجراء:</span>
+                        <span>قياس العلامات الحيوية وفحص السكر ومتابعة الالتزام</span>
+                    </div>
+                </div>
+
+                <div class="d-flex gap-xs">
+                    <a href="record-vitals.html" class="m-btn m-btn-primary m-btn-sm"
+                        style="flex: 2; background: #D97706;">
+                        بدء الزيارة وتسجيل العلامات الحيوية ←
+                    </a>
+                    <button type="button" class="m-btn m-btn-outline m-btn-sm" style="flex: 1;">
+                        🗺️ الخريطة
+                    </button>
+                </div>
+            </div>
+
+            <!-- Quick Action Grid -->
+            <div class="m-action-grid">
+                <a href="record-vitals.html" class="m-action-item">
+                    <div class="m-action-icon" style="background: #FEF3C7; color: #D97706;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                        </svg>
+                    </div>
+                    <span class="m-action-label">تسجيل علامات</span>
+                </a>
+
+                <a href="care-execution.html" class="m-action-item">
+                    <div class="m-action-icon" style="background: #EFF6FF; color: #2563EB;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="m18 2 4 4-12 12H6v-4L18 2z" />
+                        </svg>
+                    </div>
+                    <span class="m-action-label">إعطاء علاج</span>
+                </a>
+
+                <a href="submit-report.html" class="m-action-item">
+                    <div class="m-action-icon" style="background: #DCFCE7; color: #16A34A;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                            <polyline points="14 2 14 8 20 8" />
+                        </svg>
+                    </div>
+                    <span class="m-action-label">رفع تقرير</span>
+                </a>
+
+                <a href="history.html" class="m-action-item">
+                    <div class="m-action-icon" style="background: #F3E8FF; color: #7E22CE;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <polyline points="12 6 12 12 16 14" />
+                        </svg>
+                    </div>
+                    <span class="m-action-label">سجل الزيارات</span>
+                </a>
+            </div>
+
+            <!-- Today's Visits Queue -->
+            <div class="m-section-header">
+                <h3 class="m-section-title">
+                    <span>📋</span> جدول زيارات اليوم الميدانية
+                </h3>
+            </div>
+
+            <!-- Visit 1: Completed -->
+            <div class="m-card">
+                <div class="d-flex align-center justify-between mb-1">
+                    <strong style="font-size: 0.88rem;">خالد العتيبي (#YR-5510)</strong>
+                    <span class="badge badge-success text-xs">مكتمل 08:30 ص ✓</span>
+                </div>
+                <p class="text-xs text-secondary mb-1">حي الملقا - قياس ضغط وسكر، وتم رفع التقرير لدكتور القلب.</p>
+                <span class="text-xs text-success font-semibold">✓ تم توثيق العلامات والتقرير السريري</span>
+            </div>
+
+            <!-- Visit 2: Evening -->
+            <div class="m-card">
+                <div class="d-flex align-center justify-between mb-1">
+                    <strong style="font-size: 0.88rem;">نورة عبدالملك (#YR-6019)</strong>
+                    <span class="badge badge-info text-xs">مسائية 05:00 م</span>
+                </div>
+                <p class="text-xs text-secondary mb-1">حي الياسمين - غيار جراحي معقم مع توثيق حالة الجرح.</p>
+                <a href="care-execution.html" class="text-xs text-brand font-bold">معاينة تفاصيل المهمة والوصفة ←</a>
+            </div>
+
+        </div>
+
+        <!-- Nurse Bottom Navigation -->
+        <nav class="mobile-bottom-nav">
+            <a href="home.html" class="bottom-nav-item active">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                    <polyline points="9 22 9 12 15 12 15 22" />
+                </svg>
+                <span>الرئيسية</span>
+            </a>
+
+            <a href="visits.html" class="bottom-nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
+                    <line x1="16" y1="2" x2="16" y2="6" />
+                    <line x1="8" y1="2" x2="8" y2="6" />
+                </svg>
+                <span>الزيارات</span>
+            </a>
+
+            <a href="record-vitals.html" class="bottom-nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                </svg>
+                <span>العلامات</span>
+            </a>
+
+            <a href="submit-report.html" class="bottom-nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                    <polyline points="14 2 14 8 20 8" />
+                </svg>
+                <span>التقارير</span>
+            </a>
+
+            <a href="history.html" class="bottom-nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                </svg>
+                <span>السجل</span>
+            </a>
+        </nav>
+
+    </div>
+
+</body>
+
+</html>

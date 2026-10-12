@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم الإدارية المركزية | منصة يرعاني</title>
+    <link rel="stylesheet" href="../assets/css/variables.css">
+    <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" href="../assets/css/components.css">
+    <link rel="stylesheet" href="../assets/css/layout.css">
+    <link rel="stylesheet" href="../assets/css/admin.css">
+</head>
+
+<body class="admin-body">
+
+    <div class="admin-layout">
+
+        <!-- Desktop Sidebar (1440px Standard) -->
+        <aside class="admin-sidebar">
+            <div class="admin-brand">
+                <div class="admin-brand-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        style="width: 22px; height: 22px; color: #FFFFFF;">
+                        <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                    </svg>
+                </div>
+                <div>
+                    <h1 class="admin-brand-title">يرعاني <span>Admin</span></h1>
+                    <p class="admin-brand-sub">إدارة المنظومة الطبية المركزية</p>
+                </div>
+            </div>
+
+            <!-- Quick Switch to Mobile Apps for Committee Demo -->
+            <div class="p-2 mb-2"
+                style="background: rgba(22, 125, 149, 0.15); border-radius: 10px; border: 1px solid rgba(22, 125, 149, 0.3);">
+                <span class="text-xs text-muted d-block mb-1">📱 تجربة تطبيقات الجوال:</span>
+                <div class="d-flex flex-wrap gap-xs">
+                    <a href="../mobile/patient/home.html" class="badge badge-primary text-xs"
+                        style="text-decoration: none;">تطبيق المريض</a>
+                    <a href="../mobile/doctor/home.html" class="badge badge-info text-xs"
+                        style="text-decoration: none;">تطبيق الطبيب</a>
+                    <a href="../mobile/nurse/home.html" class="badge badge-warning text-xs"
+                        style="text-decoration: none;">تطبيق التمريض</a>
+                </div>
+            </div>
+
+            <!-- Admin Navigation -->
+            <nav class="admin-nav">
+                <div class="admin-nav-category">التحكم والعمليات</div>
+
+                <a href="dashboard.html" class="admin-nav-item active">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect width="7" height="9" x="3" y="3" rx="1" />
+                        <rect width="7" height="5" x="14" y="3" rx="1" />
+                        <rect width="7" height="9" x="14" y="12" rx="1" />
+                        <rect width="7" height="5" x="3" y="16" rx="1" />
+                    </svg>
+                    <span>نظرة عامة والعمليات</span>
+                </a>
+
+                <a href="patients.html" class="admin-nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                        <circle cx="9" cy="7" r="4" />
+                    </svg>
+                    <span>إدارة المرضى</span>
+                    <span class="admin-nav-badge">1,248</span>
+                </a>
+
+                <a href="doctors.html" class="admin-nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                    </svg>
+                    <span>إدارة الأطباء والعيادات</span>
+                    <span class="admin-nav-badge">42</span>
+                </a>
+
+                <a href="nurses.html" class="admin-nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="m18 2 4 4-12 12H6v-4L18 2z" />
+                    </svg>
+                    <span>طواقم التمريض المنزلي</span>
+                    <span class="admin-nav-badge">28</span>
+                </a>
+
+                <div class="admin-nav-category">التشغيل السريري والذكاء</div>
+
+                <a href="specialties.html" class="admin-nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect width="18" height="18" x="3" y="3" rx="2" />
+                        <path d="M3 9h18M9 21V9" />
+                    </svg>
+                    <span>التخصصات والعيادات</span>
+                </a>
+
+                <a href="appointments.html" class="admin-nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
+                        <line x1="16" y1="2" x2="16" y2="6" />
+                        <line x1="8" y1="2" x2="8" y2="6" />
+                    </svg>
+                    <span>المواعيد والحجوزات</span>
+                </a>
+
+                <a href="home-care.html" class="admin-nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                    </svg>
+                    <span>الرعاية المنزلية الميدانية</span>
+                </a>
+
+                <a href="reviews.html" class="admin-nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon
+                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                    </svg>
+                    <span>التقييمات والمراجعات</span>
+                    <span class="admin-nav-badge">4.9 ★</span>
+                </a>
+
+                <a href="notifications.html" class="admin-nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+                        <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+                    </svg>
+                    <span>مركز الإشعارات والتعميم</span>
+                </a>
+
+                <a href="reports.html" class="admin-nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="20" x2="18" y2="10" />
+                        <line x1="12" y1="20" x2="12" y2="4" />
+                        <line x1="6" y1="20" x2="6" y2="14" />
+                    </svg>
+                    <span>الإحصائيات والتقارير</span>
+                </a>
+
+                <a href="ai-audit.html" class="admin-nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path
+                            d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+                    </svg>
+                    <span>تدقيق توجيه AI والامتثال</span>
+                    <span class="admin-nav-badge" style="background: #16A34A; color: #fff;">98.4%</span>
+                </a>
+
+                <div class="admin-nav-category">النظام</div>
+
+                <a href="settings.html" class="admin-nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="3" />
+                        <path
+                            d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+                    </svg>
+                    <span>إعدادات النظام والأمان</span>
+                </a>
+
+                <a href="login.html" class="admin-nav-item" style="color: #EF4444;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                        <polyline points="16 17 21 12 16 7" />
+                        <line x1="21" y1="12" x2="9" y2="12" />
+                    </svg>
+                    <span>تسجيل الخروج</span>
+                </a>
+            </nav>
+
+            <!-- Sidebar Footer -->
+            <div class="p-3"
+                style="border-top: 1px solid rgba(255, 255, 255, 0.08); font-size: 0.75rem; color: #94A3B8;">
+                منصة يرعاني الإصدار v2.4 (Enterprise)<br>
+                معتمد وفق معايير هيئة الصحة الرقمية
+            </div>
+        </aside>
+
+        <!-- Main Desktop Content Area -->
+        <main class="admin-main">
+
+            <!-- Topbar Header -->
+            <header class="admin-topbar">
+                <div class="d-flex align-center gap-md">
+                    <div class="input-icon-wrap" style="width: 320px;">
+                        <input type="text" class="form-input" placeholder="بحث شامل: مريض، طبيب، موعد، رقم ملف..."
+                            style="font-size: 0.85rem; padding-right: 2.5rem;">
+                        <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            style="right: 0.75rem;">
+                            <circle cx="11" cy="11" r="8" />
+                            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                        </svg>
+                    </div>
+                    <span class="badge badge-success text-xs">● جميع الخوادم تعمل بكفاءة 99.98%</span>
+                </div>
+
+                <div class="d-flex align-center gap-md">
+                    <!-- Demo Link to Home -->
+                    <a href="../index.html" class="btn btn-outline btn-sm">بوابة العرض الرئيسية 🏠</a>
+
+                    <!-- Admin Profile -->
+                    <div class="d-flex align-center gap-xs">
+                        <div class="avatar avatar-md" style="background: #167D95; color: #FFFFFF;">
+                            <span>م.ع</span>
+                        </div>
+                        <div>
+                            <strong style="font-size: 0.88rem; color: #172B4D; display: block; line-height: 1.2;">م.
+                                عبدالعزيز الشمري</strong>
+                            <span class="text-xs text-muted">مدير النظام الصحي العام</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Viewport Content -->
+            <div class="admin-content">
+
+                <!-- Title Banner -->
+                <div class="d-flex align-center justify-between mb-4">
+                    <div>
+                        <h2 style="font-size: 1.5rem; font-weight: 800; color: #172B4D; margin-bottom: 4px;">لوحة
+                            المؤشرات والعمليات المركزية</h2>
+                        <p class="text-sm text-secondary mb-0">متابعة شاملة لتدفق المرضى، نشاط الأطباء، وزيارات التمريض
+                            المنزلي الميدانية في الوقت الفعلي.</p>
+                    </div>
+                    <div class="d-flex gap-xs">
+                        <button type="button" class="btn btn-outline btn-sm">تصدير تقرير PDF</button>
+                        <a href="appointments.html" class="btn btn-primary btn-sm">+ إدارة الجدولة المباشرة</a>
+                    </div>
+                </div>
+
+                <!-- Analytical KPI Grid -->
+                <div class="d-grid grid-4 gap-md mb-4">
+                    <div class="admin-stat-card">
+                        <div class="d-flex justify-between align-start mb-2">
+                            <span class="text-xs font-bold text-muted">إجمالي المرضى النشطين</span>
+                            <span class="badge badge-success text-xs">+12% هذا الشهر</span>
+                        </div>
+                        <div class="admin-stat-val">1,248</div>
+                        <span class="text-xs text-secondary">منهم 182 حالة تتابع خطة علاجية نشطة</span>
+                    </div>
+
+                    <div class="admin-stat-card">
+                        <div class="d-flex justify-between align-start mb-2">
+                            <span class="text-xs font-bold text-muted">الكادر الطبي والتمريضي</span>
+                            <span class="badge badge-primary text-xs">70 كادر مرخص</span>
+                        </div>
+                        <div class="admin-stat-val">42 طبيب • 28 ممرض</div>
+                        <span class="text-xs text-secondary">في 12 تخصصاً طبياً وعيادة تخصصية</span>
+                    </div>
+
+                    <div class="admin-stat-card">
+                        <div class="d-flex justify-between align-start mb-2">
+                            <span class="text-xs font-bold text-muted">زيارات التمريض المنزلي</span>
+                            <span class="badge badge-warning text-xs">156 زيارة هذا الشهر</span>
+                        </div>
+                        <div class="admin-stat-val">98.2%</div>
+                        <span class="text-xs text-secondary">نسبة رضا المرضى واعتماد التقارير</span>
+                    </div>
+
+                    <div class="admin-stat-card" style="border-right: 4px solid #16A34A;">
+                        <div class="d-flex justify-between align-start mb-2">
+                            <span class="text-xs font-bold text-muted">دقة التوجيه الذكي بالـ AI</span>
+                            <span class="badge badge-success text-xs">ممتثل للأخلاقيات</span>
+                        </div>
+                        <div class="admin-stat-val" style="color: #16A34A;">98.4%</div>
+                        <span class="text-xs text-secondary">توجيه للتخصص الصحيح بدون تشخيص مرضي</span>
+                    </div>
+                </div>
+
+                <!-- Two Column Section: Live Operations & Clinical Overview -->
+                <div class="d-grid grid-3 gap-md mb-4">
+
+                    <!-- Left (2 cols): Recent Consultations & Appointments Table -->
+                    <div class="admin-card" style="grid-column: span 2;">
+                        <div class="admin-card-header">
+                            <h3 class="admin-card-title">
+                                <span>🩺</span> نشاط العيادات والمواعيد المباشرة اليوم
+                            </h3>
+                            <a href="appointments.html" class="text-xs text-brand font-bold">عرض جميع المواعيد ←</a>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>المريض</th>
+                                        <th>الطبيب المعالج</th>
+                                        <th>التخصص</th>
+                                        <th>التوقيت</th>
+                                        <th>النوع</th>
+                                        <th>الحالة</th>
+                                        <th>الإجراء</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <strong>سارة أحمد الشمري</strong>
+                                            <span class="text-xs text-muted d-block">#YR-8902</span>
+                                        </td>
+                                        <td>د. عبدالله الحربي</td>
+                                        <td>أمراض القلب</td>
+                                        <td>04:30 م</td>
+                                        <td><span class="badge badge-primary text-xs">عيادة حضوري</span></td>
+                                        <td><span class="badge badge-warning text-xs">في الانتظار</span></td>
+                                        <td><a href="../mobile/doctor/patient-details.html"
+                                                class="text-xs text-brand font-bold">معاينة الملف</a></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <strong>خالد العتيبي</strong>
+                                            <span class="text-xs text-muted d-block">#YR-5510</span>
+                                        </td>
+                                        <td>د. عبدالله الحربي</td>
+                                        <td>أمراض القلب</td>
+                                        <td>08:30 ص</td>
+                                        <td><span class="badge badge-warning text-xs">تمريض منزلي</span></td>
+                                        <td><span class="badge badge-success text-xs">مكتمل ومعتمد</span></td>
+                                        <td><a href="../mobile/doctor/follow-up.html"
+                                                class="text-xs text-brand font-bold">تقرير الإغلاق</a></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <strong>محمد فهد الدوسري</strong>
+                                            <span class="text-xs text-muted d-block">#YR-4102</span>
+                                        </td>
+                                        <td>د. عبدالله الحربي</td>
+                                        <td>أمراض القلب</td>
+                                        <td>05:15 م</td>
+                                        <td><span class="badge badge-primary text-xs">عيادة حضوري</span></td>
+                                        <td><span class="badge badge-info text-xs">مؤكد</span></td>
+                                        <td><span class="text-xs text-muted">مجدول</span></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <strong>نورة عبدالملك</strong>
+                                            <span class="text-xs text-muted d-block">#YR-6019</span>
+                                        </td>
+                                        <td>د. خالد الغامدي</td>
+                                        <td>باطنية وجراحة</td>
+                                        <td>05:00 م</td>
+                                        <td><span class="badge badge-warning text-xs">تمريض منزلي</span></td>
+                                        <td><span class="badge badge-info text-xs">قيد التوجه</span></td>
+                                        <td><span class="text-xs text-muted">ممرض مكلف</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Right (1 col): Home Care Fleet Status & AI Metric -->
+                    <div class="admin-card">
+                        <div class="admin-card-header">
+                            <h3 class="admin-card-title">
+                                <span>🏡</span> حالة فرق التمريض الميداني
+                            </h3>
+                            <a href="home-care.html" class="text-xs text-brand font-bold">الخريطة ←</a>
+                        </div>
+
+                        <div class="d-flex flex-column gap-sm mb-3">
+                            <div class="p-2"
+                                style="background: #F8FAFC; border-radius: 10px; border-right: 3px solid #16A34A;">
+                                <div class="d-flex justify-between align-center mb-1">
+                                    <strong style="font-size: 0.85rem;">الممرض: فيصل السالم</strong>
+                                    <span class="badge badge-success text-xs">في موقع المريض</span>
+                                </div>
+                                <span class="text-xs text-secondary d-block">حي النخيل • المريضة: سارة الشمري</span>
+                            </div>
+
+                            <div class="p-2"
+                                style="background: #F8FAFC; border-radius: 10px; border-right: 3px solid #0284C7;">
+                                <div class="d-flex justify-between align-center mb-1">
+                                    <strong style="font-size: 0.85rem;">الممرضة: ريم العنزي</strong>
+                                    <span class="badge badge-info text-xs">في الطريق</span>
+                                </div>
+                                <span class="text-xs text-secondary d-block">حي الياسمين • المريضة: نورة عبدالملك</span>
+                            </div>
+
+                            <div class="p-2"
+                                style="background: #F8FAFC; border-radius: 10px; border-right: 3px solid #94A3B8;">
+                                <div class="d-flex justify-between align-center mb-1">
+                                    <strong style="font-size: 0.85rem;">الممرض: طارق الدوسري</strong>
+                                    <span class="badge badge-neutral text-xs">متاح بالمركز</span>
+                                </div>
+                                <span class="text-xs text-muted d-block">جاهز لأي تكليف طارئ</span>
+                            </div>
+                        </div>
+
+                        <!-- AI Engine Health Box -->
+                        <div class="p-3" style="background: #EFF8F9; border-radius: 12px; border: 1px solid #CCEEF1;">
+                            <div class="d-flex justify-between align-center mb-1">
+                                <strong style="font-size: 0.85rem; color: #105F75;">حالة محرك التوجيه الذكي AI</strong>
+                                <span class="badge badge-success text-xs">نشط وآمن</span>
+                            </div>
+                            <p class="text-xs text-secondary mb-2">
+                                تم تنفيذ 418 عملية توجيه لتخصصات مناسبة بدون تقديم تشخيص طبي مباشر وبنسبة مطابقة سريرية
+                                98.4%.
+                            </p>
+                            <a href="ai-audit.html" class="text-xs text-brand font-bold">استعراض سجلات التدقيق والمطابقة
+                                ←</a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>

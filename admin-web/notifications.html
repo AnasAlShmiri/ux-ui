@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مركز الإشعارات والتعميمات | لوحة التحكم الإدارية - منصة يرعاني</title>
+    <link rel="stylesheet" href="../assets/css/variables.css">
+    <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" href="../assets/css/components.css">
+    <link rel="stylesheet" href="../assets/css/layout.css">
+    <link rel="stylesheet" href="../assets/css/admin.css">
+</head>
+
+<body class="admin-body">
+
+    <div class="admin-layout">
+
+        <!-- Desktop Sidebar (1440px Standard) -->
+        <aside class="admin-sidebar">
+            <div class="admin-brand">
+                <div class="admin-brand-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        style="width: 22px; height: 22px; color: #FFFFFF;">
+                        <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                    </svg>
+                </div>
+                <div>
+                    <h1 class="admin-brand-title">يرعاني <span>Admin</span></h1>
+                    <p class="admin-brand-sub">إدارة المنظومة الطبية المركزية</p>
+                </div>
+            </div>
+
+            <!-- Quick Switch to Mobile Apps for Committee Demo -->
+            <div class="p-2 mb-2"
+                style="background: rgba(22, 125, 149, 0.15); border-radius: 10px; border: 1px solid rgba(22, 125, 149, 0.3);">
+                <span class="text-xs text-muted d-block mb-1">📱 تجربة تطبيقات الجوال:</span>
+                <div class="d-flex flex-wrap gap-xs">
+                    <a href="../mobile/patient/home.html" class="badge badge-primary text-xs"
+                        style="text-decoration: none;">تطبيق المريض</a>
+                    <a href="../mobile/doctor/home.html" class="badge badge-info text-xs"
+                        style="text-decoration: none;">تطبيق الطبيب</a>
+                    <a href="../mobile/nurse/home.html" class="badge badge-warning text-xs"
+                        style="text-decoration: none;">تطبيق التمريض</a>
+                </div>
+            </div>
+
+            <!-- Admin Navigation -->
+            <nav class="admin-nav">
+                <div class="admin-nav-category">التحكم والعمليات</div>
+
+                <a href="dashboard.html" class="admin-nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect width="7" height="9" x="3" y="3" rx="1" />
+                        <rect width="7" height="5" x="14" y="3" rx="1" />
+                        <rect width="7" height="9" x="14" y="12" rx="1" />
+                        <rect width="7" height="5" x="3" y="16" rx="1" />
+                    </svg>
+                    <span>نظرة عامة والعمليات</span>
+                </a>
+
+                <a href="patients.html" class="admin-nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                        <circle cx="9" cy="7" r="4" />
+                    </svg>
+                    <span>إدارة المرضى</span>
+                    <span class="admin-nav-badge">1,248</span>
+                </a>
+
+                <a href="doctors.html" class="admin-nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                    </svg>
+                    <span>إدارة الأطباء والعيادات</span>
+                    <span class="admin-nav-badge">42</span>
+                </a>
+
+                <a href="nurses.html" class="admin-nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="m18 2 4 4-12 12H6v-4L18 2z" />
+                    </svg>
+                    <span>طواقم التمريض المنزلي</span>
+                    <span class="admin-nav-badge">28</span>
+                </a>
+
+                <div class="admin-nav-category">التشغيل السريري والذكاء</div>
+
+                <a href="specialties.html" class="admin-nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect width="18" height="18" x="3" y="3" rx="2" />
+                        <path d="M3 9h18M9 21V9" />
+                    </svg>
+                    <span>التخصصات والعيادات</span>
+                </a>
+
+                <a href="appointments.html" class="admin-nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
+                        <line x1="16" y1="2" x2="16" y2="6" />
+                        <line x1="8" y1="2" x2="8" y2="6" />
+                    </svg>
+                    <span>المواعيد والحجوزات</span>
+                </a>
+
+                <a href="home-care.html" class="admin-nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                    </svg>
+                    <span>الرعاية المنزلية الميدانية</span>
+                </a>
+
+                <a href="reviews.html" class="admin-nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon
+                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                    </svg>
+                    <span>التقييمات والمراجعات</span>
+                    <span class="admin-nav-badge">4.9 ★</span>
+                </a>
+
+                <a href="notifications.html" class="admin-nav-item active">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+                        <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+                    </svg>
+                    <span>مركز الإشعارات والتعميم</span>
+                </a>
+
+                <a href="reports.html" class="admin-nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="20" x2="18" y2="10" />
+                        <line x1="12" y1="20" x2="12" y2="4" />
+                        <line x1="6" y1="20" x2="6" y2="14" />
+                    </svg>
+                    <span>الإحصائيات والتقارير</span>
+                </a>
+
+                <a href="ai-audit.html" class="admin-nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path
+                            d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+                    </svg>
+                    <span>تدقيق توجيه AI والامتثال</span>
+                    <span class="admin-nav-badge" style="background: #16A34A; color: #fff;">98.4%</span>
+                </a>
+
+                <div class="admin-nav-category">النظام</div>
+
+                <a href="settings.html" class="admin-nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="3" />
+                        <path
+                            d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+                    </svg>
+                    <span>إعدادات النظام والأمان</span>
+                </a>
+
+                <a href="login.html" class="admin-nav-item" style="color: #EF4444;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                        <polyline points="16 17 21 12 16 7" />
+                        <line x1="21" y1="12" x2="9" y2="12" />
+                    </svg>
+                    <span>تسجيل الخروج</span>
+                </a>
+            </nav>
+
+            <!-- Sidebar Footer -->
+            <div class="p-3"
+                style="border-top: 1px solid rgba(255, 255, 255, 0.08); font-size: 0.75rem; color: #94A3B8;">
+                منصة يرعاني v2.4 (Enterprise)<br>
+                معتمد وفق معايير هيئة الصحة الرقمية
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="admin-main">
+
+            <!-- Topbar Header -->
+            <header class="admin-topbar">
+                <div class="d-flex align-center gap-md">
+                    <h2 style="font-size: 1.25rem; font-weight: 800; color: #172B4D; margin: 0;">مركز الإشعارات
+                        والتعميمات المركزية</h2>
+                    <span class="badge badge-primary text-xs">قنوات الإرسال: Push • SMS • Email</span>
+                </div>
+
+                <div class="d-flex align-center gap-md">
+                    <button type="button" class="btn btn-outline btn-sm">
+                        📋 قوالب الرسائل المعتمدة
+                    </button>
+                    <button type="button" class="btn btn-primary btn-sm">
+                        + إنشاء إشعار فوري جديد
+                    </button>
+                </div>
+            </header>
+
+            <!-- Content Area -->
+            <div class="admin-content">
+
+                <!-- Notifications Stats KPI Grid -->
+                <div class="d-grid grid-4 gap-md mb-4">
+                    <!-- Stat 1 -->
+                    <div class="admin-stat-card">
+                        <div class="admin-stat-header">
+                            <div>
+                                <span class="admin-stat-title">إجمالي الرسائل المرسلة</span>
+                                <div class="admin-stat-value">24,850</div>
+                            </div>
+                            <div class="admin-stat-icon" style="background: #E0F2FE; color: #0284C7;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+                                    <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="admin-stat-change positive">
+                            <span>خلال شهر أكتوبر 2026</span>
+                        </div>
+                    </div>
+
+                    <!-- Stat 2 -->
+                    <div class="admin-stat-card">
+                        <div class="admin-stat-header">
+                            <div>
+                                <span class="admin-stat-title">نسبة الفتح والتفاعل</span>
+                                <div class="admin-stat-value" style="color: #16A34A;">92.4%</div>
+                            </div>
+                            <div class="admin-stat-icon" style="background: #DCFCE7; color: #16A34A;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="admin-stat-change positive">
+                            <span>معدل تفاعل قياسي للمرضى</span>
+                        </div>
+                    </div>
+
+                    <!-- Stat 3 -->
+                    <div class="admin-stat-card">
+                        <div class="admin-stat-header">
+                            <div>
+                                <span class="admin-stat-title">تنبيهات الأدوية الآلية</span>
+                                <div class="admin-stat-value" style="color: #0EA5A4;">18,200</div>
+                            </div>
+                            <div class="admin-stat-icon" style="background: #EFF8F9; color: #0EA5A4;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect width="16" height="20" x="4" y="2" rx="2" />
+                                    <path d="M8 6h8M8 10h8" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="admin-stat-change positive">
+                            <span>تذكير تلقائي بالجرعات</span>
+                        </div>
+                    </div>
+
+                    <!-- Stat 4 -->
+                    <div class="admin-stat-card">
+                        <div class="admin-stat-header">
+                            <div>
+                                <span class="admin-stat-title">التعميمات الإدارية النشطة</span>
+                                <div class="admin-stat-value" style="color: #D97706;">2</div>
+                            </div>
+                            <div class="admin-stat-icon" style="background: #FEF3C7; color: #D97706;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <line x1="12" y1="8" x2="12" y2="12" />
+                                    <line x1="12" y1="16" x2="12.01" y2="16" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="admin-stat-change positive">
+                            <span>موجهة للكوادر الطبية والتمريض</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Broadcast Form & Channel Controls Grid -->
+                <div class="d-grid grid-2 gap-md mb-4">
+
+                    <!-- Broadcast Composer Card -->
+                    <div class="admin-card">
+                        <div class="admin-card-header">
+                            <div>
+                                <h3 class="admin-card-title">
+                                    <span>📢</span> إرسال تعميم أو إشعار جماعي جديد
+                                </h3>
+                                <span class="text-xs text-muted">بث فوري عبر التطبيقات والرسائل النصية والبريد</span>
+                            </div>
+                            <span class="badge badge-primary text-xs">صلاحية المشرف</span>
+                        </div>
+
+                        <form action="#sent" method="GET" style="padding: 1.25rem;">
+                            <!-- Target Audience -->
+                            <div class="form-group mb-3">
+                                <label class="form-label" style="font-size: 0.8rem; font-weight: 700;">الشريحة المستهدفة
+                                    (Target Group)</label>
+                                <select class="form-select" style="font-size: 0.85rem;" required>
+                                    <option selected>جميع مستخدمي المنظومة (مرضى، أطباء، تمريض)</option>
+                                    <option>المرضى المسجلين فقط (تطبيق المريض)</option>
+                                    <option>كادر الأطباء فقط (تطبيق الطبيب)</option>
+                                    <option>طواقم التمريض المنزلي الميداني فقط</option>
+                                    <option>المرضى ذوي الحالات المزمنة (قلب وضغط وسكر)</option>
+                                </select>
+                            </div>
+
+                            <!-- Notification Priority & Category -->
+                            <div class="d-grid grid-2 gap-sm mb-3">
+                                <div>
+                                    <label class="form-label" style="font-size: 0.8rem; font-weight: 700;">تصنيف
+                                        الرسالة</label>
+                                    <select class="form-select" style="font-size: 0.85rem;">
+                                        <option selected>توعية صحية وإرشاد وقائي</option>
+                                        <option>تحديث في سياسات العيادات</option>
+                                        <option>حملة تطعيمات موسمية</option>
+                                        <option>تنبيه صيانة برمجية للنظام</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="form-label" style="font-size: 0.8rem; font-weight: 700;">مستوى
+                                        الأولوية</label>
+                                    <select class="form-select" style="font-size: 0.85rem;">
+                                        <option selected>عادي (Normal Push)</option>
+                                        <option>مهم (High Priority)</option>
+                                        <option style="color: #DC2626; font-weight: bold;">عاجل جداً (Urgent Alert)
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Delivery Channels -->
+                            <div class="form-group mb-3">
+                                <label class="form-label" style="font-size: 0.8rem; font-weight: 700;">قنوات البث
+                                    المعتمدة</label>
+                                <div class="d-flex gap-md">
+                                    <label class="form-check text-xs">
+                                        <input type="checkbox" checked> إشعار فوري للجوال (Push Notification)
+                                    </label>
+                                    <label class="form-check text-xs">
+                                        <input type="checkbox" checked> رسالة نصية قصيرة (SMS)
+                                    </label>
+                                    <label class="form-check text-xs">
+                                        <input type="checkbox"> البريد الإلكتروني (Email)
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Title -->
+                            <div class="form-group mb-3">
+                                <label class="form-label" style="font-size: 0.8rem; font-weight: 700;">عنوان
+                                    الإشعار</label>
+                                <input type="text" class="form-input"
+                                    value="تذكير صحي: موعد قياس العلامات الحيوية الدوري" style="font-size: 0.85rem;"
+                                    required>
+                            </div>
+
+                            <!-- Body Text -->
+                            <div class="form-group mb-3">
+                                <label class="form-label" style="font-size: 0.8rem; font-weight: 700;">نص
+                                    الرسالة</label>
+                                <textarea class="form-textarea" rows="3" style="font-size: 0.85rem;"
+                                    required>عزيزي المستفيد، يرجى الالتزام بتناول الجرعات الدوائية في موعدها المحدد وفق خطتك العلاجية. يمكنك حجز زيارة تمريض منزلي عبر التطبيق عند الحاجة للمتابعة الميدانية.</textarea>
+                            </div>
+
+                            <div class="d-flex gap-xs">
+                                <button type="submit" class="btn btn-primary" style="flex: 1; padding: 0.75rem;">
+                                    🚀 إرسال وبث الإشعار فوراً
+                                </button>
+                                <button type="button" class="btn btn-outline" style="padding: 0.75rem;">
+                                    ⏰ جدولة لوقت لاحق
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Channel Health & Automated Triggers -->
+                    <div class="admin-card">
+                        <div class="admin-card-header">
+                            <div>
+                                <h3 class="admin-card-title">
+                                    <span>⚙️</span> محركات الإشعارات التلقائية (System Triggers)
+                                </h3>
+                                <span class="text-xs text-muted">إشعارات تنطلق آلياً بناءً على الأحداث السريرية</span>
+                            </div>
+                            <span class="badge badge-success text-xs">تعمل بكفاءة 100%</span>
+                        </div>
+
+                        <div style="padding: 1.25rem;">
+                            <!-- Trigger 1 -->
+                            <div class="p-2 mb-2 d-flex align-center justify-between"
+                                style="background: #F8FAFC; border-radius: 10px; border: 1px solid #E2E8F0;">
+                                <div>
+                                    <strong style="font-size: 0.85rem; color: #172B4D;">تذكير المواعيد الطبية (قبل 24
+                                        ساعة)</strong>
+                                    <span class="text-xs text-muted d-block">إشعار للمريض باسم الطبيب وتأكيد
+                                        الحضور</span>
+                                </div>
+                                <span class="badge badge-success text-xs">مفعل آلياً</span>
+                            </div>
+
+                            <!-- Trigger 2 -->
+                            <div class="p-2 mb-2 d-flex align-center justify-between"
+                                style="background: #F8FAFC; border-radius: 10px; border: 1px solid #E2E8F0;">
+                                <div>
+                                    <strong style="font-size: 0.85rem; color: #172B4D;">إشعار إصدار وصفة دوائية
+                                        جديدة</strong>
+                                    <span class="text-xs text-muted d-block">يرسل للمريض كود الصرف الدوائي المعتمد
+                                        فوراً</span>
+                                </div>
+                                <span class="badge badge-success text-xs">مفعل آلياً</span>
+                            </div>
+
+                            <!-- Trigger 3 -->
+                            <div class="p-2 mb-2 d-flex align-center justify-between"
+                                style="background: #F8FAFC; border-radius: 10px; border: 1px solid #E2E8F0;">
+                                <div>
+                                    <strong style="font-size: 0.85rem; color: #172B4D;">تنبيه الطبيب عند رفع تقرير
+                                        التمريض</strong>
+                                    <span class="text-xs text-muted d-block">إشعار فوري لطبيب الحالة لمراجعة واعتماد
+                                        الزيارة</span>
+                                </div>
+                                <span class="badge badge-success text-xs">مفعل آلياً</span>
+                            </div>
+
+                            <!-- Trigger 4 -->
+                            <div class="p-2 mb-2 d-flex align-center justify-between"
+                                style="background: #F8FAFC; border-radius: 10px; border: 1px solid #E2E8F0;">
+                                <div>
+                                    <strong style="font-size: 0.85rem; color: #172B4D;">تكليف زيارة تمريض منزلي
+                                        عاجلة</strong>
+                                    <span class="text-xs text-muted d-block">إشعار صوتي واهتزازي للممرض المناوب في
+                                        المنطقة</span>
+                                </div>
+                                <span class="badge badge-success text-xs">مفعل آلياً</span>
+                            </div>
+
+                            <!-- Trigger 5 -->
+                            <div class="p-2 d-flex align-center justify-between"
+                                style="background: #F8FAFC; border-radius: 10px; border: 1px solid #E2E8F0;">
+                                <div>
+                                    <strong style="font-size: 0.85rem; color: #172B4D;">تنبيه نتائج المختبر والتحاليل
+                                        الجديدة</strong>
+                                    <span class="text-xs text-muted d-block">إشعار عند صدور نتيجة الفحص المخبري</span>
+                                </div>
+                                <span class="badge badge-success text-xs">مفعل آلياً</span>
+                            </div>
+                        </div>
+
+                        <div class="p-3"
+                            style="background: #F0FDF4; border-top: 1px solid #BBF7D0; font-size: 0.78rem; color: #15803D;">
+                            ✓ بوابة الرسائل القصيرة (SMS Gateway) متصلة بالشبكة الوطنية برصيد 45,000 رسالة نشطة.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Dispatched Notifications Log Table -->
+                <div class="admin-card">
+                    <div class="admin-card-header">
+                        <div>
+                            <h3 class="admin-card-title">
+                                <span>📋</span> سجل التعميمات والإشعارات السابقة
+                            </h3>
+                            <span class="text-xs text-muted">تتبع حالة التسليم ونسب الفتح لآخر الرسائل المبثوثة</span>
+                        </div>
+                        <span class="text-xs text-muted">عرض 5 من أصل 48 تعميماً</span>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>عنوان الإشعار</th>
+                                    <th>الشريحة المستهدفة</th>
+                                    <th>القنوات</th>
+                                    <th>تاريخ ووقت الإرسال</th>
+                                    <th>عدد المستلمين</th>
+                                    <th>نسبة الفتح</th>
+                                    <th>الحالة</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <strong>تحديث جدول عيادات القلب الاستشارية</strong>
+                                        <span class="text-xs text-muted d-block">إشعار إداري تنظيمي</span>
+                                    </td>
+                                    <td><span class="badge badge-primary text-xs">مرضى القلب</span></td>
+                                    <td>Push + SMS</td>
+                                    <td>14 أكتوبر 2026 • 10:00 ص</td>
+                                    <td><strong>1,420</strong></td>
+                                    <td><strong class="text-success">96.2%</strong></td>
+                                    <td><span class="badge badge-success text-xs">تم التسليم بنجاح</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <strong>إطلاق خدمة الفحص المنزلي للسكر والضغط</strong>
+                                        <span class="text-xs text-muted d-block">تعميم عام عن الرعاية المنزلية</span>
+                                    </td>
+                                    <td><span class="badge badge-neutral text-xs">كافة المرضى</span></td>
+                                    <td>Push Notification</td>
+                                    <td>10 أكتوبر 2026 • 04:30 م</td>
+                                    <td><strong>8,950</strong></td>
+                                    <td><strong class="text-success">89.4%</strong></td>
+                                    <td><span class="badge badge-success text-xs">تم التسليم بنجاح</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <strong>بروتوكول السلامة الميدانية المحدث للتمريض</strong>
+                                        <span class="text-xs text-muted d-block">تعميم سريري إلزامي</span>
+                                    </td>
+                                    <td><span class="badge badge-warning text-xs">طواقم التمريض</span></td>
+                                    <td>Push + Email</td>
+                                    <td>08 أكتوبر 2026 • 08:15 ص</td>
+                                    <td><strong>28 ممرضاً</strong></td>
+                                    <td><strong class="text-success">100%</strong></td>
+                                    <td><span class="badge badge-success text-xs">تمت القراءة بالكامل</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <strong>تحديث سياسة صرف الأدوية وتكامل وصفاتي</strong>
+                                        <span class="text-xs text-muted d-block">تعميم طبي تنظيمي</span>
+                                    </td>
+                                    <td><span class="badge badge-info text-xs">كادر الأطباء</span></td>
+                                    <td>Email + Push</td>
+                                    <td>05 أكتوبر 2026 • 09:00 ص</td>
+                                    <td><strong>42 طبيباً</strong></td>
+                                    <td><strong class="text-success">97.6%</strong></td>
+                                    <td><span class="badge badge-success text-xs">تم التسليم بنجاح</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <strong>تنبيه صيانة دورية مجدولة لمدة نصف ساعة</strong>
+                                        <span class="text-xs text-muted d-block">صيانة سيرفرات الفجر</span>
+                                    </td>
+                                    <td><span class="badge badge-neutral text-xs">كافة المستخدمين</span></td>
+                                    <td>Push Notification</td>
+                                    <td>01 أكتوبر 2026 • 11:45 م</td>
+                                    <td><strong>12,400</strong></td>
+                                    <td><strong class="text-success">91.8%</strong></td>
+                                    <td><span class="badge badge-success text-xs">مكتمل</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>

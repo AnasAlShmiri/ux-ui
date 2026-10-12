@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مواعيد العيادة | تطبيق الطبيب - يرعاني</title>
+    <link rel="stylesheet" href="../../assets/css/variables.css">
+    <link rel="stylesheet" href="../../assets/css/global.css">
+    <link rel="stylesheet" href="../../assets/css/components.css">
+    <link rel="stylesheet" href="../../assets/css/mobile.css">
+</head>
+
+<body>
+
+    <div class="mobile-app-shell">
+
+        <!-- Top Evaluator Quick Nav -->
+        <div class="demo-role-pill-bar" style="background: #0284C7;">
+            <span>🩺 جدول مواعيد العيادة</span>
+            <a href="home.html">الرئيسية</a>
+        </div>
+
+        <!-- Mobile Status Bar -->
+        <div class="mobile-status-bar">
+            <span>09:41</span>
+            <div class="status-bar-icons">
+                <span>5G</span>
+                <span>🔋 100%</span>
+            </div>
+        </div>
+
+        <!-- Mobile Header -->
+        <div class="mobile-header">
+            <a href="home.html" class="mobile-header-back" title="رجوع">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </a>
+            <h2 class="mobile-header-title">جدول مواعيد العيادة</h2>
+            <a href="home.html" class="mobile-header-action" title="الرئيسية">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                </svg>
+            </a>
+        </div>
+
+        <!-- Mobile Content -->
+        <div class="mobile-content">
+
+            <!-- Day Filter Chips -->
+            <div class="m-chip-bar">
+                <span class="m-chip active">اليوم الثلاثاء (4)</span>
+                <span class="m-chip">الأربعاء (6)</span>
+                <span class="m-chip">الخميس (5)</span>
+                <span class="m-chip">الأسبوع القادم</span>
+            </div>
+
+            <!-- Queue Status Summary -->
+            <div class="d-flex align-center justify-between p-2 mb-3"
+                style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; font-size: 0.78rem;">
+                <span>العيادة 204 • المركز التخصصي</span>
+                <span class="badge badge-success text-xs">الجلسة مفتوحة</span>
+            </div>
+
+            <!-- Patient Appointment 1 (Current) -->
+            <div class="m-card" style="border: 2px solid #0284C7; background: #F0F9FF;">
+                <div class="d-flex align-center justify-between mb-2">
+                    <span class="badge badge-primary text-xs" style="background: #0284C7;">الموعد الحالي • 04:30
+                        م</span>
+                    <span class="badge badge-warning text-xs">في الانتظار بالعيادة</span>
+                </div>
+
+                <div class="d-flex align-center gap-xs mb-2">
+                    <div class="avatar avatar-md" style="background: #BAE6FD; color: #0369A1;">
+                        <span>س.أ</span>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 0.95rem; margin-bottom: 2px;">سارة أحمد الشمري</h4>
+                        <span class="text-xs text-secondary">ملف #YR-8902 • كشف حضوري أول</span>
+                    </div>
+                </div>
+
+                <p class="text-xs text-muted mb-2">
+                    السبب: ألم وثقل بالصدر مع تسارع في نبضات القلب (توجيه AI موصى به).
+                </p>
+
+                <a href="patient-details.html" class="m-btn m-btn-primary m-btn-sm"
+                    style="width: 100%; background: #0284C7;">
+                    بدء الكشف وتسجيل الفحص السريري ←
+                </a>
+            </div>
+
+            <!-- Patient Appointment 2 -->
+            <div class="m-card">
+                <div class="d-flex align-center justify-between mb-2">
+                    <span class="text-xs font-bold text-primary">الموعد القادم • 05:15 م</span>
+                    <span class="badge badge-info text-xs">حضوري • مؤكد</span>
+                </div>
+
+                <div class="d-flex align-center gap-xs mb-2">
+                    <div class="avatar avatar-md" style="background: #FEF3C7; color: #D97706;">
+                        <span>م.ف</span>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 0.95rem; margin-bottom: 2px;">محمد فهد الدوسري</h4>
+                        <span class="text-xs text-secondary">ملف #YR-4102 • متابعة دورية بعد دعامة قلبية</span>
+                    </div>
+                </div>
+
+                <div class="d-flex gap-xs">
+                    <a href="patient-details.html" class="m-btn m-btn-outline m-btn-sm" style="flex: 1;">عرض الملف
+                        الطبي</a>
+                    <button type="button" class="m-btn m-btn-outline m-btn-sm" style="flex: 1;">إشعار المريض</button>
+                </div>
+            </div>
+
+            <!-- Patient Appointment 3 (Telehealth) -->
+            <div class="m-card">
+                <div class="d-flex align-center justify-between mb-2">
+                    <span class="text-xs font-bold text-primary">06:00 م</span>
+                    <span class="badge badge-secondary text-xs">استشارة عن بُعد 📹</span>
+                </div>
+
+                <div class="d-flex align-center gap-xs mb-2">
+                    <div class="avatar avatar-md" style="background: #DCFCE7; color: #16A34A;">
+                        <span>ن.ع</span>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 0.95rem; margin-bottom: 2px;">نورة عبدالملك</h4>
+                        <span class="text-xs text-secondary">ملف #YR-6019 • استشارة نتائج تخطيط قلب</span>
+                    </div>
+                </div>
+
+                <button type="button" class="m-btn m-btn-outline m-btn-sm" style="width: 100%;">
+                    رابط الغرفة المرئية الافتراضية 📹
+                </button>
+            </div>
+
+            <!-- Patient Appointment 4 (Review & Close) -->
+            <div class="m-card">
+                <div class="d-flex align-center justify-between mb-2">
+                    <span class="text-xs font-bold text-primary">06:45 م</span>
+                    <span class="badge badge-success text-xs">مراجعة نهائية</span>
+                </div>
+
+                <div class="d-flex align-center gap-xs mb-2">
+                    <div class="avatar avatar-md" style="background: #F3E8FF; color: #7E22CE;">
+                        <span>خ.ع</span>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 0.95rem; margin-bottom: 2px;">خالد العتيبي</h4>
+                        <span class="text-xs text-secondary">ملف #YR-5510 • انتهاء خطة علاج 30 يوماً</span>
+                    </div>
+                </div>
+
+                <a href="follow-up.html" class="m-btn m-btn-outline m-btn-sm"
+                    style="width: 100%; color: #16A34A; border-color: #BBF7D0;">
+                    معاينة تقرير التمريض وإغلاق الحالة ✓
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Doctor Bottom Navigation -->
+        <nav class="mobile-bottom-nav">
+            <a href="home.html" class="bottom-nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                    <polyline points="9 22 9 12 15 12 15 22" />
+                </svg>
+                <span>الرئيسية</span>
+            </a>
+
+            <a href="appointments.html" class="bottom-nav-item active">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
+                    <line x1="16" y1="2" x2="16" y2="6" />
+                    <line x1="8" y1="2" x2="8" y2="6" />
+                </svg>
+                <span>المواعيد</span>
+            </a>
+
+            <a href="patients.html" class="bottom-nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                    <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                </svg>
+                <span>المرضى</span>
+            </a>
+
+            <a href="nursing-reports.html" class="bottom-nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                    <polyline points="14 2 14 8 20 8" />
+                    <line x1="16" y1="13" x2="8" y2="13" />
+                </svg>
+                <span>التمريض</span>
+            </a>
+
+            <a href="follow-up.html" class="bottom-nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span>المتابعة</span>
+            </a>
+        </nav>
+
+    </div>
+
+</body>
+
+</html>
