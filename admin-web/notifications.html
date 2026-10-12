@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="../assets/css/components.css">
     <link rel="stylesheet" href="../assets/css/layout.css">
     <link rel="stylesheet" href="../assets/css/admin.css">
+    <link rel="stylesheet" href="../assets/css/yerani-mint-theme.css">
+    <script defer src="../assets/js/yerani-ui.js"></script>
 </head>
 
 <body class="admin-body">
@@ -30,21 +32,6 @@
                     <p class="admin-brand-sub">إدارة المنظومة الطبية المركزية</p>
                 </div>
             </div>
-
-            <!-- Quick Switch to Mobile Apps for Committee Demo -->
-            <div class="p-2 mb-2"
-                style="background: rgba(22, 125, 149, 0.15); border-radius: 10px; border: 1px solid rgba(22, 125, 149, 0.3);">
-                <span class="text-xs text-muted d-block mb-1">📱 تجربة تطبيقات الجوال:</span>
-                <div class="d-flex flex-wrap gap-xs">
-                    <a href="../mobile/patient/home.html" class="badge badge-primary text-xs"
-                        style="text-decoration: none;">تطبيق المريض</a>
-                    <a href="../mobile/doctor/home.html" class="badge badge-info text-xs"
-                        style="text-decoration: none;">تطبيق الطبيب</a>
-                    <a href="../mobile/nurse/home.html" class="badge badge-warning text-xs"
-                        style="text-decoration: none;">تطبيق التمريض</a>
-                </div>
-            </div>
-
             <!-- Admin Navigation -->
             <nav class="admin-nav">
                 <div class="admin-nav-category">التحكم والعمليات</div>
@@ -180,7 +167,7 @@
             <!-- Topbar Header -->
             <header class="admin-topbar">
                 <div class="d-flex align-center gap-md">
-                    <h2 style="font-size: 1.25rem; font-weight: 800; color: #172B4D; margin: 0;">مركز الإشعارات
+                    <h2 style="font-size: 1.25rem; font-weight: 800; color: #1F2D2A; margin: 0;">مركز الإشعارات
                         والتعميمات المركزية</h2>
                     <span class="badge badge-primary text-xs">قنوات الإرسال: Push • SMS • Email</span>
                 </div>
@@ -207,7 +194,7 @@
                                 <span class="admin-stat-title">إجمالي الرسائل المرسلة</span>
                                 <div class="admin-stat-value">24,850</div>
                             </div>
-                            <div class="admin-stat-icon" style="background: #E0F2FE; color: #0284C7;">
+                            <div class="admin-stat-icon" style="background: #E4F4F0; color: #0F8579;">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
                                     <path d="M13.73 21a2 2 0 0 1-3.46 0" />
@@ -242,9 +229,9 @@
                         <div class="admin-stat-header">
                             <div>
                                 <span class="admin-stat-title">تنبيهات الأدوية الآلية</span>
-                                <div class="admin-stat-value" style="color: #0EA5A4;">18,200</div>
+                                <div class="admin-stat-value" style="color: #0EA184;">18,200</div>
                             </div>
-                            <div class="admin-stat-icon" style="background: #EFF8F9; color: #0EA5A4;">
+                            <div class="admin-stat-icon" style="background: #E4F4F0; color: #0EA184;">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <rect width="16" height="20" x="4" y="2" rx="2" />
                                     <path d="M8 6h8M8 10h8" />
@@ -390,9 +377,9 @@
                         <div style="padding: 1.25rem;">
                             <!-- Trigger 1 -->
                             <div class="p-2 mb-2 d-flex align-center justify-between"
-                                style="background: #F8FAFC; border-radius: 10px; border: 1px solid #E2E8F0;">
+                                style="background: #ECFAF6; border-radius: 10px; border: 1px solid #E2E8F0;">
                                 <div>
-                                    <strong style="font-size: 0.85rem; color: #172B4D;">تذكير المواعيد الطبية (قبل 24
+                                    <strong style="font-size: 0.85rem; color: #1F2D2A;">تذكير المواعيد الطبية (قبل 24
                                         ساعة)</strong>
                                     <span class="text-xs text-muted d-block">إشعار للمريض باسم الطبيب وتأكيد
                                         الحضور</span>
@@ -402,9 +389,9 @@
 
                             <!-- Trigger 2 -->
                             <div class="p-2 mb-2 d-flex align-center justify-between"
-                                style="background: #F8FAFC; border-radius: 10px; border: 1px solid #E2E8F0;">
+                                style="background: #ECFAF6; border-radius: 10px; border: 1px solid #E2E8F0;">
                                 <div>
-                                    <strong style="font-size: 0.85rem; color: #172B4D;">إشعار إصدار وصفة دوائية
+                                    <strong style="font-size: 0.85rem; color: #1F2D2A;">إشعار إصدار وصفة دوائية
                                         جديدة</strong>
                                     <span class="text-xs text-muted d-block">يرسل للمريض كود الصرف الدوائي المعتمد
                                         فوراً</span>
@@ -414,9 +401,9 @@
 
                             <!-- Trigger 3 -->
                             <div class="p-2 mb-2 d-flex align-center justify-between"
-                                style="background: #F8FAFC; border-radius: 10px; border: 1px solid #E2E8F0;">
+                                style="background: #ECFAF6; border-radius: 10px; border: 1px solid #E2E8F0;">
                                 <div>
-                                    <strong style="font-size: 0.85rem; color: #172B4D;">تنبيه الطبيب عند رفع تقرير
+                                    <strong style="font-size: 0.85rem; color: #1F2D2A;">تنبيه الطبيب عند رفع تقرير
                                         التمريض</strong>
                                     <span class="text-xs text-muted d-block">إشعار فوري لطبيب الحالة لمراجعة واعتماد
                                         الزيارة</span>
@@ -426,9 +413,9 @@
 
                             <!-- Trigger 4 -->
                             <div class="p-2 mb-2 d-flex align-center justify-between"
-                                style="background: #F8FAFC; border-radius: 10px; border: 1px solid #E2E8F0;">
+                                style="background: #ECFAF6; border-radius: 10px; border: 1px solid #E2E8F0;">
                                 <div>
-                                    <strong style="font-size: 0.85rem; color: #172B4D;">تكليف زيارة تمريض منزلي
+                                    <strong style="font-size: 0.85rem; color: #1F2D2A;">تكليف زيارة تمريض منزلي
                                         عاجلة</strong>
                                     <span class="text-xs text-muted d-block">إشعار صوتي واهتزازي للممرض المناوب في
                                         المنطقة</span>
@@ -438,9 +425,9 @@
 
                             <!-- Trigger 5 -->
                             <div class="p-2 d-flex align-center justify-between"
-                                style="background: #F8FAFC; border-radius: 10px; border: 1px solid #E2E8F0;">
+                                style="background: #ECFAF6; border-radius: 10px; border: 1px solid #E2E8F0;">
                                 <div>
-                                    <strong style="font-size: 0.85rem; color: #172B4D;">تنبيه نتائج المختبر والتحاليل
+                                    <strong style="font-size: 0.85rem; color: #1F2D2A;">تنبيه نتائج المختبر والتحاليل
                                         الجديدة</strong>
                                     <span class="text-xs text-muted d-block">إشعار عند صدور نتيجة الفحص المخبري</span>
                                 </div>

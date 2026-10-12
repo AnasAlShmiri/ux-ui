@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Yerani | معاينة واجهات يرعاني</title>
+<link rel="stylesheet" href="../assets/css/variables.css">
+<link rel="stylesheet" href="../assets/css/yerani-mint-theme.css">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap');
+*{box-sizing:border-box}body{margin:0;font-family:Tajawal,system-ui,sans-serif;background:#ECFAF6;color:#1F2D2A}
+.wrap{max-width:1130px;margin:auto;padding:44px 22px 64px}
+.top{display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap;margin-bottom:35px}
+.logo{display:flex;align-items:center;gap:13px;color:#0F4C3A;font-weight:800;font-size:1.65rem}
+.mark{display:grid;place-items:center;background:#0F8579;color:#fff;width:52px;height:52px;border-radius:18px;font-size:26px}
+.label{font-size:.83rem;background:#DDF5EE;border:1px solid #B4DFDD;color:#0F5946;border-radius:100px;padding:8px 14px}
+h1{font-size:clamp(1.8rem,4vw,2.75rem);margin:0 0 9px;color:#0F4C3A}
+.lead{color:#576A6F;font-size:1rem;line-height:1.9;max-width:750px;margin:0 0 32px}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.tile{min-width:0;background:#fff;border:1px solid #D9ECE7;border-radius:23px;padding:23px 21px;box-shadow:0 10px 32px rgba(15,133,121,.07);display:flex;flex-direction:column;min-height:300px}
+.ic{width:55px;height:55px;border-radius:16px;background:#E4F4F0;color:#0F8579;display:grid;place-items:center;font-size:26px}
+.tile h2{font-size:1.18rem;margin:19px 0 10px;color:#0F4C3A}
+.tile p{font-size:.88rem;color:#576A6F;line-height:1.8;flex:1;margin:0 0 20px}
+.tile a{display:block;text-decoration:none;background:#0F8579;color:#fff;font-weight:700;border-radius:12px;text-align:center;padding:12px;transition:background .15s}
+.tile a:hover,.tile a:focus-visible{background:#11776D}
+.note{margin-top:27px;padding:17px 20px;background:#E4F4F0;border:1px solid #B4DFDD;border-radius:16px;color:#0F5946;font-size:.87rem;line-height:1.9}
+@media(max-width:960px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.wrap{padding:26px 16px 48px}.grid{grid-template-columns:1fr}.tile{min-height:0}.top{margin-bottom:28px}}
+</style>
+</head>
+<body>
+<main class="wrap">
+<header class="top"><div class="logo"><span class="mark" aria-hidden="true">✚</span> يرعاني <span style="font-size:.86rem;font-weight:500;color:#576A6F">Yerani</span></div><span class="label">High-Fidelity UI · Mint + Teal</span></header>
+<h1>تجربة واحدة، رعاية أقرب إليك</h1>
+<p class="lead">معاينة الواجهات العربية لمشروع يرعاني. تطبيق الموبايل للمريض والطبيب والممرض، ولوحة تحكم الويب للمدير. التصميم متناسق ويستخدم الهوية الجديدة المستوحاة من نموذجك المرجعي.</p>
+<section class="grid" aria-label="اختيار الواجهة">
+ <article class="tile"><div class="ic" aria-hidden="true">♡</div><h2>تطبيق المريض</h2><p>التخصص المناسب، حجز الطبيب، السجل الطبي وخدمات التمريض المنزلي.</p><a href="../mobile/patient/home.html">فتح واجهة المريض ←</a></article>
+ <article class="tile"><div class="ic" aria-hidden="true">✚</div><h2>تطبيق الطبيب</h2><p>مراجعة المواعيد والملفات الطبية والوصفات والخطط العلاجية والمتابعة.</p><a href="../mobile/doctor/home.html">فتح واجهة الطبيب ←</a></article>
+ <article class="tile"><div class="ic" aria-hidden="true">⌂</div><h2>تطبيق الممرض</h2><p>الزيارات المنزلية، العلامات الحيوية، كتابة التقارير ومتابعة المهام.</p><a href="../mobile/nurse/home.html">فتح واجهة الممرض ←</a></article>
+ <article class="tile"><div class="ic" aria-hidden="true">▦</div><h2>لوحة المدير</h2><p>إدارة الأطباء والممرضين والمرضى والحجوزات والإشعارات والتقارير.</p><a href="../admin-web/dashboard.html">فتح لوحة الإدارة ←</a></article>
+</section>
+<p class="note">هذه النسخة نموذج واجهات HTML وCSS وJavaScript، والبيانات المعروضة توضيحية. نظام AI لا يقدم تشخيصاً طبياً، ولا توجد اتصالات فعلية بقاعدة بيانات أو Backend في هذه المرحلة.</p>
+</main>
+</body>
+</html>
