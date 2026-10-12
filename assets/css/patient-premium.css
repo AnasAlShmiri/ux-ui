@@ -43,10 +43,8 @@ body.yp-page .mobile-content {
 .yp-icon-button:hover { background:#e8f8f2 }
 .yp-dot{ position:absolute;top:7px;left:8px;width:7px;height:7px;background:#0f9b80;border-radius:50%;border:2px solid white;box-sizing:content-box }
 .yp-avatar {font-weight:800;font-size:15px;background:#daf5eb;color:#0c7161}
-.yp-welcome { padding: 14px 1px 21px; }
-.yp-eyebrow {font-size:12px;font-weight:650;color:#669084;margin:0 0 5px}
-.yp-welcome h1 {color:#173b34;font-size:25px;line-height:1.32;font-weight:800;letter-spacing:-.6px;margin:0 0 7px}
-.yp-welcome p {font-size:13px;color:#6a827d;margin:0;line-height:1.65}
+.yp-page .mobile-content > .yp-hero { margin-top: 16px; }
+.yp-page .yp-avatar svg { width: 21px; height: 21px; }
 .yp-hero{
   position:relative;isolation:isolate;overflow:hidden;
   background:linear-gradient(128deg,#d8f8eb 0%,#e7fbf3 46%,#d0eee9 100%);
