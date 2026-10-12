@@ -198,3 +198,8 @@ body.yp-ai-page .m-form-textarea:focus{border-color:#0d9179!important;box-shadow
 body.yp-ai-page .alert-ai{background:#eaf8f2;border:1px solid #c9e8dc;color:#2a6959;border-radius:14px}
 body.yp-ai-page .yp-emergency-note{margin:8px 0 1px;font-size:11px;line-height:1.7;color:#758b84}
 body.yp-ai-page .yp-ai-demo-label{background:#f1faf5;border:1px solid #daefe5;border-radius:12px;padding:9px 12px;font-size:11px;color:#376a5c;margin-bottom:15px}
+
+body.yp-ai-page .yp-ai-icon{display:inline-grid;place-items:center;width:35px;height:35px;border-radius:12px;background:#e4f7ef;color:#0c816b;flex:0 0 auto}
+body.yp-ai-page .yp-ai-icon svg{width:20px;height:20px}
+body.yp-ai-page .m-card h3{line-height:1.4}
+body.yp-ai-page #ai-result-section{scroll-margin-top:78px}
