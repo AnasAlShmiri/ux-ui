@@ -126,3 +126,10 @@ body.y8-admin .admin-content .d-grid.grid-3{grid-template-columns:repeat(3,minma
 .y8-admin-quick svg{width:18px;height:18px}
 @media(max-width:1180px){body.y8-admin .admin-content .d-grid.grid-4{grid-template-columns:repeat(2,minmax(0,1fr))}body.y8-admin .admin-content .d-grid.grid-3{grid-template-columns:minmax(0,1fr)}body.y8-admin .admin-content .d-grid.grid-3>div{grid-column:auto!important}}
 @media(max-width:700px){body.y8-admin .admin-content{padding:14px}body.y8-admin .admin-topbar{padding-inline:12px}.y8-admin-intro{padding:19px;flex-wrap:wrap}.y8-admin-intro h2{font-size:1.27rem}body.y8-admin .admin-content .d-grid.grid-4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+body.y8-admin .y8-admin-search{display:inline-flex;align-items:center;gap:10px;background:#f5fbf8;border:1px solid #d9ebe2;border-radius:13px;min-height:43px;padding:9px 14px;max-width:360px;min-width:230px;font-size:12px;font-weight:700;color:#628473;text-decoration:none}
+body.y8-admin .y8-admin-search:hover{background:#e8f7ef;border-color:#b5e0cd;color:#0d7c63}
+body.y8-admin .y8-admin-search svg{width:19px;height:19px;color:#0e8a72}
+body.y8-admin .admin-topbar .avatar{font-size:10px}
+@media(max-width:940px){body.y8-admin .y8-admin-search{min-width:0;max-width:195px;font-size:11px}}
+@media(max-width:700px){body.y8-admin .y8-admin-search{display:none}body.y8-admin .y8-admin-intro{margin-bottom:14px}body.y8-admin .admin-content .admin-stat-card{padding:14px!important;min-height:108px}}
