@@ -1,0 +1,99 @@
+/* Yerani v9 · Visual Storytelling System
+   Icon-first screen hierarchy for patient, doctor, nurse, admin.
+   Direction: Arabic RTL. Shared semantic colors. */
+:root{
+ --v9-ink:#153e33;--v9-body:#55776b;--v9-muted:#79988b;
+ --v9-brand:#0f927b;--v9-deep:#087963;--v9-mint:#e6f8ef;
+ --v9-canvas:#f4fbf8;--v9-line:#dceee5;
+ --v9-shadow:0 5px 16px rgba(10,97,73,.035),0 14px 28px rgba(15,117,88,.04);
+}
+body.yr-v9{color:var(--v9-ink);font-family:var(--font-family,'Tajawal',system-ui,sans-serif)}
+body.yr-v9 :where(a,button,input,select,textarea):focus-visible{outline:3px solid #0d8f78;outline-offset:3px}
+body.yr-v9 .v9-icon{width:20px;height:20px;stroke-width:1.8;display:inline-block;flex:0 0 auto;vertical-align:middle;color:inherit}
+body.yr-v9 .v9-icon-sm{width:15px;height:15px}
+body.yr-v9 .v9-icon-lg{width:27px;height:27px}
+body.yr-v9 .v9-icon-xl{width:31px;height:31px}
+body.yr-v9 :where(.mobile-content,.admin-content) {color:var(--v9-ink)}
+/* Icon-led page identity and small illustrative service steps. */
+body.yr-v9 .v9-context{margin:8px 0 23px;background:linear-gradient(137deg,#e4f9ee,#f8fefa 67%,#eef9f5);border:1px solid #cde9da;border-radius:22px;padding:18px 17px;position:relative;overflow:hidden;box-shadow:0 9px 25px rgba(19,121,91,.055)}
+body.yr-v9 .v9-context:before{content:"";width:116px;height:116px;border:1px solid rgba(10,147,111,.11);border-radius:50%;position:absolute;top:-63px;left:-29px;pointer-events:none}
+body.yr-v9 .v9-context-row{display:flex;align-items:center;gap:13px;position:relative}
+body.yr-v9 .v9-context-art{width:57px;height:57px;background:linear-gradient(143deg,#0db18d,#0b8578);border-radius:18px;display:grid;place-items:center;color:#fff;flex:0 0 57px;box-shadow:0 9px 18px rgba(13,144,113,.17)}
+body.yr-v9 .v9-context-art .v9-icon{width:29px;height:29px}
+body.yr-v9 .v9-context-kicker{font-size:10px;color:#318773;font-weight:800;line-height:1.4}
+body.yr-v9 .v9-context h1{font-size:18px;font-weight:800;line-height:1.35;color:#175541;margin:3px 0 5px;letter-spacing:-.35px}
+body.yr-v9 .v9-context p{color:#628d79;margin:0;font-size:11px;line-height:1.6}
+body.yr-v9 .v9-journey{margin-top:16px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;background:rgba(255,255,255,.7);border:1px solid #dbefe4;padding:9px 7px;border-radius:14px}
+body.yr-v9 .v9-journey-step{font-size:10px;color:#45796a;display:flex;flex-direction:column;gap:6px;align-items:center;text-align:center;line-height:1.35;min-width:0;font-weight:750}
+body.yr-v9 .v9-journey-step .v9-icon{color:#168c73;height:19px;width:19px}
+body.yr-v9 .v9-journey-label{display:block;color:#7a9b8b;font-size:10px;font-weight:700;margin-top:11px}
+/* Mobile internal pages: airy visual rhythm and clear controls. */
+body.yr-v9:has(.mobile-app-shell){background:#e8f7f0!important}
+body.yr-v9 .mobile-app-shell{background:var(--v9-canvas)!important}
+body.yr-v9 .mobile-content{background:var(--v9-canvas)!important;padding-inline:16px}
+body.yr-v9 .mobile-header{min-height:62px;background:rgba(255,255,255,.96)!important;border-bottom:1px solid #e6f0e9}
+body.yr-v9 .mobile-header-title{font-size:14px!important;font-weight:800;line-height:1.35;color:#1c5241!important}
+body.yr-v9 .mobile-header :where(.mobile-header-back,.mobile-header-action){border-radius:13px;min-width:44px;min-height:44px;color:#087d65;background:#ebf8f1}
+body.yr-v9 .mobile-content>.m-card{margin-bottom:13px!important}
+body.yr-v9 .m-card{border-radius:19px!important;border:1px solid var(--v9-line)!important;background:#fff;box-shadow:var(--v9-shadow)!important;transition:box-shadow .16s,border-color .16s}
+body.yr-v9 .m-card:has(> .d-flex > .avatar) {border-color:#cbe7dc}
+body.yr-v9 .m-card[style*="border: 2px"]{border-color:#cbe6db!important;background:#fff!important;border-width:1px!important}
+body.yr-v9 .m-card:has(>.v9-card-mark){padding-top:15px}
+body.yr-v9 .v9-card-mark{width:36px;height:36px;border-radius:12px;background:#e9f7f0;color:#0f8a73;display:grid;place-items:center;margin-bottom:10px}
+body.yr-v9 .v9-card-mark .v9-icon{width:21px;height:21px}
+body.yr-v9 .m-section-header{margin-top:21px!important;margin-bottom:11px}
+body.yr-v9 .m-section-title{display:inline-flex;align-items:center;gap:9px;color:#1c4d3e!important;font-size:15px!important;font-weight:800}
+body.yr-v9 .v9-section-icon{display:grid;place-items:center;background:#e5f7ed;border-radius:12px;width:35px;height:35px;flex:0 0 35px;color:#0e9176}
+body.yr-v9 .v9-section-icon .v9-icon{width:19px;height:19px}
+body.yr-v9 .m-form-label{display:flex;align-items:center;gap:6px;color:#285b4a;font-weight:800;line-height:1.6}
+body.yr-v9 .m-form-group{margin-bottom:14px}
+body.yr-v9 :where(.m-form-input,.m-form-select,.m-form-textarea){min-height:45px;border-radius:12px;background:#fbfefd;border:1px solid #d8e9e0;color:#1b4034;font:inherit;font-size:12px}
+body.yr-v9 :where(.m-form-input,.m-form-select,.m-form-textarea):focus{background:#fff;border-color:#159478;box-shadow:0 0 0 3px rgba(15,146,123,.12)}
+body.yr-v9 :where(.m-btn,.m-slot-btn){min-height:43px;border-radius:12px;font-weight:800}
+body.yr-v9 .m-btn-primary{background:#0a9078!important;border-color:#0a9078!important;color:#fff!important;box-shadow:0 6px 13px rgba(12,137,110,.10)}
+body.yr-v9 .m-btn-primary:hover{background:#086b5b!important}
+body.yr-v9 .m-btn-outline{background:#f5fcf8;color:#16745e;border:1px solid #d5ebe0}
+body.yr-v9 .m-btn .v9-icon{width:16px;height:16px;margin-inline-end:5px}
+body.yr-v9 .m-chip-bar{display:flex;gap:7px;scrollbar-width:none;overflow-x:auto;padding-bottom:7px}
+body.yr-v9 .m-chip{border-radius:999px;padding:8px 12px;background:#fff;color:#54796b;border:1px solid #dceae3;font-size:11px;white-space:nowrap;font-weight:750}
+body.yr-v9 button.m-chip{cursor:pointer;font:750 11px var(--font-family,'Tajawal',system-ui,sans-serif);min-height:40px}
+body.yr-v9 .m-chip.active,body.yr-v9 button.m-chip[aria-pressed="true"]{background:#0a8d75!important;color:#fff!important;border-color:#0a8d75!important}
+body.yr-v9 .badge{font-weight:750;border-radius:100px}
+body.yr-v9 .avatar{border-radius:14px;font-weight:800}
+body.yr-v9 .m-card .d-grid>div{min-width:0}
+body.yr-v9 .mobile-bottom-nav{background:#fff!important;border-top:1px solid #e0eee6}
+body.yr-v9 .mobile-bottom-nav .bottom-nav-item{min-width:0;min-height:51px}
+body.yr-v9 .mobile-bottom-nav .bottom-nav-item.active{background:#e9f8ef!important;color:#087b67}
+/* Neutralize misleading loud primary panels, but keep true clinical danger signals. */
+body.yr-v9 .m-card-primary{background:linear-gradient(120deg,#0c947b,#0b7264)!important;border-color:#0b8570!important;color:#fff!important;box-shadow:0 14px 25px rgba(13,116,90,.14)!important}
+body.yr-v9 .m-card-primary :where(h3,h4,strong){color:#fff}
+body.yr-v9 .m-card-primary :where(.text-xs,.text-muted){color:#ddf7ea!important}
+body.yr-v9 .m-card-primary .v9-card-mark{background:rgba(255,255,255,.2);color:#fff}
+body.yr-v9 .v9-no-results{padding:20px 15px;border:1px dashed #a6d8c0;border-radius:16px;text-align:center;color:#587a6d;background:#fff;margin:8px 0 17px}
+body.yr-v9 .v9-no-results[hidden],body.yr-v9 .v9-hidden{display:none!important}
+body.yr-v9 .v9-no-results .v9-icon{width:31px;height:31px;color:#178f77}
+body.yr-v9 .v9-status-note{font-size:10px!important;color:#78988a;background:#f1faf5;padding:9px 12px;border-radius:12px;border:1px solid #e0eee5;margin:12px 0 0;line-height:1.6}
+body.yr-v9 .v9-action-hint{font-size:10px;color:#668d7b;margin-bottom:9px;font-weight:750;display:block}
+body.yr-v9 .v9-cards-grid .m-card{margin-bottom:0}
+body.yr-v9 .v9-compact-stats{display:flex;gap:9px;margin-bottom:12px}
+body.yr-v9 .v9-compact-stat{background:#fff;border:1px solid #dceee3;border-radius:13px;padding:10px 12px;flex:1;min-width:0}
+body.yr-v9 .v9-compact-stat strong{display:block;font-size:16px;color:#136c56}
+body.yr-v9 .v9-compact-stat small{font-size:10px;color:#809b8d}
+/* Administrative pages: visual structure, no aggressive decorative noise. */
+body.yr-v9.admin-body .admin-main{background:#f5fbf8!important}
+body.yr-v9.admin-body .admin-content{max-width:1470px}
+body.yr-v9.admin-body .v9-admin-identity{display:flex;align-items:center;gap:16px;padding:21px 24px;background:linear-gradient(110deg,#e4f8ee,#f8fdf9);border:1px solid #cfe9da;border-radius:19px;margin:0 0 20px}
+body.yr-v9.admin-body .v9-admin-identity>.v9-context-art{height:57px;width:57px;flex-basis:57px}
+body.yr-v9.admin-body .v9-admin-identity h1{font-size:21px;line-height:1.4;color:#124a39;margin:0 0 4px;font-weight:800}
+body.yr-v9.admin-body .v9-admin-identity p{font-size:12px;color:#698b7c;margin:0;line-height:1.7}
+body.yr-v9.admin-body .admin-card{border-radius:18px;border-color:#dfefe5;box-shadow:var(--v9-shadow)}
+body.yr-v9.admin-body :where(.admin-card-title,.admin-content h3){color:#204c3c}
+body.yr-v9.admin-body .admin-content table th{background:#ebf7f0;color:#315f4e;font-weight:800}
+body.yr-v9.admin-body .admin-content table tr:hover td{background:#f2fbf6}
+body.yr-v9.admin-body .admin-content :where(.form-input,.form-select){background:#fbfefd;border-color:#d8e8df;border-radius:11px;min-height:42px}
+body.yr-v9.admin-body .admin-content :where(.form-input,.form-select):focus{border-color:#138c70;box-shadow:0 0 0 3px rgba(10,140,108,.11)}
+body.yr-v9.admin-body .admin-card-title .v9-section-icon{width:33px;height:33px;display:inline-grid;vertical-align:middle;margin-inline-end:8px}
+body.yr-v9.admin-body .v9-admin-identity + .admin-card{margin-top:0}
+@media(max-width:700px){body.yr-v9.admin-body .v9-admin-identity{padding:15px;gap:10px}body.yr-v9.admin-body .v9-admin-identity h1{font-size:16px}body.yr-v9 .v9-context{margin-top:6px;padding:14px}body.yr-v9 .v9-context h1{font-size:16px}}
+@media(max-width:355px){body.yr-v9 .mobile-content{padding-inline:12px}body.yr-v9 .v9-journey-step{font-size:9px}}
+@media(prefers-reduced-motion:reduce){body.yr-v9 :where(.m-card,.m-btn){transition:none}}
