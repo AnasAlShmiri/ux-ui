@@ -26,7 +26,7 @@ body.y12-clinical{font-family:Tajawal,'Segoe UI',system-ui,sans-serif}
 .y12-clinical .y12-flow span{flex:1;display:grid;justify-items:center;gap:7px;font-size:10px;color:#628677;font-weight:800;text-align:center;min-width:0}
 .y12-clinical .y12-flow b{height:35px;width:35px;display:grid;place-items:center;background:#e1f5e9;color:#11836b;border-radius:12px}
 .y12-clinical .y12-flow b svg{width:19px;height:19px}
-.y12-clinical .y12-flow i{width:15px;align-self:16px;color:#93bdae;display:grid;place-items:center;font-style:normal;align-self:start;margin-top:9px}
+.y12-clinical .y12-flow i{width:15px;color:#93bdae;display:grid;place-items:center;font-style:normal;align-self:start;margin-top:9px}
 .y12-clinical .y12-card{background:white;border:1px solid #deeee5;border-radius:21px;padding:17px;margin:13px 0;box-shadow:0 8px 23px #116d5010}
 .y12-clinical .y12-card h3{display:flex;align-items:center;gap:9px;color:#1b5241;margin:0 0 9px;font-size:15px;line-height:1.4;font-weight:900}
 .y12-clinical .y12-card h3 svg{width:21px;height:21px;color:#098670}
