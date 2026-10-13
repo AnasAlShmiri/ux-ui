@@ -89,3 +89,8 @@ body.m13.m14 .m14-spacer{height:2px}
 body.m13.m14 .m14-footer-note{font-size:10px;color:#8ba598;text-align:center;line-height:1.8;margin:20px 4px 5px}
 @media(max-width:365px){body.m13.m14 .m14-queue-card,body.m13.m14 .m14-alert{padding:12px}body.m13.m14 .m14-card-head{gap:8px}body.m13.m14 .m14-card-art{height:43px;width:43px;flex-basis:43px}body.m13.m14 .m14-actionlist{gap:5px}body.m13.m14 .m14-action{padding:8px 3px}body.m13.m14 .m14-card-actions a{font-size:10px;padding:8px 5px}}
 @media(prefers-reduced-motion:reduce){body.m13.m14 *{transition:none!important;scroll-behavior:auto!important}}
+
+/* Hidden empty states and disabled controls must remain hidden in all themes. */
+body.m13.m14 [data-m14-empty-unread][hidden]{display:none!important}
+body.m13.m14 .m14-notif-tools button:disabled{opacity:.45;cursor:not-allowed}
+body.m13.m14 .m14-alert:focus-within{border-color:#99d5bb}
