@@ -83,9 +83,9 @@ body.y11-page{--y11-ink:#153e34;--y11-brand:#0c8871;--y11-mint:#e4f8ee;--y11-lin
 .y11-page .y11-demo{text-align:center;font-size:10px;color:#92a69b;line-height:1.7;margin:18px 4px 3px}
 .y11-page .y11-search{display:flex;align-items:center;gap:9px;border:1px solid #d9eae0;border-radius:14px;background:white;padding:0 13px;min-height:49px}
 .y11-page .y11-search svg{height:20px;width:20px;color:#0b8870}
-.y11-page .y11-search input{width:100%;border:0;background:transparent;font:12px inherit;color:#215242;outline:none;padding:12px 0}
+.y11-page .y11-search input{width:100%;border:0;background:transparent;font-size:12px;font-family:inherit;color:#215242;outline:none;padding:12px 0}
 .y11-page .y11-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px;background:#e9f6ee;border-radius:14px;padding:5px;margin:17px 0}
-.y11-page .y11-tabs button{min-height:42px;border:0;background:transparent;border-radius:11px;color:#749589;font:800 11px inherit;cursor:pointer}
+.y11-page .y11-tabs button{min-height:42px;border:0;background:transparent;border-radius:11px;color:#749589;font-size:11px;font-weight:800;font-family:inherit;cursor:pointer}
 .y11-page .y11-tabs button[aria-selected=true]{background:white;color:#0b816a;box-shadow:0 3px 9px rgba(16,110,82,.08)}
 .y11-page [data-y11-panel][hidden]{display:none!important}
 .y11-page .y11-upload{display:block;border:1.5px dashed #91c9af;border-radius:17px;padding:22px 13px;text-align:center;background:#f5fcf8;color:#225b48;cursor:pointer}
@@ -106,3 +106,8 @@ body.y11-page{--y11-ink:#153e34;--y11-brand:#0c8871;--y11-mint:#e4f8ee;--y11-lin
 @media(min-width:481px){body.y11-page .mobile-app-shell{border-radius:22px;margin:20px auto;min-height:calc(100vh - 40px)}}
 @media(max-width:360px){body.y11-page .mobile-content{padding-inline:12px!important}.y11-page .y11-actions{gap:7px}.y11-page .y11-card{padding:12px}.y11-page .y11-chip{font-size:9px}.y11-page .y11-stat strong{font-size:13px}}
 @media(prefers-reduced-motion:reduce){.y11-page *{scroll-behavior:auto!important;transition:none!important}}
+
+.y11-page .y11-btn:disabled{opacity:.48;cursor:not-allowed;box-shadow:none}
+.y11-page .y11-upload:focus-within{outline:3px solid #0b846d;outline-offset:3px}
+.y11-page .y11-upload:focus-within input{outline:none}
+.y11-page .y11-notice svg{display:inline-block;vertical-align:middle;margin-inline-end:4px;width:16px;height:16px}
