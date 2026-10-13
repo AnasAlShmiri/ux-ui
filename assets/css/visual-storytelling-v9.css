@@ -37,7 +37,6 @@ body.yr-v9 .mobile-header :where(.mobile-header-back,.mobile-header-action){bord
 body.yr-v9 .mobile-content>.m-card{margin-bottom:13px!important}
 body.yr-v9 .m-card{border-radius:19px!important;border:1px solid var(--v9-line)!important;background:#fff;box-shadow:var(--v9-shadow)!important;transition:box-shadow .16s,border-color .16s}
 body.yr-v9 .m-card:has(> .d-flex > .avatar) {border-color:#cbe7dc}
-body.yr-v9 .m-card[style*="border: 2px"]{border-color:#cbe6db!important;background:#fff!important;border-width:1px!important}
 body.yr-v9 .m-card:has(>.v9-card-mark){padding-top:15px}
 body.yr-v9 .v9-card-mark{width:36px;height:36px;border-radius:12px;background:#e9f7f0;color:#0f8a73;display:grid;place-items:center;margin-bottom:10px}
 body.yr-v9 .v9-card-mark .v9-icon{width:21px;height:21px}

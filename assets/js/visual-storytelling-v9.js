@@ -154,7 +154,7 @@ function enhanceMobile(){
  if(key==="nurse/visits.html")enhanceVisitFilter(main);
  // Prototype reminder replaces false success from inert demo-only actions.
  main.querySelectorAll('button[type="button"]').forEach(btn=>{
-   if(btn.hasAttribute("data-v9-filter")||btn.hasAttribute("onclick")||btn.closest("[data-doctor-directory]"))return;
+   if(btn.matches("[data-v9-filter],[data-day],[data-time],[data-appointment-tab],[data-filter-specialty]")||btn.hasAttribute("onclick")||btn.closest("[data-doctor-directory]"))return;
    btn.addEventListener("click",()=>demoToast(main));
  });
 }
