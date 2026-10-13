@@ -1,0 +1,129 @@
+/* Yerani V10 — High-Fidelity Care Experience
+ * Applied after V9, scoped to .yr-v10.
+ * Clinical hierarchy, depth, affordance and AA-oriented contrast.
+ */
+:root {
+  --v10-forest:#104d3e;--v10-ink:#183e34;--v10-teal:#0a876f;
+  --v10-mint:#e4f7ed;--v10-paper:#ffffff;--v10-cloud:#f5fbf8;
+  --v10-muted:#647d73;--v10-hair:#d7e9df;
+  --v10-shadow:0 2px 6px rgba(10,86,62,.022),0 13px 35px rgba(21,103,75,.073);
+}
+body.yr-v10{--font-family:Tajawal,'Segoe UI',system-ui,sans-serif;color:var(--v10-ink);-webkit-font-smoothing:antialiased}
+body.yr-v10 :where(a,button,input,select,textarea){-webkit-tap-highlight-color:transparent}
+body.yr-v10 :where(a,button,input,select,textarea):focus-visible{outline:3px solid #087c64!important;outline-offset:3px!important}
+body.yr-v10 :where(button,input,select,textarea){font-family:var(--font-family)}
+body.yr-v10 a,body.yr-v10 button{transition:background-color .18s ease,border-color .18s ease,color .18s ease,box-shadow .18s ease,transform .18s ease}
+body.yr-v10 .mobile-app-shell{background:#f5fbf8!important}
+body.yr-v10 .mobile-content{background:#f5fbf8!important}
+body.yr-v10 .mobile-content>.m-card{box-shadow:var(--v10-shadow)!important}
+body.yr-v10 .m-card{border-color:#dbece3!important}
+body.yr-v10 .m-section-title,body.yr-v10 .yp-section-head h2{letter-spacing:-.25px;color:var(--v10-forest)!important}
+body.yr-v10 .m-card p{line-height:1.8}
+body.yr-v10 .m-btn:not([disabled]):hover,body.yr-v10 .yp-hero-button:hover{transform:translateY(-1px)}
+body.yr-v10 .m-btn:active,body.yr-v10 .yp-hero-button:active{transform:translateY(0)}
+body.yr-v10 .mobile-bottom-nav{box-shadow:0 -9px 24px rgba(15,83,62,.062)!important;backdrop-filter:blur(15px)}
+body.yr-v10 .mobile-bottom-nav .bottom-nav-item svg{stroke-width:1.9}
+/* Patient front door — visual hierarchy, better storytelling. */
+body.yr-v10.yp-page .mobile-content{padding-left:17px;padding-right:17px}
+body.yr-v10 .yp-header{padding:20px 19px 17px;background:#f5fbf8}
+body.yr-v10 .yp-brand-mark{width:44px;height:44px;border-radius:16px;box-shadow:0 10px 21px rgba(7,135,103,.18)}
+body.yr-v10 .yp-brand-mark svg{width:25px;height:25px}
+body.yr-v10 .yp-brand-name{font-size:21px;color:#10503e;font-weight:900}
+body.yr-v10 .yp-brand-caption{color:#5e8173}
+body.yr-v10 .yp-header-tools .yp-icon-button{background:#fff;border-color:#dcece4;box-shadow:0 5px 14px rgba(20,103,80,.045)}
+body.yr-v10 .yp-hero{margin-top:10px;min-height:258px;border-radius:28px;padding:24px 18px;background:linear-gradient(132deg,#d9f8ea 0%,#e7fbf2 52%,#cdeee8 100%);border:1px solid #bce8d8;box-shadow:0 17px 38px rgba(10,130,100,.105)}
+body.yr-v10 .yp-hero::before{width:250px;height:250px;left:-100px;top:-93px;border-color:#51c8a52c}
+body.yr-v10 .yp-hero::after{width:185px;height:185px;left:-68px;top:-60px;border-color:#51c8a51e}
+body.yr-v10 .yp-hero-text{max-width:235px;z-index:3}
+body.yr-v10 .yp-hero h2{font-size:clamp(19px,5.8vw,26px);line-height:1.34;color:#0c5643;letter-spacing:-.55px;margin:14px 0 10px}
+body.yr-v10 .yp-hero p{font-size:11.8px;max-width:214px;line-height:1.85;color:#3d7765;margin-bottom:18px}
+body.yr-v10 .yp-pill{border-color:#bce7d4;box-shadow:0 4px 11px rgba(20,114,78,.04);color:#0c6f58;background:rgba(255,255,255,.84)}
+body.yr-v10 .yp-hero-button{background:linear-gradient(118deg,#05b98e,#0c806e);border-radius:13px;min-height:46px;padding:12px 14px;box-shadow:0 8px 18px rgba(7,126,99,.16);font-size:12px;letter-spacing:-.1px}
+body.yr-v10 .yp-hero-visual{width:170px;height:202px;top:35px;left:-9px}
+body.yr-v10 .yp-circle-main{left:4px;top:22px;width:145px;height:151px;border-radius:39px;transform:rotate(-10deg);background:linear-gradient(146deg,#fff,#dff9ee);border:3px solid rgba(255,255,255,.8);box-shadow:0 19px 26px rgba(15,118,92,.13)}
+body.yr-v10 .yp-circle-main svg{width:118px;height:118px;transform:rotate(10deg);filter:drop-shadow(0 3px 1px rgba(11,130,93,.06))}
+body.yr-v10 .yp-spark{left:113px;top:9px;width:35px;height:35px;border-radius:12px}
+body.yr-v10 .yp-floating{bottom:0;left:0;border:1px solid #e0f3e7;font-size:10px;padding:9px 10px}
+body.yr-v10 .yp-section{margin-top:28px}
+body.yr-v10 .yp-section-head{align-items:end;margin-bottom:16px}
+body.yr-v10 .yp-section-head h2{font-size:19px!important;font-weight:900}
+body.yr-v10 .yp-section-head p{color:#819e8e;font-size:11px;margin:4px 0 0}
+body.yr-v10 .yp-service-grid{gap:11px}
+body.yr-v10 .yp-service{background:#fff;border:1px solid #d9ede3;border-radius:21px;min-height:147px;padding:15px;box-shadow:0 9px 24px rgba(20,117,85,.045)}
+body.yr-v10 .yp-service:hover{border-color:#80cba9;box-shadow:0 15px 29px rgba(13,111,80,.11);transform:translateY(-2px)}
+body.yr-v10 .yp-service-icon{border-radius:15px;width:51px;height:51px;background:linear-gradient(140deg,#dff6ed,#ebf9f5)}
+body.yr-v10 .yp-service-icon svg{width:26px;height:26px;stroke-width:1.9}
+body.yr-v10 .yp-service:nth-child(2) .yp-service-icon{background:#e1f3f5;color:#137e88}
+body.yr-v10 .yp-service:nth-child(3) .yp-service-icon{background:#eeeeFA;color:#7578ae}
+body.yr-v10 .yp-service:nth-child(4) .yp-service-icon{background:#f4f0df;color:#a38b3f}
+body.yr-v10 .yp-service-title{font-size:14px;color:#174f3c;font-weight:900}
+body.yr-v10 .yp-service-desc{color:#7b998a;font-size:10.5px}
+body.yr-v10 .yp-service-arrow{color:#90b8a5}
+body.yr-v10 .yp-mini{border-color:#dbece2;background:#fff;border-radius:14px;min-height:45px;box-shadow:0 4px 13px rgba(27,105,77,.035)}
+body.yr-v10 .yp-mini svg{color:#15886f}
+body.yr-v10 .yp-appointment{border-radius:23px;box-shadow:var(--v10-shadow)}
+body.yr-v10 .yp-follow{border-color:#dbece3;border-radius:21px;box-shadow:var(--v10-shadow)}
+body.yr-v10 .yp-lab{border-radius:17px;border-color:#dcebe2}
+/* Expressive, non-status care pathway */
+.v10-path{margin:15px 0 4px;border:1px solid #d9ece2;background:#fff;box-shadow:0 10px 25px rgba(26,113,85,.047);border-radius:19px;padding:14px 12px 13px}
+.v10-path-title{display:flex;align-items:center;justify-content:space-between;gap:7px;margin-bottom:13px}
+.v10-path-title strong{font-size:12px;color:#245746;font-weight:900}
+.v10-path-title span{font-size:10px;color:#7c9d8e}
+.v10-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+.v10-step{min-width:0;display:flex;flex-direction:column;align-items:center;gap:7px;text-align:center;text-decoration:none}
+.v10-step .v10-step-symbol{display:grid;place-items:center;width:40px;height:40px;border-radius:14px;background:#e8f8ef;color:#0a8e72;border:1px solid #d9f0e3;box-shadow:0 3px 10px #0a826010}
+.v10-step:nth-child(2) .v10-step-symbol{color:#217f85;background:#eaf7f7;border-color:#d9eced}
+.v10-step:nth-child(3) .v10-step-symbol{color:#7576a1;background:#f0f0fc;border-color:#e8e8f9}
+.v10-step .v10-step-symbol svg{width:23px;height:23px}
+.v10-step strong{font-size:11px;line-height:1.5;color:#315e4f;font-weight:850}
+.v10-step small{font-size:9px;line-height:1.45;color:#809c90}
+.v10-step:hover .v10-step-symbol{border-color:#89d2b0;transform:translateY(-2px)}
+/* Clinician dashboards: less information overload, tangible actions */
+body.yr-v10.y8-mobile .y8-top{background:#f5fbf8;padding:19px 19px}
+body.yr-v10.y8-mobile .y8-brand-mark{border-radius:17px;width:47px;height:47px}
+body.yr-v10.y8-mobile .y8-brand-label strong{font-size:16px}
+body.yr-v10.y8-mobile .y8-overview{margin:11px 0 17px}
+body.yr-v10.y8-mobile .y8-overview h1{font-size:26px;font-weight:900;color:#154b39}
+body.yr-v10.y8-mobile .y8-hero{border-radius:26px;min-height:202px;padding:23px 19px;border-color:#bce8d8;box-shadow:0 16px 33px rgba(16,108,79,.09)}
+body.yr-v10.y8-mobile .y8-hero h2{font-size:23px}
+body.yr-v10.y8-mobile .y8-hero-art{top:45px;left:1px}
+body.yr-v10.y8-mobile .y8-art-tile{width:125px;height:125px;border-radius:35px}
+body.yr-v10.y8-mobile .y8-section{margin-top:29px}
+body.yr-v10.y8-mobile .y8-section-head h2{font-size:18px;color:#194c3c}
+body.yr-v10.y8-mobile .y8-kpi{border-radius:19px;min-height:93px;box-shadow:var(--v10-shadow)}
+body.yr-v10.y8-mobile .y8-kpi-ic{width:46px;height:46px;border-radius:15px}
+body.yr-v10.y8-mobile .y8-action{border-radius:21px;min-height:153px;box-shadow:var(--v10-shadow)}
+body.yr-v10.y8-mobile .y8-action-ic{width:50px;height:50px;border-radius:17px}
+body.yr-v10.y8-mobile .y8-action strong{font-size:14px}
+body.yr-v10.y8-mobile .y8-visit{border-radius:21px;box-shadow:var(--v10-shadow)}
+body.yr-v10.y8-mobile .y8-note{border-radius:17px}
+/* Inner pages: consistent spacing, no stacked giant banners. */
+body.yr-v10 .v9-context{border-radius:22px;border-color:#cee9d9;box-shadow:0 10px 25px rgba(16,116,82,.05);background:linear-gradient(128deg,#e0f8eb,#f8fefa)}
+body.yr-v10 .v9-context-art{border-radius:18px;box-shadow:0 9px 20px rgba(10,135,105,.13)}
+body.yr-v10 .v9-journey{border-radius:15px}
+body.yr-v10 .v9-section-icon{border-radius:12px}
+/* For doctor directory + appointment detail */
+body.yr-v10 .ypf-med-card{border-radius:22px;border-color:#d8ebdf;box-shadow:var(--v10-shadow);padding:17px}
+body.yr-v10 .ypf-med-card:hover{border-color:#a6dbc3;box-shadow:0 15px 31px rgba(15,108,81,.09)}
+body.yr-v10 .ypf-search{border-radius:16px;box-shadow:var(--v10-shadow)}
+body.yr-v10 .ypf-btn{border-radius:13px;min-height:45px}
+body.yr-v10 .ypf-profile-hero{border-radius:26px}
+body.yr-v10 .ypf-panel{border-radius:21px;box-shadow:var(--v10-shadow)}
+body.yr-v10 .ypf-choice{border-radius:13px}
+/* Admin: legible data density and distinctive navigation. */
+body.yr-v10.admin-body .admin-main{background:#f5fbf8!important}
+body.yr-v10.admin-body .admin-sidebar{background:#fcfffd!important}
+body.yr-v10.admin-body .admin-content{padding:28px;max-width:1500px}
+body.yr-v10.admin-body .y8-admin-intro{border-radius:23px;background:linear-gradient(105deg,#dbf6e9,#f8fcf8 67%,#e0f5ee);box-shadow:0 12px 25px rgba(12,104,77,.035);padding:26px}
+body.yr-v10.admin-body .y8-admin-intro h2{font-size:24px;font-weight:900}
+body.yr-v10.admin-body .y8-admin-quick a{border-radius:13px;min-height:45px;box-shadow:0 6px 16px rgba(10,104,76,.035)}
+body.yr-v10.admin-body .admin-stat-card{border-radius:19px!important;box-shadow:var(--v10-shadow)!important}
+body.yr-v10.admin-body .admin-card{border-radius:19px;box-shadow:var(--v10-shadow)}
+body.yr-v10.admin-body .admin-table th{font-size:12px}
+body.yr-v10.admin-body .admin-table td{font-size:12px}
+body.yr-v10.admin-body .admin-nav-item{border-radius:13px}
+/* Reduced motion; touch targets */
+@media(min-width:481px){body.yr-v10:has(.mobile-app-shell) .mobile-app-shell{box-shadow:0 24px 65px rgba(15,82,65,.13)}}
+@media(max-width:390px){body.yr-v10 .yp-hero{min-height:255px;padding:22px 15px}body.yr-v10 .yp-hero-text{max-width:212px}body.yr-v10 .yp-hero h2{font-size:20px}body.yr-v10 .yp-hero-visual{left:-32px;opacity:.9}body.yr-v10.admin-body .admin-content{padding:15px}}
+@media(max-width:360px){body.yr-v10 .yp-hero-visual{opacity:.5}body.yr-v10 .yp-hero-text{max-width:230px}body.yr-v10 .v10-step strong{font-size:10px}body.yr-v10.y8-mobile .y8-hero-art{opacity:.38}}
+@media(prefers-reduced-motion:reduce){body.yr-v10 :where(a,button,.yp-service,.y8-action,.v10-step-symbol){transition:none!important;animation:none!important}}
