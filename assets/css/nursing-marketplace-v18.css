@@ -67,7 +67,7 @@ body.nh{margin:0;background:#eaf7f0;color:var(--nh-forest);font-family:Tajawal,'
 .nh-chat-compose textarea{border:0;outline:0;resize:vertical;width:100%;min-height:65px;color:#294d3d;font-size:11.5px;line-height:1.7}
 .nh-chat-compose .nh-action{width:100%}
 .nh-empty{text-align:center;padding:21px 15px;border:1px dashed #bcdccc;border-radius:15px;background:#fff;font-size:11px;color:#719382}
-.nh-bottom{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));padding:8px 3px calc(6px + env(safe-area-inset-bottom,0px));background:#fff;border-top:1px solid #daeadd;position:sticky;bottom:0;z-index:10}
+.nh-bottom{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));padding:8px 3px calc(6px + env(safe-area-inset-bottom,0px));background:#fff;border-top:1px solid #daeadd;position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(100%,430px);z-index:100;box-shadow:0 -8px 20px rgba(25,93,65,.045)}
 .nh-bottom a{min-width:0;display:flex;align-items:center;flex-direction:column;justify-content:center;gap:5px;text-align:center;color:#8aa396;min-height:57px;text-decoration:none;font-size:10px;font-weight:800;border-radius:11px}
 .nh-bottom a.active{background:#e7f8ee;color:#0a886d}.nh-bottom svg{height:22px;width:22px}
 .nh-illustration{display:grid;place-items:center;height:74px;width:74px;background:#e0f5e8;border:1px solid #bfe8d3;border-radius:23px;margin:auto;color:#0d9b79}.nh-illustration svg{width:39px;height:39px}
