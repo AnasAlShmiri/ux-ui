@@ -13,6 +13,13 @@ const ready=()=> {
       button.setAttribute("aria-pressed",String(!isShown));
     });
   });
+  // Keep "none" mutually exclusive with selected conditions.
+  document.querySelectorAll(".auth-health").forEach(section=>{
+    const no=section.querySelector('[name="chronicNone"]');
+    const conditions=[...section.querySelectorAll('[name="chronic"]')];
+    no?.addEventListener("change",()=>{if(no.checked)conditions.forEach(c=>c.checked=false)});
+    conditions.forEach(c=>c.addEventListener("change",()=>{if(c.checked&&no)no.checked=false}));
+  });
   document.querySelectorAll("[data-auth-form]").forEach(form=>{
     const message=form.querySelector("[data-auth-response]");
     const password=form.querySelector('[name="password"]'),confirmation=form.querySelector('[name="confirmPassword"]');

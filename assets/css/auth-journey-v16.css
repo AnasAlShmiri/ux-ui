@@ -62,3 +62,6 @@ body.auth-v16 svg{display:block;width:21px;height:21px;stroke-linecap:round;stro
 @media(min-width:480px){.auth-shell{border-radius:25px;margin:20px auto;min-height:calc(100vh - 40px);box-shadow:0 21px 55px #0d674d18}}
 @media(max-width:360px){.auth-content{padding-inline:13px}.auth-form{padding:17px 13px}.auth-field-row{gap:7px}.auth-brand h1{font-size:23px}}
 @media(prefers-reduced-motion:reduce){body.auth-v16 *{animation:none!important;transition:none!important}}
+
+/* Accessible, compact optional health history selector */
+.auth-health{border:1px solid #dcebe1;background:#f8fdf9;border-radius:14px;padding:12px 13px;margin:9px 0 19px;min-width:0}.auth-health legend{font-weight:900;font-size:12px;color:#315b47;padding:0 6px}.auth-health legend span{font-size:10px;font-weight:400;color:#93a99a}.auth-health>p{font-size:10px;color:#819a8c;margin:0 0 10px}.auth-health-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.auth-health-options label{background:#fff;border:1px solid #e2f0e6;border-radius:10px;padding:9px 8px;font-size:11px;color:#376b54;display:flex;align-items:center;gap:7px;min-height:42px;cursor:pointer}.auth-health-options input{height:16px;width:16px;accent-color:#088c70}
