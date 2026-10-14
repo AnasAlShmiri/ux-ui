@@ -38,7 +38,7 @@ const buttons=scenes.map((scene,i)=>{
  rail.appendChild(b);
  return b;
 });
-const go=(index)=>{
+const go=(index, skipRailScroll=false)=>{
  if(!Number.isInteger(index)||index<0||index>=scenes.length)return;
  current=index;const scene=scenes[index];
  sceneTitle.textContent=scene.title;sceneLead.textContent=scene.lead;sceneFocus.textContent=scene.focus;
@@ -49,7 +49,7 @@ const go=(index)=>{
  prev.disabled=index===0;next.disabled=index===scenes.length-1;
  sceneProgress.style.width=((index+1)/scenes.length*100)+"%";
  buttons.forEach((b,i)=>{if(i===index){b.setAttribute("aria-current","step")}else{b.removeAttribute("aria-current")}});
- buttons[index].scrollIntoView({behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",inline:"center",block:"nearest"});
+ if(!skipRailScroll)buttons[index].scrollIntoView({behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",inline:"center",block:"nearest"});
  status.textContent="الخطوة الحالية: "+scene.title;
 };
 prev?.addEventListener("click",()=>go(current-1));
@@ -76,5 +76,5 @@ get("skip-credentials")?.addEventListener("click",()=>go(16));
 get("skip-nursing")?.addEventListener("click",()=>go(10));
 get("skip-doctor")?.addEventListener("click",()=>go(5));
 get("skip-patient")?.addEventListener("click",()=>go(0));
-go(0);
+go(0,true);
 })();
