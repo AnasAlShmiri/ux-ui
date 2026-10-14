@@ -48,8 +48,14 @@ const go=(index, skipRailScroll=false)=>{
  phoneLabel.textContent=scene.role+" — شاشة تفاعلية";
  prev.disabled=index===0;next.disabled=index===scenes.length-1;
  sceneProgress.style.width=((index+1)/scenes.length*100)+"%";
+ const track=sceneProgress.closest('[role="progressbar"]');
+ if(track){track.setAttribute("aria-valuemin","1");track.setAttribute("aria-valuemax",String(scenes.length));track.setAttribute("aria-valuenow",String(index+1));}
  buttons.forEach((b,i)=>{if(i===index){b.setAttribute("aria-current","step")}else{b.removeAttribute("aria-current")}});
- if(!skipRailScroll)buttons[index].scrollIntoView({behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",inline:"center",block:"nearest"});
+ if(!skipRailScroll){
+  const list=rail.getBoundingClientRect(),target=buttons[index].getBoundingClientRect();
+  const shift=target.left+target.width/2-list.left-list.width/2;
+  if(Number.isFinite(shift)&&Math.abs(shift)>8)rail.scrollBy({left:shift,behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"instant":"smooth"});
+ }
  status.textContent="الخطوة الحالية: "+scene.title;
 };
 prev?.addEventListener("click",()=>go(current-1));
