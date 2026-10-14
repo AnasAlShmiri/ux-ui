@@ -10,6 +10,7 @@ const providers=[
 {id:"d1",role:"doctor",name:"د. عبدالله الحربي",short:"ع",specialty:"أمراض القلب",rating:"4.9",experience:"14 سنة",fee:8000,services:["consult"]},
 {id:"d2",role:"doctor",name:"د. مها السليمان",short:"م",specialty:"الباطنية والسكري",rating:"4.8",experience:"11 سنة",fee:7000,services:["consult"]},
 {id:"d3",role:"doctor",name:"د. خالد الغامدي",short:"خ",specialty:"طب الأسرة",rating:"4.7",experience:"9 سنوات",fee:6000,services:["consult"]},
+{id:"d4",role:"doctor",name:"د. نورة القحطاني",short:"ن",specialty:"العظام",rating:"4.9",experience:"10 سنوات",fee:7000,services:["consult"]},
 {id:"n1",role:"nurse",name:"الممرضة مريم",short:"م",specialty:"قياس العلامات الحيوية",rating:"4.8",experience:"7 سنوات",fee:6000,services:["vitals","nursing"]},
 {id:"n2",role:"nurse",name:"الممرض سامي",short:"س",specialty:"رعاية كبار السن",rating:"4.7",experience:"6 سنوات",fee:7500,services:["elder","nursing"]},
 {id:"n3",role:"nurse",name:"الممرضة هدى",short:"هـ",specialty:"الرعاية بعد العمليات",rating:"4.9",experience:"8 سنوات",fee:9000,services:["postop","vitals"]}
@@ -22,7 +23,7 @@ nurse:[["workspace","⌂","الرئيسية"],["case","▤","ملف المريض
 admin:[["workspace","⌂","الرئيسية"],["approvals","✓","الاعتماد"],["catalog","▦","الخدمات"],["issues","☷","الشكاوى"],["account","♙","حسابي"]]
 };
 const today=()=>{const d=new Date(),o=d.getTimezoneOffset();return new Date(d.getTime()-o*60000).toISOString().slice(0,10)};
-const state={role:"patient",view:"home",filter:"all",search:"",selectedService:null,notifications:["تذكير تجريبي: راجع موعدك القادم من صفحة مواعيدي."],modal:null,ratings:{},complaints:[{id:"C-01",kind:"شكوى",text:"نموذج: تأخر في الرد على طلب زيارة",status:"جديد"}],professionalApplications:[{id:"A-01",name:"طبيب تجريبي",kind:"طبيب",status:"قيد المراجعة"},{id:"A-02",name:"ممرض تجريبي",kind:"ممرض",status:"قيد المراجعة"}],record:{
+const state={role:"patient",view:"home",filter:"all",search:"",selectedService:null,notifications:["تذكير تجريبي: راجع موعدك القادم من صفحة مواعيدي."],modal:null,ratings:{},payments:{},complaints:[{id:"C-01",kind:"شكوى",text:"نموذج: تأخر في الرد على طلب زيارة",status:"جديد"}],professionalApplications:[{id:"A-01",name:"طبيب تجريبي",kind:"طبيب",status:"قيد المراجعة"},{id:"A-02",name:"ممرض تجريبي",kind:"ممرض",status:"قيد المراجعة"}],record:{
 profile:{name:"مريض تجريبي",age:"بيانات توضيحية",blood:"O+ (مثال)",allergies:"غير موثقة في النموذج",history:"متابعة قلبية افتراضية"},
 diagnosis:"متابعة دورية (مثال تعليمي — ليس تشخيصًا حقيقيًا)",
 instructions:"متابعة العلامات الحيوية ورفع تقرير الزيارة للطبيب، وفق خطة الرعاية المعتمدة (مثال).",
@@ -63,7 +64,7 @@ card("حجوزاتي",b?'<p>'+en((provider(b.pid)||{}).name)+" · "+en(b.date)+'
 '</div>'+notice("تجربة التصميم فقط: لا يُنشئ هذا النموذج حجزًا لدى مقدم رعاية حقيقي، ولا ينقل معلومات طبية خارج الجهاز.") }
 function doctors(){return head("أطباء يرعاني","اختر طبيبك","التقييم الظاهر يخص الطبيب نفسه، وليس نوع الخدمة.")+
 '<div class="searchbar"><span>⌕</span><input type="search" id="search" aria-label="ابحث عن طبيب" placeholder="ابحث باسم الطبيب أو التخصص..." value="'+en(state.search)+'"></div>'+
-'<div class="filters">'+["all","أمراض القلب","الباطنية والسكري","طب الأسرة"].map(f=>'<button type="button" class="chip '+(state.filter===f?"selected":"")+'" data-action="filter" data-filter="'+f+'">'+(f==="all"?"الكل":f)+'</button>').join("")+'</div>'+providerGrid("doctor") }
+'<div class="filters">'+["all","أمراض القلب","الباطنية والسكري","طب الأسرة","العظام"].map(f=>'<button type="button" class="chip '+(state.filter===f?"selected":"")+'" data-action="filter" data-filter="'+f+'">'+(f==="all"?"الكل":f)+'</button>').join("")+'</div>'+providerGrid("doctor") }
 function servicesView(){return head("الرعاية المنزلية","ما الخدمة التي تحتاجها؟","الخدمة لا تُقيّم. بعد الاختيار سترى أسماء الممرضين وتقييم كل ممرض.")+
 '<div class="service-grid">'+services.map(s=>'<button class="service-card" type="button" data-action="select-service" data-id="'+s.id+'"><span class="quick-icon">'+s.icon+'</span><span><strong>'+s.name+'</strong><small>'+s.desc+'</small></span><span class="chevron">‹</span></button>').join("")+'</div>'+
 '<div class="form-actions">'+btn("goto","استعرض جميع الممرضين","btn-quiet","data-view=\"nurses\"")+'</div>'+notice("قد تتطلب بعض الإجراءات أمرًا طبيًا صالحًا ومقدم رعاية مؤهلًا. الأسعار المعروضة لاحقًا توضيحية.") }
@@ -85,6 +86,7 @@ if(!belongs)return "";
 return '<article class="booking"><div class="booking-head"><h3>'+en(p?p.name:"مقدم رعاية")+'</h3>'+status(b.status)+'</div><p>'+en(b.type==="doctor"?"استشارة طبية":((service(b.service)||{}).name||"تمريض منزلي"))+'</p><p>◷ '+en(b.date)+' · '+en(b.time)+' &nbsp; ◇ '+en(b.area)+'</p>'+
 '<div class="booking-actions">'+(isPatient&&b.status!=="cancelled"&&b.status!=="completed"?btn("edit-booking","تعديل","btn-quiet btn-small","data-id=\""+b.id+"\"")+btn("cancel-booking","إلغاء الطلب","btn-danger btn-small","data-id=\""+b.id+"\""):"")+
 (isPatient&&b.status==="completed"? (state.ratings[b.id]?'<span class="pill-info">★ تم تقييم '+en(p?.name)+' في المعاينة</span>':btn("rate","★ تقييم "+(b.type==="doctor"?"الطبيب":"الممرض"),"btn btn-small","data-id=\""+b.id+"\"")):"")+
+(isPatient&&b.status==="completed"?(state.payments[b.id]?'<span class="pill-info">تمت معاينة تأكيد الدفع النقدي</span>':btn("payment","تأكيد الدفع النقدي (معاينة)","btn-quiet btn-small","data-id=\""+b.id+"\"")):"")+
 (!isPatient&&state.role!=="admin"&&b.status==="pending"?btn("accept","قبول الطلب","btn btn-small","data-id=\""+b.id+"\"")+btn("reject","الاعتذار","btn-danger btn-small","data-id=\""+b.id+"\""):"")+
 (!isPatient&&b.status==="confirmed"?btn("finish","إتمام الزيارة","btn btn-small","data-id=\""+b.id+"\""):"")+'</div></article>';
 }).join("")+'</div>':'<div class="empty">لا توجد حجوزات تجريبية.</div>')+
@@ -189,6 +191,8 @@ if(a==="book"){closeModal();bookModal(id);return}
 if(a==="profile"){closeModal();profileModal(id);return}
 if(a==="whatsapp"){whatsapp(id);return}
 if(a==="rate"){ratingModal(id);return}
+if(a==="payment"){const b=state.bookings.find(x=>x.id===id);if(b&&b.status==="completed"&&window.confirm("هل تريد تأكيد دفع نقدي في معاينة التصميم فقط؟ لا يوجد دفع حقيقي.")){state.payments[id]=true;render();toast("تأكيد دفع نقدي تجريبي، دون تحصيل أموال")}return}
+if(a==="recommended"){state.view="doctors";state.selectedService=null;state.search="";state.filter=button.dataset.specialty==="الباطنية"?"الباطنية والسكري":button.dataset.specialty;render();window.scrollTo(0,0);return}
 if(a==="edit-booking"){const b=state.bookings.find(x=>x.id===id);if(b)bookModal(b.pid,b);return}
 if(a==="cancel-booking"){const b=state.bookings.find(x=>x.id===id);if(b&&b.status!=="completed"&&window.confirm("إلغاء هذا الطلب في معاينة التصميم فقط؟")){b.status="cancelled";notify("أُلغي الطلب في المعاينة");render()}return}
 if(["accept","reject","finish"].includes(a)){const b=state.bookings.find(x=>x.id===id);if(!b)return;b.status=a==="accept"?"confirmed":a==="reject"?"cancelled":"completed";notify("تغيرت حالة الحجز في المعاينة: "+statusLabel[b.status]);render();return}
@@ -233,7 +237,7 @@ const urgent=/ضيق تنفس|ألم صدر|اغماء|إغماء|نزيف شد�
 const found=/عظم|مفاصل/.test(input)?"العظام":/قلب|صدر|خفقان/.test(input)?"أمراض القلب":/سكر|معدة|بطن/.test(input)?"الباطنية":"طب الأسرة";
 const box=$("symptomResult");
 if(box)box.innerHTML=urgent?'<div class="notice-box"><strong>تنبيه:</strong> بعض الأعراض المذكورة قد تكون طارئة. اطلب المساعدة الطبية العاجلة بدل الانتظار.</div>':
-'<div class="soft-panel" style="margin-top:16px"><strong>مثال توجيهي: '+found+'</strong><p class="subtle">هذا عرض تجريبي بالكلمات المفتاحية، لا تحليل طبي ولا توصية موثوقة.</p><button type="button" class="btn" data-action="goto" data-view="doctors">استعراض الأطباء ←</button></div>';
+'<div class="soft-panel" style="margin-top:16px"><strong>مثال توجيهي: '+found+'</strong><p class="subtle">هذا عرض تجريبي بالكلمات المفتاحية، لا تحليل طبي ولا توصية موثوقة.</p><button type="button" class="btn" data-action="recommended" data-specialty="'+en(found)+'">استعراض أطباء التخصص المقترح ←</button></div>';
 return;
 }
 }
