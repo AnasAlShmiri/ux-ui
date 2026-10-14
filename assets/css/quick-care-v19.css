@@ -1,0 +1,36 @@
+/* Yerani V19 — single-file medical UX and one-tap access */
+.q19-panel,.q19-file{direction:rtl;font-family:Tajawal,'Segoe UI',system-ui,sans-serif;color:#19483b}
+.q19-panel{background:white;border:1px solid #d9eadf;border-radius:20px;margin:15px 0;padding:17px;box-shadow:0 8px 24px #10583a09}
+.q19-panel h2,.q19-file h2{margin:0 0 7px!important;color:#164b3d;font-size:21px!important;line-height:1.4}
+.q19-panel h3,.q19-file h3{font-size:16px!important;margin:0 0 9px!important;color:#185844}
+.q19-panel p,.q19-file p{color:#5c766a;font-size:12px;line-height:1.85;margin:5px 0}
+.q19-label{display:inline-block;border-radius:25px;padding:5px 10px;color:#096c51;background:#e1f6e9;font-size:11px;font-weight:800;margin-bottom:8px}
+.q19-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.q19-tile{display:flex;flex-direction:column;align-items:flex-start;gap:7px;padding:15px 12px;border:1px solid #d8ece0;border-radius:15px;background:#f5fbf7;color:#145642!important;text-decoration:none!important;min-width:0;min-height:112px}
+.q19-tile:hover{background:#eaf8ef;border-color:#7abb9b}
+.q19-tile b{font-size:14px}.q19-tile small{font-size:11px;color:#5d7b6e}
+.q19-icon{display:grid;place-items:center;width:32px;height:32px;border-radius:10px;background:#ddefe4;color:#0e7858;font-size:20px}
+.q19-note{font-size:11px!important;color:#637b6b!important;border-top:1px solid #e9f0eb;margin-top:14px!important;padding-top:11px}
+.q19-note a{color:#087e5c;text-decoration:underline}
+.q19-nav{display:flex}.q19-nav .bottom-nav-item{min-width:0;flex:1}.q19-nav .q19-nav-icon{font-size:24px;line-height:1.2}
+.q19-file{padding-bottom:9px}.q19-identity{display:flex;gap:12px;align-items:center;background:#eaf7ef;border:1px solid #d7ecdd;border-radius:16px;padding:14px;margin:13px 0}
+.q19-avatar{width:44px;height:44px;border-radius:13px;background:#cce8d9;display:grid;place-items:center;font-size:25px;flex-shrink:0}
+.q19-identity strong{display:block;font-size:15px;color:#155943}.q19-identity small{display:block;font-size:11px;color:#5c786a;margin-top:4px}
+.q19-box,.q19-file details{background:white;border:1px solid #deebe2;border-radius:15px;padding:15px;margin:11px 0}
+.q19-file details{padding:0 15px}.q19-file summary{cursor:pointer;list-style:none;font-size:14px;color:#185941;font-weight:800;padding:17px 0}
+.q19-file summary::-webkit-details-marker{display:none}.q19-file summary:after{content:' +';color:#0a9770}
+.q19-file details[open] summary:after{content:' −'}.q19-detail{padding-bottom:12px}
+.q19-row{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid #eaf0eb}
+.q19-row:last-child{border-bottom:none}.q19-row span{font-size:11px;color:#648071}.q19-row strong{font-size:12px;color:#1c5642}
+.q19-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:13px}
+.q19-action{display:inline-block;padding:9px 12px;background:#118666;color:white!important;border-radius:10px;text-decoration:none!important;font-size:12px;font-weight:800}
+.q19-action.secondary{background:#e5f5eb;color:#176b50!important}
+.q19-alert{background:#fff9ec;border:1px solid #f1deb1;color:#85662a;border-radius:12px;padding:12px;font-size:11px;line-height:1.85;margin-top:12px}
+.q19-file ul{margin:5px 0;padding-inline-start:19px}.q19-file li{font-size:12px;line-height:2;color:#426d58}
+.q19-instructions{border:1px solid #cfebdc;background:#f5fbf7;border-radius:12px;padding:12px;margin:11px 0}
+.q19-instructions label{display:block;font-size:12px;font-weight:800;color:#205a44;margin-bottom:7px}
+.q19-instructions textarea{display:block;width:100%;min-height:84px;padding:10px;border:1px solid #c3ddce;border-radius:9px;background:white;font:inherit;color:#174f3a}
+.q19-instructions small{font-size:10px;color:#607869}
+.q19-timeline{border-inline-start:2px solid #9fd7b8;padding-inline-start:15px}.q19-timeline p{margin-bottom:13px}
+.q19-panel a:focus-visible,.q19-file a:focus-visible,.q19-file summary:focus-visible{outline:3px solid #0f8262;outline-offset:3px}
+@media(max-width:340px){.q19-panel{padding:12px}.q19-tile{padding:11px 8px}.q19-tile b{font-size:12px}}
