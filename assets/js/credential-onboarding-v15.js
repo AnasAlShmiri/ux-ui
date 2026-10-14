@@ -31,7 +31,13 @@ whenReady(()=>{
      const pass=form.querySelector("[name=password]"),confirm=form.querySelector("[name=confirmPassword]");
      if(pass&&confirm){confirm.setCustomValidity(pass.value===confirm.value?"":"كلمتا المرور غير متطابقتين");}
      const files=[...form.querySelectorAll("input[type=file]")];
-     for(const f of files){if(f.files?.length&&!fileOkay(f.files[0]))f.setCustomValidity("الملف يجب أن يكون PDF أو JPG أو PNG بحجم لا يزيد عن 5 ميجابايت");}
+     for(const f of files){
+       if(!f.files?.length||!fileOkay(f.files[0])){
+         if(out){out.hidden=false;out.textContent="يرجى اختيار جميع مستندات الهوية والمؤهل والترخيص بصيغة PDF أو JPG أو PNG وبحجم لا يتجاوز 5 ميجابايت."; }
+         return;
+       }
+       f.setCustomValidity("");
+     }
      if(!form.reportValidity())return;
      const kind=form.dataset.cvRegistration==="doctor"?"الطبيب":"الممرض";
      const name=form.elements.namedItem("fullName")?.value?.trim()||"";
