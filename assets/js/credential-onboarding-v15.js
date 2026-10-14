@@ -39,6 +39,16 @@ whenReady(()=>{
        f.setCustomValidity("");
      }
      if(!form.reportValidity())return;
+     const expiry=form.elements.namedItem("licenseExpiry");
+     if(expiry?.value){
+       const parsed=new Date(expiry.value+"T00:00:00");
+       const now=new Date();
+       const today=new Date(now.getFullYear(),now.getMonth(),now.getDate());
+       if(!Number.isFinite(parsed.getTime())||parsed<today){
+         if(out){out.hidden=false;out.textContent="تاريخ انتهاء الترخيص منتهٍ أو غير صالح. يجب إدخال ترخيص ساري المفعول لمتابعة المعاينة.";}
+         expiry.focus();return;
+       }
+     }
      const kind=form.dataset.cvRegistration==="doctor"?"الطبيب":"الممرض";
      const name=form.elements.namedItem("fullName")?.value?.trim()||"";
      const specialty=form.elements.namedItem("specialty")?.value||form.elements.namedItem("qualification")?.value||"";
