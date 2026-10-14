@@ -17,28 +17,36 @@ const providers=[
 ];
 const roleNames={patient:"المريض",doctor:"الطبيب",nurse:"الممرض",admin:"الإدارة"};
 const rolePages={
-patient:[["home","⌂","الرئيسية"],["doctors","⚕","الأطباء"],["services","♡","التمريض"],["appointments","▦","مواعيدي"],["record","▤","ملفي"]],
+patient:[["home","⌂","الرئيسية"],["services","♡","الخدمات"],["appointments","▦","مواعيدي"],["record","▤","ملفي"]],
 doctor:[["workspace","⌂","الرئيسية"],["case","▤","ملف المريض"],["appointments","▦","المواعيد"],["account","♙","حسابي"]],
 nurse:[["workspace","⌂","الرئيسية"],["case","▤","ملف المريض"],["appointments","▦","الزيارات"],["account","♙","حسابي"]],
 admin:[["workspace","⌂","الرئيسية"],["approvals","✓","الاعتماد"],["catalog","▦","الخدمات"],["issues","☷","الشكاوى"],["account","♙","حسابي"]]
 };
 const today=()=>{const d=new Date(),o=d.getTimezoneOffset();return new Date(d.getTime()-o*60000).toISOString().slice(0,10)};
-const state={role:"patient",view:"home",filter:"all",search:"",selectedService:null,notifications:["تذكير تجريبي: راجع موعدك القادم من صفحة مواعيدي."],modal:null,ratings:{},payments:{},complaints:[{id:"C-01",kind:"شكوى",text:"نموذج: تأخر في الرد على طلب زيارة",status:"جديد"}],professionalApplications:[{id:"A-01",name:"طبيب تجريبي",kind:"طبيب",status:"قيد المراجعة"},{id:"A-02",name:"ممرض تجريبي",kind:"ممرض",status:"قيد المراجعة"}],record:{
-profile:{name:"مريض تجريبي",age:"بيانات توضيحية",blood:"O+ (مثال)",allergies:"غير موثقة في النموذج",history:"متابعة قلبية افتراضية"},
-diagnosis:"متابعة دورية (مثال تعليمي — ليس تشخيصًا حقيقيًا)",
-instructions:"متابعة العلامات الحيوية ورفع تقرير الزيارة للطبيب، وفق خطة الرعاية المعتمدة (مثال).",
-prescription:"وصفة نموذجية غير قابلة للاستخدام العلاجي",
-labs:["تحليل دم — ملف توضيحي"],nurseTasks:["تقرير تمريض توضيحي: قياس الضغط والنبض ورفع الملاحظات."],vitals:["ضغط 124/82، نبض 74 — مثال افتراضي"],timeline:["متابعة الطبيب وإضافة التعليمات","زيارة الممرض وتوثيق المؤشرات","رفع نتيجة فحص تجريبية"]
+const state={role:"patient",view:"home",filter:"all",search:"",selectedService:null,viewPatientId:"p1",actorIds:{patient:"p1",doctor:"d1",nurse:"n1",admin:"a1"},beneficiaries:[{id:"p1",name:"المريض التجريبي"},{id:"p2",name:"أحد أفراد الأسرة — مثال"}],notifications:["تذكير تجريبي: راجع موعدك القادم من صفحة مواعيدي."],modal:null,ratings:{},payments:{},complaints:[{id:"C-01",kind:"شكوى",text:"نموذج: تأخر في الرد على طلب زيارة",status:"جديد"}],professionalApplications:[{id:"A-01",name:"طبيب تجريبي",kind:"طبيب",status:"قيد المراجعة"},{id:"A-02",name:"ممرض تجريبي",kind:"ممرض",status:"قيد المراجعة"}],records:{
+p1:{profile:{name:"المريض التجريبي",age:"بيانات توضيحية",blood:"O+ (مثال)",allergies:"غير موثقة في النموذج",history:"متابعة قلبية افتراضية"},diagnosis:"متابعة دورية (مثال تعليمي — ليس تشخيصًا حقيقيًا)",instructions:"متابعة العلامات الحيوية ورفع تقرير الزيارة للطبيب وفق خطة الرعاية المعتمدة (مثال).",prescription:"وصفة نموذجية غير قابلة للاستخدام العلاجي",medications:[{id:"m1",name:"دواء توضيحي فقط",dose:"حسب وصفة الطبيب",schedule:"صباحًا",duration:"موعد المتابعة",remind:false}],followupDate:"2026-10-20",labs:["تحليل دم — ملف توضيحي"],nurseTasks:["تقرير تمريض توضيحي: قياس الضغط والنبض ورفع الملاحظات."],vitals:["ضغط 124/82، نبض 74 — مثال افتراضي"],timeline:["متابعة الطبيب وإضافة التعليمات","زيارة الممرض وتوثيق المؤشرات","رفع نتيجة فحص تجريبية"]},
+p2:{profile:{name:"أحد أفراد الأسرة — مثال",age:"بيانات توضيحية",blood:"غير محددة",allergies:"غير مسجلة",history:"لا توجد معلومات في النموذج"},diagnosis:"لا يوجد تقييم مسجل لهذا المستفيد",instructions:"لا توجد تعليمات طبيب مسجلة",prescription:"لا توجد وصفات طبية",medications:[],followupDate:"",labs:[],nurseTasks:[],vitals:[],timeline:["إنشاء الملف التجريبي للمستفيد"]}
 },
 bookings:[
-{id:"YR-101",type:"doctor",pid:"d1",service:"consult",date:"2026-10-10",time:"10:00",area:"العيادة — بيانات توضيحية",status:"completed"},
-{id:"YR-102",type:"nurse",pid:"n1",service:"vitals",date:"2026-10-11",time:"11:00",area:"عنوان توضيحي",status:"completed"}
+{id:"YR-101",type:"doctor",pid:"d1",patientId:"p1",createdBy:"p1",service:"consult",date:"2026-10-10",time:"10:00",area:"العيادة — بيانات توضيحية",status:"completed"},
+{id:"YR-102",type:"nurse",pid:"n1",patientId:"p1",createdBy:"p1",service:"vitals",date:"2026-10-11",time:"11:00",area:"عنوان توضيحي",status:"completed"}
 ]};
 const $=id=>document.getElementById(id);
 const escapeHTML=value=>String(value==null?"":value).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const en=escapeHTML;
 const money=n=>new Intl.NumberFormat("ar-YE").format(n)+" ر.ي";
 const service=id=>services.find(x=>x.id===id);
+const actor=()=>state.actorIds[state.role];
+const beneficiary=id=>state.beneficiaries.find(x=>x.id===id);
+const actorCanPatient=id=>state.role==="patient"?Boolean(beneficiary(id)):state.bookings.some(b=>b.patientId===id&&b.pid===actor()&&["confirmed","completed"].includes(b.status));
+const permittedPatients=()=>state.role==="patient"?state.beneficiaries:state.beneficiaries.filter(p=>actorCanPatient(p.id));
+const currentRecord=()=>actorCanPatient(state.viewPatientId)?state.records[state.viewPatientId]:null;
+const choosePatient=id=>{if(!actorCanPatient(id))return false;state.viewPatientId=id;return true};
+const providerScore=p=>{const reviews=state.bookings.filter(b=>b.pid===p.id&&b.status==="completed"&&state.ratings[b.id]).map(b=>Number(state.ratings[b.id].stars));return reviews.length?((Number(p.rating)*4+reviews.reduce((a,b)=>a+b,0))/(4+reviews.length)).toFixed(1):p.rating};
+const providerFee=(p,serviceId)=>p.role==="doctor"?p.fee:(service(serviceId)?.price??p.fee);
+const isSlotFree=(pid,date,time,excludeId="")=>!state.bookings.some(b=>b.pid===pid&&b.date===date&&b.time===time&&b.id!==excludeId&&["pending","confirmed"].includes(b.status));
+const formatPatient=id=>beneficiary(id)?.name||"مستفيد غير معروف";
+
 const provider=id=>providers.find(x=>x.id===id);
 const card=(title,content,cls="")=>'<section class="white-panel '+cls+'"><h3 class="card-title">'+title+'</h3>'+content+'</section>';
 const btn=(action,label,cls="btn",extra="")=>'<button type="button" class="'+cls+'" data-action="'+action+'" '+extra+'>'+label+'</button>';
@@ -51,7 +59,7 @@ function quick(href,icon,title,sub){return '<button class="quick-card" type="but
 function notify(msg){state.notifications.unshift(msg);renderRoles();renderNav();toast(msg)}
 function toast(msg){const t=$("toast");t.textContent=msg;t.classList.add("show");clearTimeout(toast.timer);toast.timer=setTimeout(()=>t.classList.remove("show"),3500)}
 function goto(view){state.view=view;state.search="";state.filter="all";render();window.scrollTo({top:0,behavior:"smooth"})}
-function setRole(role){if(!roleNames[role])return;state.role=role;state.view=role==="patient"?"home":"workspace";state.search="";state.filter="all";render();window.scrollTo(0,0)}
+function setRole(role){if(!roleNames[role])return;state.role=role;state.view=role==="patient"?"home":"workspace";state.viewPatientId="p1";state.selectedService=null;state.search="";state.filter="all";render();window.scrollTo(0,0)}
 function renderRoles(){ $("roles").innerHTML=Object.keys(roleNames).map(key=>'<button class="role-pill '+(key===state.role?"is-active":"")+'" data-action="role" data-role="'+key+'" aria-pressed="'+(key===state.role)+'">'+roleNames[key]+'</button>').join("");const dot=$("notifyDot");dot.style.display=state.notifications.length?"block":"none"}
 function renderNav(){const nav=$("bottomNav");nav.innerHTML=rolePages[state.role].map(([view,icon,label])=>'<button class="nav-item '+(state.view===view?"active":"")+'" data-action="goto" data-view="'+view+'" '+(state.view===view?'aria-current="page"':"")+'><span aria-hidden="true">'+icon+'</span><span>'+label+'</span></button>').join("")}
 function patientHome(){let b=state.bookings.filter(x=>x.status==="pending"||x.status==="confirmed").slice(0,1)[0];
