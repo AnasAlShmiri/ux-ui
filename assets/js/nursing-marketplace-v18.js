@@ -18,7 +18,12 @@
  }
  const listing=get("nh-provider-list"),search=get("nh-search-input"),summary=get("nh-match-count");
  if(listing){
-  let filter="all";const cards=[...listing.querySelectorAll("[data-nurse-card]")];
+  const preset=query.get("service");
+  let filter=["vitals","elder","home"].includes(preset)?preset:"all";
+  document.querySelectorAll("[data-filter]").forEach(button=>{
+    button.setAttribute("aria-pressed",String(button.dataset.filter===filter));
+  });
+  const cards=[...listing.querySelectorAll("[data-nurse-card]")];
   const rerender=()=>{
     const term=(search?.value||"").trim().toLocaleLowerCase("ar");let visible=0;
     cards.forEach(card=>{const id=card.dataset.nurseCard,data=providers[id];const match=(!term||((data.name+" "+data.care+" "+data.location).toLocaleLowerCase("ar").includes(term)))&&(filter==="all"||card.dataset.category===filter);card.hidden=!match;if(match)visible++;});
