@@ -16,7 +16,7 @@
  for(const a of document.querySelectorAll("[data-nurse-url]")){
    const name=a.dataset.nurseUrl;a.href=name+".html?nurse="+encodeURIComponent(key);
  }
- const listing=get("nh-provider-list"),search=get("nh-search"),summary=get("nh-match-count");
+ const listing=get("nh-provider-list"),search=get("nh-search-input"),summary=get("nh-match-count");
  if(listing){
   let filter="all";const cards=[...listing.querySelectorAll("[data-nurse-card]")];
   const rerender=()=>{
