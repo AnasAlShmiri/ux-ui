@@ -210,10 +210,10 @@ function genericModal(type,id){
 if(type==="price"){const s=service(id);if(!s)return;showModal("تعديل سعر تجريبي",'<form data-form="price"><input type="hidden" name="id" value="'+s.id+'"><p>'+s.name+'</p><div class="form-field"><label for="priceAmount">السعر التوضيحي (ريال يمني)</label><input id="priceAmount" type="number" min="0" max="1000000" name="price" value="'+s.price+'" required></div><button type="submit" class="btn">تطبيق السعر في المعاينة</button></form>')}
 if(type==="complaint")showModal("شكوى أو اعتراض",'<form data-form="complaint"><div class="form-field"><label for="complaintKind">نوع الطلب</label><select id="complaintKind" name="kind"><option>شكوى</option><option>اعتراض مالي</option><option>ملاحظة</option></select></div><div class="form-field"><label for="complaintText">صف المشكلة بإيجاز</label><textarea id="complaintText" name="text" required minlength="8" maxlength="400" placeholder="لا تضع بيانات حقيقية أو معلومات طبية حساسة"></textarea></div><button class="btn" type="submit">إضافة للمعاينة</button></form>');
 if(type==="notifications"){
-const record=state.records[state.actorIds.patient];
-const appointments=state.bookings.filter(b=>b.createdBy===state.actorIds.patient&&["pending","confirmed"].includes(b.status)).map(b=>'موعد '+en(b.date)+' الساعة '+en(b.time)+' · '+en(provider(b.pid)?.name||"مقدم رعاية"));
-const reminders=record.medications.filter(m=>m.remind).map(m=>'دواء تجريبي: '+en(m.name)+' · '+en(m.schedule));
-const followup=record.followupDate?['موعد متابعة الطبيب التوضيحي: '+en(record.followupDate)]:[];
+const record=state.role==="patient"?currentRecord():null;
+const appointments=state.bookings.filter(b=>(state.role==="patient"?b.createdBy===actor():["doctor","nurse"].includes(state.role)?b.pid===actor():false)&&["pending","confirmed"].includes(b.status)).map(b=>'موعد '+en(b.date)+' الساعة '+en(b.time)+' · '+en(provider(b.pid)?.name||"مقدم رعاية"));
+const reminders=record?.medications.filter(m=>m.remind).map(m=>'دواء تجريبي: '+en(m.name)+' · '+en(m.schedule))||[];
+const followup=record?.followupDate?['موعد متابعة الطبيب التوضيحي: '+en(record.followupDate)]:[];
 const messages=[...state.notifications,...appointments,...reminders,...followup];
 showModal("الإشعارات والتذكيرات — معاينة",messages.map(x=>'<p class="white-panel" style="font-size:12px">'+x+'</p>').join("")+'<p class="subtle">هذه قائمة تُعرض عند فتحها؛ ليست إشعارات آلية أو جدولة خلفية.</p>');
 }
