@@ -85,13 +85,13 @@ return list.length?'<div class="provider-grid">'+list.map(p=>'<article class="pr
 '<div class="meta-row"><span>◷ خبرة '+en(p.experience)+'</span><span>◈ من '+money(p.fee)+' <small>(توضيحي)</small></span></div>'+
 '<div class="provider-actions">'+btn("book",role==="doctor"?"اختيار موعد":"طلب زيارة","btn","data-id=\""+p.id+"\"")+btn("profile","ملف مقدم الخدمة","btn-quiet","data-id=\""+p.id+"\"")+btn("whatsapp","واتساب","btn-quiet","data-id=\""+p.id+"\"")+'</div></article>').join("")+'</div>':'<div class="empty">لا توجد نتائج مطابقة في البيانات التجريبية. '+btn("clear-service","عرض جميع الممرضين","btn-quiet btn-small")+'</div>' }
 function appointmentsView(){
-const list=state.bookings.slice().reverse();
+const list=state.bookings.filter(b=>state.role==="patient"?b.createdBy===actor():(state.role==="admin"?true:b.pid===actor())).slice().reverse();
 const isPatient=state.role==="patient";
 return head("المواعيد والطلبات",isPatient?"مواعيدي":"الزيارات المرتبطة بدوري",isPatient?"تابع الطلب أو عدّله أو ألغِه، وقيّم مقدم الرعاية بعد اكتمال الزيارة.":"يمكنك مراجعة الطلبات المسندة أو تحديث حالتها داخل المعاينة.")+
 (list.length?'<div class="booking-list">'+list.map(b=>{
-const p=provider(b.pid),belongs=!p||state.role==="patient"||state.role==="admin"||p.role===state.role;
+const p=provider(b.pid),belongs=state.role==="patient"?b.createdBy===actor():(state.role==="admin"?true:b.pid===actor());
 if(!belongs)return "";
-return '<article class="booking"><div class="booking-head"><h3>'+en(p?p.name:"مقدم رعاية")+'</h3>'+status(b.status)+'</div><p>'+en(b.type==="doctor"?"استشارة طبية":((service(b.service)||{}).name||"تمريض منزلي"))+'</p><p>◷ '+en(b.date)+' · '+en(b.time)+' &nbsp; ◇ '+en(b.area)+'</p>'+
+return '<article class="booking"><div class="booking-head"><h3>'+en(p?p.name:"مقدم رعاية") +'</h3>'+status(b.status)+'</div><p><strong>المستفيد:</strong> '+en(formatPatient(b.patientId))+'</p><p>'+en(b.type==="doctor"?"استشارة طبية":((service(b.service)||{}).name||"تمريض منزلي"))+'</p><p>◷ '+en(b.date)+' · '+en(b.time)+' &nbsp; ◇ '+en(b.area)+'</p>'+
 '<div class="booking-actions">'+(isPatient&&b.status!=="cancelled"&&b.status!=="completed"?btn("edit-booking","تعديل","btn-quiet btn-small","data-id=\""+b.id+"\"")+btn("cancel-booking","إلغاء الطلب","btn-danger btn-small","data-id=\""+b.id+"\""):"")+
 (isPatient&&b.status==="completed"? (state.ratings[b.id]?'<span class="pill-info">★ تم تقييم '+en(p?.name)+' في المعاينة</span>':btn("rate","★ تقييم "+(b.type==="doctor"?"الطبيب":"الممرض"),"btn btn-small","data-id=\""+b.id+"\"")):"")+
 (isPatient&&b.status==="completed"?(state.payments[b.id]?'<span class="pill-info">تمت معاينة تأكيد الدفع النقدي</span>':btn("payment","تأكيد الدفع النقدي (معاينة)","btn-quiet btn-small","data-id=\""+b.id+"\"")):"")+
@@ -165,21 +165,30 @@ function showModal(title,body){state.modal={title,body};renderModal()}
 function closeModal(){state.modal=null;renderModal()}
 function renderModal(){const root=$("modalRoot");if(!state.modal){root.innerHTML="";return}root.innerHTML='<div class="overlay" data-overlay="true"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-head"><h2 id="modalTitle">'+state.modal.title+'</h2><button class="close" data-action="close" type="button" aria-label="إغلاق">×</button></div><div class="modal-content">'+state.modal.body+'</div></div></div>';const first=root.querySelector("input,select,textarea,button");if(first)first.focus()}
 function bookModal(id,b){
+if(state.role!=="patient"||(b&&(b.createdBy!==actor()||!["pending","confirmed"].includes(b.status))))return toast("هذا الطلب ليس ضمن صلاحية المريض");
 const p=provider(id);if(!p)return toast("مقدم الرعاية غير موجود في المعاينة");
 const sc=p.role==="doctor"?"consult":(state.selectedService&&p.services.includes(state.selectedService)?state.selectedService:p.services[0]);
 const options=p.role==="nurse"?'<div class="form-field"><label for="bookService">نوع الخدمة</label><select id="bookService" name="service" required>'+p.services.map(x=>'<option value="'+x+'" '+(sc===x?"selected":"")+'>'+en(service(x)?.name)+'</option>').join("")+'</select></div>':'<input type="hidden" name="service" value="consult">';
 showModal(b?"تعديل طلب تجريبي":"اطلب الخدمة في شاشة واحدة",
 '<div class="soft-panel"><strong>'+en(p.name)+'</strong><p class="subtle">'+en(p.specialty)+' · ★ '+providerScore(p)+' تقييم تجريبي</p></div>'+
-'<form data-form="booking"><input type="hidden" name="pid" value="'+en(id)+'"><input type="hidden" name="editId" value="'+(b?en(b.id):"")+'">'+options+
+'<form data-form="booking"><input type="hidden" name="pid" value="'+en(id)+'"><input type="hidden" name="editId" value="'+(b?en(b.id):"")+'">'+
+'<div class="form-field"><label for="bookPatient">المستفيد من الرعاية</label><select id="bookPatient" name="patientId" required>'+state.beneficiaries.map(x=>'<option value="'+x.id+'" '+((b?.patientId||"p1")===x.id?"selected":"")+'>'+en(x.name)+'</option>').join("")+'</select></div>'+options+
 '<div class="form-row"><div class="form-field"><label for="bookDate">التاريخ المفضل</label><input id="bookDate" type="date" name="date" min="'+today()+'" value="'+(b?en(b.date):"")+'" required></div><div class="form-field"><label for="bookTime">الوقت المفضل</label><select id="bookTime" name="time" required><option value="">اختر الوقت</option>'+["09:00","11:00","15:00","17:00","19:00"].map(t=>'<option value="'+t+'" '+(b&&b.time===t?"selected":"")+'>'+t+'</option>').join("")+'</select></div></div>'+
 '<div class="form-field"><label for="bookArea">'+(p.role==="doctor"?"مكان الاستشارة أو المنطقة":"منطقة الزيارة")+'</label><input id="bookArea" name="area" required minlength="2" maxlength="80" value="'+(b?en(b.area):"")+'" placeholder="اسم المنطقة فقط — لا تُدخل عنوانك الحقيقي"></div>'+
-'<p class="subtle">سعر إرشادي في بيانات العرض: '+money(p.fee)+'. الموعد والسعر غير مؤكدين.</p>'+
+'<p class="subtle">سعر إرشادي في بيانات العرض: <strong id="bookingPrice">'+money(providerFee(p,sc))+'</strong>. الموعد والسعر غير مؤكدين.</p>'+
 '<div class="form-actions"><button type="submit" class="btn">'+(b?"معاينة التعديل":"معاينة إرسال الطلب")+'</button>'+btn("close","إلغاء","btn-quiet")+'</div></form>'+
-notice("لا ينشئ هذا النموذج حجزًا حقيقيًا، ولا يرسل معلومات إلى الطبيب أو الممرض."))}
+notice("لا ينشئ هذا النموذج حجزًا حقيقيًا، ولا يرسل معلومات إلى الطبيب أو الممرض."));
+const when=$("bookDate"),time=$("bookTime"),sv=$("bookService");
+const refresh=()=>{
+ for(const option of time.options){if(option.value){let occupied=Boolean(when.value)&&!isSlotFree(p.id,when.value,option.value,b?.id||"");option.disabled=occupied;option.textContent=option.value+(occupied?" — مشغول بالمعاينة":"")}}
+ const amount=$("bookingPrice");if(amount)amount.textContent=money(providerFee(p,sv?.value||sc));
+};
+when?.addEventListener("change",refresh);time?.addEventListener("focus",refresh);sv?.addEventListener("change",refresh);refresh();
+}
 function profileModal(id){const p=provider(id);if(!p)return;
 showModal("الملف التعريفي لمقدم الرعاية",'<div class="provider-top"><span class="avatar">'+en(p.short)+'</span><div><h3>'+en(p.name)+'</h3><p>'+en(p.specialty)+'</p></div><div class="rating">★ '+providerScore(p)+'<small>تقييم تجريبي</small></div></div><div class="divider"></div>'+row("الخبرة",en(p.experience))+row("التكلفة التوضيحية",money(p.fee))+row("نوع الملف",p.role==="doctor"?"طبيب":"ممرض")+
 '<p class="subtle">تظهر تقييمات مقدمي الرعاية فقط، ولا تُمنح نجوم لقياس الضغط أو نوع خدمة تمريضية.</p><div class="form-actions">'+btn("book","طلب موعد","btn","data-id=\""+p.id+"\"")+btn("whatsapp","واتساب","btn-quiet","data-id=\""+p.id+"\"")+'</div>')}
-function ratingModal(id){const b=state.bookings.find(x=>x.id===id),p=b&&provider(b.pid);if(!p||b.status!=="completed")return toast("التقييم متاح فقط بعد اكتمال الزيارة");
+function ratingModal(id){const b=state.bookings.find(x=>x.id===id),p=b&&provider(b.pid);if(state.role!=="patient"||b?.createdBy!==actor()||!p||b.status!=="completed")return toast("التقييم متاح فقط بعد اكتمال الزيارة");
 showModal("تقييم "+(p.role==="doctor"?"الطبيب":"الممرض"),'<div class="soft-panel"><strong>'+en(p.name)+'</strong><p class="subtle">أنت تقيّم مقدم الرعاية نفسه، وليس نوع الخدمة.</p></div>'+
 '<form data-form="rating"><input type="hidden" name="booking" value="'+en(b.id)+'"><div class="form-field"><label>كيف كانت تجربتك مع مقدم الرعاية؟</label><div class="star-list">'+[5,4,3,2,1].map(n=>'<label class="star-label"><input type="radio" value="'+n+'" name="stars" required><span>★</span><small>'+n+'</small></label>').join("")+'</div></div><div class="form-field"><label for="rateNote">ملاحظات اختيارية</label><textarea name="comment" id="rateNote" maxlength="250" placeholder="ملاحظات عن تعامل مقدم الرعاية..."></textarea></div><button class="btn" type="submit">حفظ التقييم في المعاينة</button></form>'+
 notice("التقييم لا يغيّر متوسط النجوم ولا يُنشر؛ يحتاج النظام الحقيقي إلى مراجعات موثقة مرتبطة بزيارة مكتملة."))}
@@ -208,11 +217,11 @@ if(a==="profile"){closeModal();profileModal(id);return}
 if(a==="whatsapp"){whatsapp(id);return}
 if(a==="rate"){ratingModal(id);return}
 if(a==="reminder"){if(state.role!=="patient")return;const record=currentRecord();const med=record?.medications?.find(m=>m.id===id);if(med){med.remind=!med.remind;render();toast("تذكير توضيحي فقط، لا تُرسل إشعارات تلقائية")}return}
-if(a==="payment"){const b=state.bookings.find(x=>x.id===id);if(b&&b.status==="completed"&&window.confirm("هل تريد تأكيد دفع نقدي في معاينة التصميم فقط؟ لا يوجد دفع حقيقي.")){state.payments[id]=true;render();toast("تأكيد دفع نقدي تجريبي، دون تحصيل أموال")}return}
+if(a==="payment"){const b=state.bookings.find(x=>x.id===id);if(state.role==="patient"&&b?.createdBy===actor()&&b.status==="completed"&&window.confirm("هل تريد تأكيد دفع نقدي في معاينة التصميم فقط؟ لا يوجد دفع حقيقي.")){state.payments[id]=true;render();toast("تأكيد دفع نقدي تجريبي، دون تحصيل أموال")}return}
 if(a==="recommended"){state.view="doctors";state.selectedService=null;state.search="";state.filter=button.dataset.specialty==="الباطنية"?"الباطنية والسكري":button.dataset.specialty;render();window.scrollTo(0,0);return}
-if(a==="edit-booking"){const b=state.bookings.find(x=>x.id===id);if(b)bookModal(b.pid,b);return}
-if(a==="cancel-booking"){const b=state.bookings.find(x=>x.id===id);if(b&&b.status!=="completed"&&window.confirm("إلغاء هذا الطلب في معاينة التصميم فقط؟")){b.status="cancelled";notify("أُلغي الطلب في المعاينة");render()}return}
-if(["accept","reject","finish"].includes(a)){const b=state.bookings.find(x=>x.id===id);if(!b)return;b.status=a==="accept"?"confirmed":a==="reject"?"cancelled":"completed";notify("تغيرت حالة الحجز في المعاينة: "+statusLabel[b.status]);render();return}
+if(a==="edit-booking"){const b=state.bookings.find(x=>x.id===id);if(state.role==="patient"&&b?.createdBy===actor()&&["pending","confirmed"].includes(b.status))bookModal(b.pid,b);else toast("هذا الطلب غير قابل للتعديل");return}
+if(a==="cancel-booking"){const b=state.bookings.find(x=>x.id===id);if(state.role==="patient"&&b?.createdBy===actor()&&["pending","confirmed"].includes(b.status)&&window.confirm("إلغاء هذا الطلب في معاينة التصميم فقط؟")){b.status="cancelled";notify("أُلغي الطلب في المعاينة");render()}return}
+if(["accept","reject","finish"].includes(a)){const b=state.bookings.find(x=>x.id===id);if(!b||!["doctor","nurse"].includes(state.role)||b.pid!==actor()||!(a==="finish"?b.status==="confirmed":b.status==="pending"))return toast("هذه الزيارة غير مسندة لهذا الحساب أو حالتها لا تسمح بالإجراء");b.status=a==="accept"?"confirmed":a==="reject"?"cancelled":"completed";notify("تغيرت حالة الحجز في المعاينة: "+statusLabel[b.status]);render();return}
 if(["approve","decline"].includes(a)){const t=state.professionalApplications.find(x=>x.id===id);if(t){t.status=a==="approve"?"معتمد تجريبيًا":"مرفوض تجريبيًا";notify("تم تحديث حالة طلب الكادر في المعاينة");render()}return}
 if(a==="resolve"){const c=state.complaints.find(x=>x.id===id);if(c){c.status="تمت المعالجة";render()}return}
 if(["price","complaint","register","login","notifications","about","upload"].includes(a)){genericModal(a,id);return}
@@ -222,10 +231,15 @@ const form=ev.target.closest("form[data-form]");if(!form)return;
 ev.preventDefault();if(!form.reportValidity())return;
 const payload=Object.fromEntries(new FormData(form).entries()),kind=form.dataset.form;
 if(kind==="booking"){
-const p=provider(payload.pid);if(!p)return;
+const p=provider(payload.pid);if(!p||state.role!=="patient"||!beneficiary(payload.patientId))return toast("المستفيد أو مقدم الرعاية غير صالح للطلب");
+if(payload.date<today())return toast("اختر تاريخًا اليوم أو بعده");
+if(!isSlotFree(p.id,payload.date,payload.time,payload.editId||""))return toast("هذا الوقت محجوز في المعاينة، اختر وقتًا آخر");
+if(p.role==="nurse"&&!p.services.includes(payload.service))return toast("الممرض لا يقدم هذه الخدمة");
+if(p.role==="doctor"&&payload.service!=="consult")return toast("الخدمة غير صالحة للطبيب");
 const item=state.bookings.find(x=>x.id===payload.editId);
-if(item){item.service=payload.service;item.date=payload.date;item.time=payload.time;item.area=String(payload.area).trim();item.status="pending"}
-else state.bookings.push({id:"YR-D"+(state.bookings.length+101),type:p.role,pid:p.id,service:payload.service,date:payload.date,time:payload.time,area:String(payload.area).trim(),status:"pending"});
+if(item&&(item.createdBy!==actor()||!["pending","confirmed"].includes(item.status)))return toast("ليس لديك صلاحية تعديل الطلب");
+if(item){item.patientId=payload.patientId;item.fee=providerFee(p,payload.service);item.service=payload.service;item.date=payload.date;item.time=payload.time;item.area=String(payload.area).trim();item.status="pending"}
+else state.bookings.push({id:"YR-D"+(state.bookings.length+101),type:p.role,pid:p.id,patientId:payload.patientId,createdBy:actor(),fee:providerFee(p,payload.service),service:payload.service,date:payload.date,time:payload.time,area:String(payload.area).trim(),status:"pending"});
 closeModal();goto("appointments");notify("تمت معاينة طلبك — بانتظار القبول (غير مُرسل)");return;
 }
 if(kind==="rating"){state.ratings[payload.booking]={stars:Number(payload.stars),note:String(payload.comment||"")};closeModal();render();toast("حُفظ التقييم في ذاكرة المعاينة فقط");return}
