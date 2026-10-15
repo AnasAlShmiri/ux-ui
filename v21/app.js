@@ -23,7 +23,7 @@ nurse:[["workspace","⌂","الرئيسية"],["case","▤","ملف المريض
 admin:[["workspace","⌂","الرئيسية"],["approvals","✓","الاعتماد"],["catalog","▦","الخدمات"],["issues","☷","الشكاوى"],["account","♙","حسابي"]]
 };
 const today=()=>{const d=new Date(),o=d.getTimezoneOffset();return new Date(d.getTime()-o*60000).toISOString().slice(0,10)};
-const state={role:"patient",view:"home",filter:"all",search:"",selectedService:null,viewPatientId:"p1",actorIds:{patient:"p1",doctor:"d1",nurse:"n1",admin:"a1"},beneficiaries:[{id:"p1",name:"المريض التجريبي"},{id:"p2",name:"أحد أفراد الأسرة — مثال"}],notifications:["تذكير تجريبي: راجع موعدك القادم من صفحة مواعيدي."],modal:null,ratings:{},payments:{},complaints:[{id:"C-01",kind:"شكوى",text:"نموذج: تأخر في الرد على طلب زيارة",status:"جديد"}],professionalApplications:[{id:"A-01",name:"طبيب تجريبي",kind:"طبيب",status:"قيد المراجعة"},{id:"A-02",name:"ممرض تجريبي",kind:"ممرض",status:"قيد المراجعة"}],records:{
+const state={role:"patient",view:"home",filter:"all",search:"",selectedService:null,viewPatientId:"p1",actorIds:{patient:"p1",doctor:"d1",nurse:"n1",admin:"a1"},userAccounts:[{id:"p1",name:"المريض التجريبي",role:"patient",status:"فعال تجريبيًا"},{id:"d1",name:"د. عبدالله الحربي",role:"doctor",status:"فعال تجريبيًا"},{id:"n1",name:"الممرضة مريم",role:"nurse",status:"فعال تجريبيًا"}],beneficiaries:[{id:"p1",name:"المريض التجريبي"},{id:"p2",name:"أحد أفراد الأسرة — مثال"}],notifications:["تذكير تجريبي: راجع موعدك القادم من صفحة مواعيدي."],modal:null,ratings:{},payments:{},complaints:[{id:"C-01",kind:"شكوى",text:"نموذج: تأخر في الرد على طلب زيارة",status:"جديد"}],professionalApplications:[{id:"A-01",name:"طبيب تجريبي",kind:"طبيب",status:"قيد المراجعة"},{id:"A-02",name:"ممرض تجريبي",kind:"ممرض",status:"قيد المراجعة"}],records:{
 p1:{profile:{name:"المريض التجريبي",age:"بيانات توضيحية",blood:"O+ (مثال)",allergies:"غير موثقة في النموذج",history:"متابعة قلبية افتراضية"},diagnosis:"متابعة دورية (مثال تعليمي — ليس تشخيصًا حقيقيًا)",instructions:"متابعة العلامات الحيوية ورفع تقرير الزيارة للطبيب وفق خطة الرعاية المعتمدة (مثال).",prescription:"وصفة نموذجية غير قابلة للاستخدام العلاجي",medications:[{id:"m1",name:"دواء توضيحي فقط",dose:"حسب وصفة الطبيب",schedule:"صباحًا",duration:"موعد المتابعة",remind:false}],followupDate:"2026-10-20",labs:["تحليل دم — ملف توضيحي"],nurseTasks:["تقرير تمريض توضيحي: قياس الضغط والنبض ورفع الملاحظات."],vitals:["ضغط 124/82، نبض 74 — مثال افتراضي"],timeline:["متابعة الطبيب وإضافة التعليمات","زيارة الممرض وتوثيق المؤشرات","رفع نتيجة فحص تجريبية"]},
 p2:{profile:{name:"أحد أفراد الأسرة — مثال",age:"بيانات توضيحية",blood:"غير محددة",allergies:"غير مسجلة",history:"لا توجد معلومات في النموذج"},diagnosis:"لا يوجد تقييم مسجل لهذا المستفيد",instructions:"لا توجد تعليمات طبيب مسجلة",prescription:"لا توجد وصفات طبية",medications:[],followupDate:"",labs:[],nurseTasks:[],vitals:[],timeline:["إنشاء الملف التجريبي للمستفيد"]}
 },
@@ -82,7 +82,7 @@ function nursesView(){return head("مقدمو التمريض","اختر المم
 function providerGrid(role){
 const list=providers.filter(p=>p.role===role&&(!state.selectedService||role==="doctor"||p.services.includes(state.selectedService))&&(!state.search||(p.name+" "+p.specialty).includes(state.search))&&(state.filter==="all"||p.specialty===state.filter));
 return list.length?'<div class="provider-grid">'+list.map(p=>'<article class="provider-card"><div class="provider-top"><span class="avatar">'+en(p.short)+'</span><div><h3>'+en(p.name)+'</h3><p>'+en(p.specialty)+'</p></div><div class="rating">★ '+providerScore(p)+'<small>تقييم تجريبي</small></div></div>'+
-'<div class="meta-row"><span>◷ خبرة '+en(p.experience)+'</span><span>◈ من '+money(p.fee)+' <small>(توضيحي)</small></span></div>'+
+'<div class="meta-row"><span>◷ خبرة '+en(p.experience)+'</span><span>◈ من '+money(p.role==="doctor"?p.fee:Math.min(...p.services.map(sid=>providerFee(p,sid))))+' <small>(توضيحي)</small></span></div>'+
 '<div class="provider-actions">'+btn("book",role==="doctor"?"اختيار موعد":"طلب زيارة","btn","data-id=\""+p.id+"\"")+btn("profile","ملف مقدم الخدمة","btn-quiet","data-id=\""+p.id+"\"")+btn("whatsapp","واتساب","btn-quiet","data-id=\""+p.id+"\"")+'</div></article>').join("")+'</div>':'<div class="empty">لا توجد نتائج مطابقة في البيانات التجريبية. '+btn("clear-service","عرض جميع الممرضين","btn-quiet btn-small")+'</div>' }
 function appointmentsView(){
 const list=state.bookings.filter(b=>state.role==="patient"?b.createdBy===actor():(state.role==="admin"?true:b.pid===actor())).slice().reverse();
@@ -132,7 +132,7 @@ if(state.role==="nurse")return head("مساحة الممرض","زياراتي ا
 notice("الأدوية والحقن والإجراءات المقيدة تتطلب أمرًا طبيًا صالحًا. لا يحق للممرض إصدار وصفات أو تعديل تشخيص الطبيب.");
 return head("لوحة الإدارة","إدارة المنصة","مراقبة الحجوزات والكوادر والخدمات والشكاوى في شاشة واضحة.")+
 '<div class="mini-stat-grid"><div class="mini-stat"><strong>'+providers.length+'</strong><small>مقدمو خدمة تجريبيون</small></div><div class="mini-stat"><strong>'+state.bookings.length+'</strong><small>الحجوزات</small></div><div class="mini-stat"><strong>'+state.professionalApplications.filter(x=>x.status==="قيد المراجعة").length+'</strong><small>طلبات اعتماد معلّقة</small></div></div>'+
-'<div class="section-title"><h2>الإدارة السريعة</h2></div><div class="quick-grid">'+quick("approvals","✓","اعتماد الكوادر","مراجعة وثائق الأطباء والممرضين")+quick("catalog","▦","الخدمات","الأسعار والأنواع")+quick("issues","☷","الشكاوى","الملاحظات والاعتراضات")+quick("appointments","◷","الحجوزات","الطلبات وحالاتها")+'</div>' }
+'<div class="section-title"><h2>الإدارة السريعة</h2></div><div class="quick-grid">'+quick("approvals","✓","اعتماد الكوادر","مراجعة وثائق الأطباء والممرضين")+quick("users","♙","المستخدمون","حساباتهم وحالاتها")+quick("issues","☷","الشكاوى","الملاحظات والاعتراضات")+quick("appointments","◷","الحجوزات","الطلبات وحالاتها")+'</div>' }
 function caseView(){
 if(!["doctor","nurse"].includes(state.role))return '<div class="empty">هذه الواجهة للكادر الصحي فقط.</div>';
 const allowed=permittedPatients();if(allowed.length&&!actorCanPatient(state.viewPatientId))state.viewPatientId=allowed[0].id;
@@ -147,6 +147,14 @@ function approvalsView(){return head("الكوادر","مراجعة اعتماد
 (x.reason?'<p><strong>سبب القرار:</strong> '+en(x.reason)+'</p>':"")+
 (x.status==="قيد المراجعة"?'<div class="booking-actions">'+btn("approve","اعتماد معاينة","btn btn-small",'data-id="'+x.id+'"')+btn("decline","رفض مع سبب","btn-danger btn-small",'data-id="'+x.id+'"')+'</div>':"")+'</article>').join("")+'</div>'+
 notice("أسماء المستندات للعرض فقط. اعتماد الكادر الحقيقي يتطلب التحقق من الترخيص والهوية والجهات المختصة.");}
+function usersView(){
+if(state.role!=="admin")return '<div class="empty">إدارة المستخدمين متاحة للإدارة فقط.</div>';
+return head("الإدارة","حسابات المستخدمين التجريبية","عرض حالات حسابات عيّنة، دون تطبيق صلاحيات حقيقية.")+
+'<div class="booking-list">'+state.userAccounts.map(u=>
+'<article class="booking"><div class="booking-head"><h3>'+en(u.name)+'</h3><span class="status-chip '+(u.status.includes("معلق")?"pending":"confirmed")+'">'+en(u.status)+'</span></div>'+
+'<p>'+en(roleNames[u.role]||u.role)+' · '+en(u.id)+'</p><div class="booking-actions">'+btn("toggle-user",u.status.includes("معلق")?"إعادة التفعيل (معاينة)":"تعليق الحساب (معاينة)","btn-quiet btn-small",'data-id="'+u.id+'"')+'</div></article>').join("")+'</div>'+
+notice("تغيير الحالة لا يمنع تبديل الأدوار في معرض التصميم. التحكم الحقيقي يتطلب مصادقة وهوية وتطبيق قيود الخادم.");
+}
 function catalogView(){return head("الكتالوج","إدارة الخدمات والأسعار","أسعار تجريبية وقابلة للتعديل في جلسة العرض فقط.")+'<div class="service-grid">'+services.map(x=>'<article class="white-panel"><div class="pill-row"><span class="quick-icon">'+x.icon+'</span><span><strong>'+en(x.name)+'</strong><small class="subtle" style="display:block">'+money(x.price)+' · توضيحي</small></span></div>'+btn("price","تعديل السعر","btn-quiet btn-small","data-id=\""+x.id+"\"")+'</article>').join("")+'</div>' }
 function issuesView(){return head("متابعة المستفيدين","الشكاوى والاعتراضات","استعراض الطلبات وملاحظات المرضى والتعامل معها.")+'<div class="booking-list">'+state.complaints.map(x=>'<article class="booking"><div class="booking-head"><h3>'+en(x.kind)+' · '+en(x.id)+'</h3><span class="status-chip">'+en(x.status)+'</span></div><p>'+en(x.text)+'</p>'+(x.status!=="تمت المعالجة"?'<div class="booking-actions">'+btn("resolve","وضع علامة تمت المعالجة","btn btn-small","data-id=\""+x.id+"\"")+'</div>':"")+'</article>').join("")+'</div>' }
 function render(){
@@ -161,7 +169,7 @@ else if(state.view==="record")result=recordView();
 else if(state.view==="ai")result=symptomsView();
 else result=account();
 }else if(state.role==="admin"){
-if(state.view==="approvals")result=approvalsView();else if(state.view==="catalog")result=catalogView();else if(state.view==="issues")result=issuesView();else if(state.view==="appointments")result=appointmentsView();else if(state.view==="account")result=account();else result=workspace();
+if(state.view==="approvals")result=approvalsView();else if(state.view==="users")result=usersView();else if(state.view==="catalog")result=catalogView();else if(state.view==="issues")result=issuesView();else if(state.view==="appointments")result=appointmentsView();else if(state.view==="account")result=account();else result=workspace();
 }else{
 if(state.view==="case")result=caseView();else if(state.view==="appointments")result=appointmentsView();else if(state.view==="account")result=account();else result=workspace();
 }
@@ -201,7 +209,14 @@ notice("التقييم لا يغيّر متوسط النجوم ولا يُنشر
 function genericModal(type,id){
 if(type==="price"){const s=service(id);if(!s)return;showModal("تعديل سعر تجريبي",'<form data-form="price"><input type="hidden" name="id" value="'+s.id+'"><p>'+s.name+'</p><div class="form-field"><label for="priceAmount">السعر التوضيحي (ريال يمني)</label><input id="priceAmount" type="number" min="0" max="1000000" name="price" value="'+s.price+'" required></div><button type="submit" class="btn">تطبيق السعر في المعاينة</button></form>')}
 if(type==="complaint")showModal("شكوى أو اعتراض",'<form data-form="complaint"><div class="form-field"><label for="complaintKind">نوع الطلب</label><select id="complaintKind" name="kind"><option>شكوى</option><option>اعتراض مالي</option><option>ملاحظة</option></select></div><div class="form-field"><label for="complaintText">صف المشكلة بإيجاز</label><textarea id="complaintText" name="text" required minlength="8" maxlength="400" placeholder="لا تضع بيانات حقيقية أو معلومات طبية حساسة"></textarea></div><button class="btn" type="submit">إضافة للمعاينة</button></form>');
-if(type==="notifications")showModal("الإشعارات",state.notifications.length?state.notifications.map(x=>'<p class="white-panel" style="font-size:12px">'+en(x)+'</p>').join(""):'<div class="empty">لا توجد إشعارات تجريبية.</div>');
+if(type==="notifications"){
+const record=state.records[state.actorIds.patient];
+const appointments=state.bookings.filter(b=>b.createdBy===state.actorIds.patient&&["pending","confirmed"].includes(b.status)).map(b=>'موعد '+en(b.date)+' الساعة '+en(b.time)+' · '+en(provider(b.pid)?.name||"مقدم رعاية"));
+const reminders=record.medications.filter(m=>m.remind).map(m=>'دواء تجريبي: '+en(m.name)+' · '+en(m.schedule));
+const followup=record.followupDate?['موعد متابعة الطبيب التوضيحي: '+en(record.followupDate)]:[];
+const messages=[...state.notifications,...appointments,...reminders,...followup];
+showModal("الإشعارات والتذكيرات — معاينة",messages.map(x=>'<p class="white-panel" style="font-size:12px">'+x+'</p>').join("")+'<p class="subtle">هذه قائمة تُعرض عند فتحها؛ ليست إشعارات آلية أو جدولة خلفية.</p>');
+}
 if(type==="login")showModal("تسجيل الدخول — معاينة فقط",'<p class="subtle">لا تستخدم بياناتك الحقيقية. يمكنك تجربة الانتقال إلى دور مستخدم دون تحقق من خادم.</p><form data-form="login"><div class="form-field"><label for="loginName">البريد الإلكتروني التجريبي</label><input id="loginName" type="email" name="email" required placeholder="demo@example.com" autocomplete="off"></div><div class="form-field"><label for="loginPassword">كلمة مرور وهمية</label><input id="loginPassword" type="password" name="password" required minlength="4" placeholder="••••••" autocomplete="off"></div><div class="form-field"><label for="loginRole">الدور المراد معاينته</label><select id="loginRole" name="role"><option value="patient">مريض</option><option value="doctor">طبيب</option><option value="nurse">ممرض</option><option value="admin">مدير المنصة</option></select></div><button type="submit" class="btn">دخول تجريبي</button></form>');
 if(type==="register")showModal("التسجيل التجريبي",'<p class="subtle">لإظهار رحلة التسجيل فقط، دون إنشاء حساب حقيقي.</p><form data-form="register"><div class="form-field"><label for="regName">الاسم الظاهر في المعاينة</label><input id="regName" name="name" placeholder="اسم افتراضي" required minlength="3"></div><div class="form-field"><label>الصفة</label><select name="kind"><option value="patient">مريض</option><option value="doctor">طبيب — يتطلب اعتماد الإدارة</option><option value="nurse">ممرض — يتطلب اعتماد الإدارة</option></select></div><div class="form-field"><label for="regCredential">ترخيص أو مؤهل طبي (مطلوب لطلب انضمام طبيب أو ممرض)</label><input id="regCredential" name="credential" type="file" accept=".pdf,.png,.jpg,.jpeg"></div><p class="subtle">لا يتم رفع الوثيقة أو تخزينها. تسجيل الكادر الطبي يخضع لاعتماد الإدارة في النظام الحقيقي.</p><button class="btn" type="submit">متابعة المعاينة</button></form>');
 if(type==="about")showModal("حدود النسخة V21",'<div class="help-grid"><details open><summary>هل هذه منظومة تشغيل فعلية؟</summary><p>لا. هذه واجهة تفاعلية لتصميم التجربة؛ بدون خادم أو حفظ سجلات أو إرسال رسائل أو تأكيد حجوزات.</p></details><details><summary>ما دور الذكاء الاصطناعي؟</summary><p>يظهر نموذج توجيه إرشادي لا يشخّص المرض ولا ينفذ استدلالًا طبيًا فعليًا.</p></details><details><summary>كيف يتم التواصل؟</summary><p>يُفتح واتساب الخارجي مع رسالة عامة. لا توجد أرقام حقيقية، وتختار جهة الاتصال بنفسك. لا تُرسل بيانات طبية تلقائيًا.</p></details><details><summary>كيف تعمل الصلاحيات؟</summary><p>يُظهر التصميم عناصر كل دور، أما التحكم الحقيقي في الصلاحيات فيستلزم Backend وهوية ومراجعة صلاحيات وتدقيقًا.</p></details></div>');
@@ -233,8 +248,9 @@ if(state.role!=="admin")return toast("هذا القرار للإدارة فقط"
 const t=state.professionalApplications.find(x=>x.id===id);
 if(!t||t.status!=="قيد المراجعة")return;
 if(a==="decline"){showModal("رفض طلب الكادر مع السبب",'<form data-form="approval"><input type="hidden" name="id" value="'+en(t.id)+'"><div class="form-field"><label for="reason">سبب الرفض (إلزامي)</label><textarea id="reason" name="reason" required minlength="8" maxlength="250" placeholder="مثال: بيانات الترخيص غير مكتملة"></textarea></div><button type="submit" class="btn">تسجيل رفض تجريبي</button></form>');return}
-t.status="معتمد تجريبيًا";t.reason="تمت مراجعة نموذج المستند فقط";notify("تم اعتماد طلب الكادر في المعاينة (دون تحقق رسمي)");render();return
+t.status="معتمد تجريبيًا";t.reason="تمت مراجعة نموذج المستند فقط";if(!state.userAccounts.some(u=>u.id===t.id))state.userAccounts.push({id:t.id,name:t.name,role:t.kind==="طبيب"?"doctor":"nurse",status:"فعال تجريبيًا"});notify("تم اعتماد طلب الكادر في المعاينة (دون تحقق رسمي)");render();return
 }
+if(a==="toggle-user"){if(state.role!=="admin")return;const u=state.userAccounts.find(x=>x.id===id);if(!u)return;u.status=u.status.includes("معلق")?"فعال تجريبيًا":"معلق تجريبيًا";render();toast("تم تغيير حالة حساب تجريبي فقط");return}
 if(a==="resolve"){if(state.role!=="admin")return;const c=state.complaints.find(x=>x.id===id);if(c){c.status="تمت المعالجة";render()}return}
 if(["price","complaint","register","login","notifications","about","upload"].includes(a)){genericModal(a,id);return}
 }
@@ -258,9 +274,9 @@ if(kind==="rating"){const b=state.bookings.find(x=>x.id===payload.booking);if(st
 if(kind==="doctor-note"){
 if(state.role!=="doctor"||!actorCanPatient(state.viewPatientId))return toast("لا يوجد تكليف يسمح بتعديل هذا الملف");
 currentRecord().diagnosis=String(payload.diagnosis);currentRecord().instructions=String(payload.instructions);currentRecord().prescription=String(payload.prescription);
+if(String(payload.medName||"").trim()&&(!String(payload.medDose||"").trim()||!String(payload.medSchedule||"").trim()||!String(payload.medDuration||"").trim()))return toast("أكمل الجرعة والوقت والمدة قبل حفظ بيانات الطبيب");
 if(String(payload.lab||"").trim())currentRecord().labs.unshift(String(payload.lab).trim());
 if(String(payload.medName||"").trim()){
-  if(!String(payload.medDose||"").trim()||!String(payload.medSchedule||"").trim()||!String(payload.medDuration||"").trim())return toast("أكمل بيانات الجرعة والوقت والمدة قبل إضافة الدواء");
   currentRecord().medications.unshift({id:"m"+Date.now(),name:String(payload.medName).trim(),dose:String(payload.medDose).trim(),schedule:String(payload.medSchedule).trim(),duration:String(payload.medDuration).trim(),remind:false});
 }
 if(payload.followupDate)currentRecord().followupDate=String(payload.followupDate);
