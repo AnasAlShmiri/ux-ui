@@ -81,7 +81,7 @@ function nursesView(){return head("مقدمو التمريض","اختر المم
 '<div class="searchbar"><span>⌕</span><input type="search" id="search" aria-label="ابحث عن ممرض" placeholder="اسم الممرض أو التخصص..." value="'+en(state.search)+'"></div>'+providerGrid("nurse") }
 function providerGrid(role){
 const list=providers.filter(p=>p.role===role&&(!state.selectedService||role==="doctor"||p.services.includes(state.selectedService))&&(!state.search||(p.name+" "+p.specialty).includes(state.search))&&(state.filter==="all"||p.specialty===state.filter));
-return list.length?'<div class="provider-grid">'+list.map(p=>'<article class="provider-card"><div class="provider-top"><span class="avatar">'+en(p.short)+'</span><div><h3>'+en(p.name)+'</h3><p>'+en(p.specialty)+'</p></div><div class="rating">★ '+en(p.rating)+'<small>تقييم تجريبي</small></div></div>'+
+return list.length?'<div class="provider-grid">'+list.map(p=>'<article class="provider-card"><div class="provider-top"><span class="avatar">'+en(p.short)+'</span><div><h3>'+en(p.name)+'</h3><p>'+en(p.specialty)+'</p></div><div class="rating">★ '+providerScore(p)+'<small>تقييم تجريبي</small></div></div>'+
 '<div class="meta-row"><span>◷ خبرة '+en(p.experience)+'</span><span>◈ من '+money(p.fee)+' <small>(توضيحي)</small></span></div>'+
 '<div class="provider-actions">'+btn("book",role==="doctor"?"اختيار موعد":"طلب زيارة","btn","data-id=\""+p.id+"\"")+btn("profile","ملف مقدم الخدمة","btn-quiet","data-id=\""+p.id+"\"")+btn("whatsapp","واتساب","btn-quiet","data-id=\""+p.id+"\"")+'</div></article>').join("")+'</div>':'<div class="empty">لا توجد نتائج مطابقة في البيانات التجريبية. '+btn("clear-service","عرض جميع الممرضين","btn-quiet btn-small")+'</div>' }
 function appointmentsView(){
@@ -101,8 +101,12 @@ return '<article class="booking"><div class="booking-head"><h3>'+en(p?p.name:"م
 (isPatient?'<div class="form-actions">'+btn("goto","موعد طبيب جديد","btn","data-view=\"doctors\"")+btn("goto","تمريض منزلي","btn-quiet","data-view=\"services\"")+'</div>':"")+
 notice("حالات الطلبات والتعديل والتقييم تتغير داخل الصفحة فقط؛ عند إعادة تحميلها تعود بيانات المعاينة.") }
 function recordView(){
-const r=state.record;
-return head("سجلك الصحي","ملف طبي واحد","بيانات المريض، تعليمات الطبيب، ما نفذه الممرض، التحاليل والوصفات في شاشة واحدة.")+
+const r=currentRecord();
+if(!r)return head("الملف الطبي","لا توجد سجلات مخوّل بعرضها","لا توجد زيارات مؤكدة أو مكتملة تسمح بالاطلاع على هذا الملف.");
+const allowed=permittedPatients();
+if(!allowed.some(p=>p.id===state.viewPatientId)&&allowed.length){state.viewPatientId=allowed[0].id;}
+const chooser=allowed.length>1?'<div class="form-field"><label for="patientPicker">المستفيد صاحب هذا الملف</label><select id="patientPicker" data-patient-picker>'+allowed.map(x=>'<option value="'+x.id+'" '+(x.id===state.viewPatientId?"selected":"")+'>'+en(x.name)+'</option>').join("")+'</select></div>':"";
+return head("السجل الصحي","ملف طبي مستقل لكل مستفيد","بيانات المريض، تعليمات الطبيب، أعمال الممرض والفحوصات في شاشة واحدة.")+chooser+
 '<section class="soft-panel"><span class="eyebrow">ملف المريض</span><h2 style="margin:3px 0;font-size:21px">'+en(r.profile.name)+'</h2><p class="subtle">YR-DEMO-204 · هذا مثال بصري غير مرتبط بشخص حقيقي.</p><div class="pill-row"><span class="pill-info">فصيلة الدم: '+en(r.profile.blood)+'</span><span class="pill-info">الحساسية: '+en(r.profile.allergies)+'</span></div></section>'+
 '<div class="section-title"><h2>تفاصيل السجل</h2></div><div class="record-grid">'+
 '<section class="record-card"><h3>◈ بيانات المريض</h3>'+row("التاريخ المرضي",en(r.profile.history))+row("فصيلة الدم",en(r.profile.blood))+row("الحساسية",en(r.profile.allergies))+'</section>'+
@@ -110,6 +114,7 @@ return head("سجلك الصحي","ملف طبي واحد","بيانات الم�
 '<section class="record-card"><h3>♡ ما نفذه الممرض</h3>'+r.nurseTasks.map(x=>'<p class="subtle">✓ '+en(x)+'</p>').join("")+'<div class="divider"></div><strong style="font-size:12px">القياسات</strong>'+r.vitals.map(x=>'<p class="subtle">'+en(x)+'</p>').join("")+'</section>'+
 '<section class="record-card"><h3>▤ الوصفات والفحوصات</h3><p class="subtle">وصفة: '+en(r.prescription)+'</p><div class="divider"></div>'+r.labs.map(x=>'<p class="subtle">↟ '+en(x)+'</p>').join("")+
 (state.role==="patient"?'<div class="form-actions">'+btn("upload","إضافة مرفق للمعاينة","btn-quiet btn-small")+'</div>':"")+'</section>'+
+'<section class="record-card"><h3>◷ الأدوية ومواعيد المتابعة</h3>'+row("موعد المتابعة",en(r.followupDate||"لم يُحدد"))+(r.medications||[]).map(m=>'<div class="info-row"><span>'+en(m.name)+'<small class="subtle" style="display:block">'+en(m.dose)+' · '+en(m.schedule)+' · '+en(m.duration)+'</small></span>'+(state.role==="patient"?btn("reminder",m.remind?"تذكير مفعّل (تجريبي)":"تفعيل تذكير (تجريبي)","btn-quiet btn-small",'data-id="'+m.id+'"'):"")+'</div>').join("")+'</section>'+
 '<section class="record-card full"><h3>◷ تسلسل المتابعة</h3><ul class="timeline">'+r.timeline.map((x,i)=>'<li><small>حدث توضيحي '+(i+1)+'</small><strong>'+en(x)+'</strong></li>').join("")+'</ul></section></div>'+
 notice("السجل هنا توضيحي وغير محفوظ. الطبيب وحده يعتمد التشخيص والوصفة والتوجيه الطبي، والممرض يوثّق التنفيذ دون تعديل تشخيص الطبيب.") }
 function symptomsView(){return head("المساعد الإرشادي","إلى أي تخصص أذهب؟","عرض توضيحي لتوجيه الأعراض نحو تخصص، وليس تحليل ذكاء اصطناعي فعليًا أو تشخيصًا.")+
@@ -123,15 +128,17 @@ if(state.role==="doctor")return head("مساحة الطبيب","مرحبًا ب�
 '<div class="section-title"><h2>إجراءات الطبيب</h2></div>'+card("مريض تجريبي — YR-DEMO-204",'<p class="subtle">افتح الملف واطلع على تقارير التمريض، ثم دوّن التقييم والتعليمات الطبية في نفس الشاشة.</p><div class="form-actions">'+btn("goto","فتح الملف الموحد","btn","data-view=\"case\"")+btn("whatsapp","التواصل مع الممرض بواتساب","btn-quiet","data-id=\"n1\"")+'</div>')+
 notice("البيانات افتراضية. دور الطبيب في المعاينة لا يمنح صلاحيات حقيقية، ولا يحفظ تشخيصًا لمريض.");
 if(state.role==="nurse")return head("مساحة الممرض","زياراتي اليوم","أولاً راجع تعليمات الطبيب، ثم وثّق الإجراءات التي نفذتها.")+'<div class="quick-grid">'+quick("case","▤","ملف المريض","تعليمات الطبيب والقياسات")+quick("appointments","▦","زياراتي","حالة الطلبات والزيارات")+quick("case","✓","تقرير الزيارة","توثيق التنفيذ والملاحظات")+quick("account","♙","حسابي","البيانات والتواصل")+'</div>'+
-'<div class="section-title"><h2>قبل بدء الرعاية</h2></div>'+card("تعليمات الطبيب الحالية",'<p>'+en(state.record.instructions)+'</p><div class="form-actions">'+btn("goto","الاطلاع والتوثيق","btn","data-view=\"case\"")+btn("whatsapp","استفسار واتساب للطبيب","btn-quiet","data-id=\"d1\"")+'</div>')+
+'<div class="section-title"><h2>قبل بدء الرعاية</h2></div>'+card("تعليمات الطبيب الحالية",'<p>'+en(currentRecord().instructions)+'</p><div class="form-actions">'+btn("goto","الاطلاع والتوثيق","btn","data-view=\"case\"")+btn("whatsapp","استفسار واتساب للطبيب","btn-quiet","data-id=\"d1\"")+'</div>')+
 notice("الأدوية والحقن والإجراءات المقيدة تتطلب أمرًا طبيًا صالحًا. لا يحق للممرض إصدار وصفات أو تعديل تشخيص الطبيب.");
 return head("لوحة الإدارة","إدارة المنصة","مراقبة الحجوزات والكوادر والخدمات والشكاوى في شاشة واضحة.")+
 '<div class="mini-stat-grid"><div class="mini-stat"><strong>'+providers.length+'</strong><small>مقدمو خدمة تجريبيون</small></div><div class="mini-stat"><strong>'+state.bookings.length+'</strong><small>الحجوزات</small></div><div class="mini-stat"><strong>'+state.professionalApplications.filter(x=>x.status==="قيد المراجعة").length+'</strong><small>طلبات اعتماد معلّقة</small></div></div>'+
 '<div class="section-title"><h2>الإدارة السريعة</h2></div><div class="quick-grid">'+quick("approvals","✓","اعتماد الكوادر","مراجعة وثائق الأطباء والممرضين")+quick("catalog","▦","الخدمات","الأسعار والأنواع")+quick("issues","☷","الشكاوى","الملاحظات والاعتراضات")+quick("appointments","◷","الحجوزات","الطلبات وحالاتها")+'</div>' }
 function caseView(){
+if(!["doctor","nurse"].includes(state.role))return '<div class="empty">هذه الواجهة للكادر الصحي فقط.</div>';
+const allowed=permittedPatients();if(allowed.length&&!actorCanPatient(state.viewPatientId))state.viewPatientId=allowed[0].id;
 let role=state.role,extra="";
-if(role==="doctor")extra=card("⚕ توثيق الطبيب — معاينة",'<form data-form="doctor-note"><div class="form-field"><label for="docDiag">التقييم / التشخيص من الطبيب</label><textarea id="docDiag" name="diagnosis" required minlength="5">'+en(state.record.diagnosis)+'</textarea></div><div class="form-field"><label for="docInst">تعليمات العلاج والرعاية الموجّهة للممرض</label><textarea id="docInst" name="instructions" required minlength="5">'+en(state.record.instructions)+'</textarea></div><div class="form-field"><label for="docRx">الوصفة الطبية</label><textarea id="docRx" name="prescription" required minlength="5">'+en(state.record.prescription)+'</textarea></div><div class="form-field"><label for="docLab">طلب فحص جديد (اختياري)</label><input id="docLab" name="lab" placeholder="نوع الفحص فقط — مثال تعليمي"></div><button type="submit" class="btn">معاينة تحديث الملف</button></form>');
-if(role==="nurse")extra=card("✓ توثيق الممرض — معاينة",'<p class="subtle">خطة الطبيب لا يمكن تعديلها من هذه الواجهة.</p>'+notice(en(state.record.instructions))+'<form data-form="nurse-report"><div class="form-row"><div class="form-field"><label for="vitalBP">ضغط الدم (اختياري)</label><input id="vitalBP" name="bp" placeholder="120/80"></div><div class="form-field"><label for="vitalPulse">النبض (اختياري)</label><input id="vitalPulse" name="pulse" placeholder="75"></div></div><div class="form-field"><label for="nurseTask">ما الذي نفذته خلال الزيارة؟</label><textarea id="nurseTask" name="task" required minlength="8" placeholder="وثّق الإجراءات التمريضية المنفذة والملاحظات دون تشخيص..."></textarea></div><button type="submit" class="btn">إضافة تقرير للمعاينة</button></form>');
+if(role==="doctor"&&actorCanPatient(state.viewPatientId))extra=card("⚕ توثيق الطبيب — معاينة",'<form data-form="doctor-note"><div class="form-field"><label for="docDiag">التقييم / التشخيص من الطبيب</label><textarea id="docDiag" name="diagnosis" required minlength="5">'+en(currentRecord().diagnosis)+'</textarea></div><div class="form-field"><label for="docInst">تعليمات العلاج والرعاية الموجّهة للممرض</label><textarea id="docInst" name="instructions" required minlength="5">'+en(currentRecord().instructions)+'</textarea></div><div class="form-field"><label for="docRx">الوصفة الطبية</label><textarea id="docRx" name="prescription" required minlength="5">'+en(currentRecord().prescription)+'</textarea></div><div class="form-field"><label for="docLab">طلب فحص جديد (اختياري)</label><input id="docLab" name="lab" placeholder="نوع الفحص فقط — مثال تعليمي"></div><button type="submit" class="btn">معاينة تحديث الملف</button></form>');
+if(role==="nurse"&&actorCanPatient(state.viewPatientId))extra=card("✓ توثيق الممرض — معاينة",'<p class="subtle">خطة الطبيب لا يمكن تعديلها من هذه الواجهة.</p>'+notice(en(currentRecord().instructions))+'<form data-form="nurse-report"><div class="form-row"><div class="form-field"><label for="vitalBP">ضغط الدم (اختياري)</label><input id="vitalBP" name="bp" placeholder="120/80"></div><div class="form-field"><label for="vitalPulse">النبض (اختياري)</label><input id="vitalPulse" name="pulse" placeholder="75"></div></div><div class="form-field"><label for="nurseTask">ما الذي نفذته خلال الزيارة؟</label><textarea id="nurseTask" name="task" required minlength="8" placeholder="وثّق الإجراءات التمريضية المنفذة والملاحظات دون تشخيص..."></textarea></div><button type="submit" class="btn">إضافة تقرير للمعاينة</button></form>');
 return recordView()+'<div class="section-title"><h2>إجراءات '+roleNames[role]+'</h2></div>'+extra }
 function approvalsView(){return head("إدارة الكادر","طلبات اعتماد الكوادر","الطبيب والممرض يتقدمان بالوثائق، والإدارة تراجع الطلب قبل الموافقة.")+'<div class="booking-list">'+state.professionalApplications.map(x=>'<article class="booking"><div class="booking-head"><h3>'+en(x.name)+'</h3><span class="status-chip '+(x.status==="قيد المراجعة"?"pending":"confirmed")+'">'+en(x.status)+'</span></div><p>'+en(x.kind)+' · ملف اعتماد توضيحي، لا توجد وثائق حقيقية</p><div class="booking-actions">'+(x.status==="قيد المراجعة"?btn("approve","اعتماد تجريبي","btn btn-small","data-id=\""+x.id+"\"")+btn("decline","رفض تجريبي","btn-danger btn-small","data-id=\""+x.id+"\""):"")+'</div></article>').join("")+'</div>'+notice("لا يمنح الاعتماد التجريبي تصريحًا مهنيًا حقيقيًا. التشغيل الفعلي يتطلب التحقق من الترخيص والهوية.") }
 function catalogView(){return head("الكتالوج","إدارة الخدمات والأسعار","أسعار تجريبية وقابلة للتعديل في جلسة العرض فقط.")+'<div class="service-grid">'+services.map(x=>'<article class="white-panel"><div class="pill-row"><span class="quick-icon">'+x.icon+'</span><span><strong>'+en(x.name)+'</strong><small class="subtle" style="display:block">'+money(x.price)+' · توضيحي</small></span></div>'+btn("price","تعديل السعر","btn-quiet btn-small","data-id=\""+x.id+"\"")+'</article>').join("")+'</div>' }
@@ -162,7 +169,7 @@ const p=provider(id);if(!p)return toast("مقدم الرعاية غير موجو
 const sc=p.role==="doctor"?"consult":(state.selectedService&&p.services.includes(state.selectedService)?state.selectedService:p.services[0]);
 const options=p.role==="nurse"?'<div class="form-field"><label for="bookService">نوع الخدمة</label><select id="bookService" name="service" required>'+p.services.map(x=>'<option value="'+x+'" '+(sc===x?"selected":"")+'>'+en(service(x)?.name)+'</option>').join("")+'</select></div>':'<input type="hidden" name="service" value="consult">';
 showModal(b?"تعديل طلب تجريبي":"اطلب الخدمة في شاشة واحدة",
-'<div class="soft-panel"><strong>'+en(p.name)+'</strong><p class="subtle">'+en(p.specialty)+' · ★ '+en(p.rating)+' تقييم تجريبي</p></div>'+
+'<div class="soft-panel"><strong>'+en(p.name)+'</strong><p class="subtle">'+en(p.specialty)+' · ★ '+providerScore(p)+' تقييم تجريبي</p></div>'+
 '<form data-form="booking"><input type="hidden" name="pid" value="'+en(id)+'"><input type="hidden" name="editId" value="'+(b?en(b.id):"")+'">'+options+
 '<div class="form-row"><div class="form-field"><label for="bookDate">التاريخ المفضل</label><input id="bookDate" type="date" name="date" min="'+today()+'" value="'+(b?en(b.date):"")+'" required></div><div class="form-field"><label for="bookTime">الوقت المفضل</label><select id="bookTime" name="time" required><option value="">اختر الوقت</option>'+["09:00","11:00","15:00","17:00","19:00"].map(t=>'<option value="'+t+'" '+(b&&b.time===t?"selected":"")+'>'+t+'</option>').join("")+'</select></div></div>'+
 '<div class="form-field"><label for="bookArea">'+(p.role==="doctor"?"مكان الاستشارة أو المنطقة":"منطقة الزيارة")+'</label><input id="bookArea" name="area" required minlength="2" maxlength="80" value="'+(b?en(b.area):"")+'" placeholder="اسم المنطقة فقط — لا تُدخل عنوانك الحقيقي"></div>'+
@@ -170,7 +177,7 @@ showModal(b?"تعديل طلب تجريبي":"اطلب الخدمة في شاش�
 '<div class="form-actions"><button type="submit" class="btn">'+(b?"معاينة التعديل":"معاينة إرسال الطلب")+'</button>'+btn("close","إلغاء","btn-quiet")+'</div></form>'+
 notice("لا ينشئ هذا النموذج حجزًا حقيقيًا، ولا يرسل معلومات إلى الطبيب أو الممرض."))}
 function profileModal(id){const p=provider(id);if(!p)return;
-showModal("الملف التعريفي لمقدم الرعاية",'<div class="provider-top"><span class="avatar">'+en(p.short)+'</span><div><h3>'+en(p.name)+'</h3><p>'+en(p.specialty)+'</p></div><div class="rating">★ '+en(p.rating)+'<small>تقييم تجريبي</small></div></div><div class="divider"></div>'+row("الخبرة",en(p.experience))+row("التكلفة التوضيحية",money(p.fee))+row("نوع الملف",p.role==="doctor"?"طبيب":"ممرض")+
+showModal("الملف التعريفي لمقدم الرعاية",'<div class="provider-top"><span class="avatar">'+en(p.short)+'</span><div><h3>'+en(p.name)+'</h3><p>'+en(p.specialty)+'</p></div><div class="rating">★ '+providerScore(p)+'<small>تقييم تجريبي</small></div></div><div class="divider"></div>'+row("الخبرة",en(p.experience))+row("التكلفة التوضيحية",money(p.fee))+row("نوع الملف",p.role==="doctor"?"طبيب":"ممرض")+
 '<p class="subtle">تظهر تقييمات مقدمي الرعاية فقط، ولا تُمنح نجوم لقياس الضغط أو نوع خدمة تمريضية.</p><div class="form-actions">'+btn("book","طلب موعد","btn","data-id=\""+p.id+"\"")+btn("whatsapp","واتساب","btn-quiet","data-id=\""+p.id+"\"")+'</div>')}
 function ratingModal(id){const b=state.bookings.find(x=>x.id===id),p=b&&provider(b.pid);if(!p||b.status!=="completed")return toast("التقييم متاح فقط بعد اكتمال الزيارة");
 showModal("تقييم "+(p.role==="doctor"?"الطبيب":"الممرض"),'<div class="soft-panel"><strong>'+en(p.name)+'</strong><p class="subtle">أنت تقيّم مقدم الرعاية نفسه، وليس نوع الخدمة.</p></div>'+
@@ -200,6 +207,7 @@ if(a==="book"){closeModal();bookModal(id);return}
 if(a==="profile"){closeModal();profileModal(id);return}
 if(a==="whatsapp"){whatsapp(id);return}
 if(a==="rate"){ratingModal(id);return}
+if(a==="reminder"){if(state.role!=="patient")return;const record=currentRecord();const med=record?.medications?.find(m=>m.id===id);if(med){med.remind=!med.remind;render();toast("تذكير توضيحي فقط، لا تُرسل إشعارات تلقائية")}return}
 if(a==="payment"){const b=state.bookings.find(x=>x.id===id);if(b&&b.status==="completed"&&window.confirm("هل تريد تأكيد دفع نقدي في معاينة التصميم فقط؟ لا يوجد دفع حقيقي.")){state.payments[id]=true;render();toast("تأكيد دفع نقدي تجريبي، دون تحصيل أموال")}return}
 if(a==="recommended"){state.view="doctors";state.selectedService=null;state.search="";state.filter=button.dataset.specialty==="الباطنية"?"الباطنية والسكري":button.dataset.specialty;render();window.scrollTo(0,0);return}
 if(a==="edit-booking"){const b=state.bookings.find(x=>x.id===id);if(b)bookModal(b.pid,b);return}
@@ -222,15 +230,17 @@ closeModal();goto("appointments");notify("تمت معاينة طلبك — با�
 }
 if(kind==="rating"){state.ratings[payload.booking]={stars:Number(payload.stars),note:String(payload.comment||"")};closeModal();render();toast("حُفظ التقييم في ذاكرة المعاينة فقط");return}
 if(kind==="doctor-note"){
-state.record.diagnosis=String(payload.diagnosis);state.record.instructions=String(payload.instructions);state.record.prescription=String(payload.prescription);
-if(String(payload.lab||"").trim())state.record.labs.unshift(String(payload.lab).trim());
-state.record.timeline.unshift("الطبيب: تحديث المعاينة السريرية والتعليمات");
+if(state.role!=="doctor"||!actorCanPatient(state.viewPatientId))return toast("لا يوجد تكليف يسمح بتعديل هذا الملف");
+currentRecord().diagnosis=String(payload.diagnosis);currentRecord().instructions=String(payload.instructions);currentRecord().prescription=String(payload.prescription);
+if(String(payload.lab||"").trim())currentRecord().labs.unshift(String(payload.lab).trim());
+currentRecord().timeline.unshift("الطبيب: تحديث المعاينة السريرية والتعليمات");
 render();toast("ظهرت تعليمات الطبيب في الملف التجريبي");return;
 }
 if(kind==="nurse-report"){
-state.record.nurseTasks.unshift(String(payload.task));
-if(payload.bp||payload.pulse)state.record.vitals.unshift("ضغط: "+String(payload.bp||"—")+" · نبض: "+String(payload.pulse||"—"));
-state.record.timeline.unshift("الممرض: إضافة ملاحظات تنفيذ الرعاية في المعاينة");
+if(state.role!=="nurse"||!actorCanPatient(state.viewPatientId))return toast("لا يوجد تكليف يسمح بتوثيق هذه الحالة");
+currentRecord().nurseTasks.unshift(String(payload.task));
+if(payload.bp||payload.pulse)currentRecord().vitals.unshift("ضغط: "+String(payload.bp||"—")+" · نبض: "+String(payload.pulse||"—"));
+currentRecord().timeline.unshift("الممرض: إضافة ملاحظات تنفيذ الرعاية في المعاينة");
 render();toast("أضيف تقرير الممرض دون تغيير تشخيص الطبيب");return;
 }
 if(kind==="price"){const s=service(payload.id);if(s)s.price=Number(payload.price);closeModal();render();toast("تم تعديل السعر في المعاينة");return}
@@ -242,9 +252,9 @@ closeModal();setRole(role);toast("معاينة دخول إلى دور "+(roleNam
 if(kind==="register"){
 const name=String(payload.name),role=String(payload.kind);
 if(role!=="patient"&&(!payload.credential||!payload.credential.name)){toast("يرجى اختيار مستند مهني تجريبي لطلب انضمام الكادر");return;}
-if(role==="patient"){state.record.profile.name=name;closeModal();setRole("patient");toast("مرحبا بك في المعاينة، دون إنشاء حساب حقيقي")}
+if(role==="patient"){currentRecord().profile.name=name;closeModal();setRole("patient");toast("مرحبا بك في المعاينة، دون إنشاء حساب حقيقي")}
 else{state.professionalApplications.unshift({id:"A-"+(state.professionalApplications.length+1),name,kind:role==="doctor"?"طبيب":"ممرض",status:"قيد المراجعة"});closeModal();toast("ظهر طلب اعتماد تجريبي في لوحة الإدارة")}return}
-if(kind==="upload"){const file=payload.file;if(file&&file.name){state.record.labs.unshift("ملف معاينة: "+file.name);closeModal();render();toast("أضيف اسم الملف فقط؛ لم يُرفع الملف")}return}
+if(kind==="upload"){if(state.role!=="patient"||!actorCanPatient(state.viewPatientId))return;const file=payload.file;if(file&&file.name){currentRecord().labs.unshift("ملف معاينة: "+file.name);closeModal();render();toast("أضيف اسم الملف فقط؛ لم يُرفع الملف")}return}
 if(kind==="symptoms"){
 const input=String(payload.symptoms||"");
 const urgent=/ضيق تنفس|ألم صدر|اغماء|إغماء|نزيف شديد/.test(input);
@@ -258,6 +268,7 @@ return;
 function init(){
 document.addEventListener("click",handleClick);
 document.addEventListener("submit",handleSubmit);
+document.addEventListener("change",event=>{if(event.target.matches("[data-patient-picker]")){if(choosePatient(event.target.value))render();else toast("لا تملك صلاحية الاطلاع على هذا الملف")}});
 document.addEventListener("input",ev=>{if(ev.target.id==="search"){const val=ev.target.value;state.search=val;const where=state.view;const caret=ev.target.selectionStart;render();const fresh=$("search");if(fresh&&state.view===where){fresh.focus();try{fresh.setSelectionRange(caret,caret)}catch(e){}}}});
 document.addEventListener("keydown",ev=>{if(ev.key==="Escape"&&state.modal)closeModal()});
 const role=new URLSearchParams(location.search).get("role");
